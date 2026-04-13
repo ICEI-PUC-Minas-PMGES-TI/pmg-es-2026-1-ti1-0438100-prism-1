@@ -143,13 +143,6 @@ O mapeamento abaixo descreve a rede de influência ao redor da solução:
 
 ## Etapa de Definição
 
-### Personas
-
-**✳️✳️✳️ APRESENTE OS DIAGRAMAS DE PERSONAS ✳️✳️✳️**
-
-
----
-
 # Personas e Mapas de Empatia
 
 Este documento apresenta as personas identificadas no projeto, juntamente com seus respectivos mapas de empatia, representando os principais usuários da solução
