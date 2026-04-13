@@ -362,12 +362,6 @@ Com base na análise das personas foram identificadas as seguintes histórias de
 
 ---
 
-# Histórias de Usuário
-
-As histórias de usuário foram definidas com base nas necessidades, dores e objetivos das personas identificadas.
-
----
-
 ## Acesso à Informação
 
 | EU COMO... | QUERO/PRECISO... | PARA... |
@@ -422,15 +416,6 @@ As histórias de usuário foram definidas com base nas necessidades, dores e obj
 
 As histórias de usuário refletem diretamente as necessidades reais das personas, garantindo que a solução desenvolvida seja acessível, eficiente e centrada no usuário.  
 O foco principal é reduzir a complexidade, aumentar a confiança e promover autonomia no uso da tecnologia.
-
-> ⚠️ **APAGUE ESSA PARTE ANTES DE ENTREGAR SEU TRABALHO**
->
-> Apresente aqui as histórias de usuário que são relevantes para o projeto de sua solução. As Histórias de Usuário consistem em uma ferramenta poderosa para a compreensão das necessidades de cada persona. Se possível, agrupe as histórias de usuário por contexto, para facilitar consultas recorrentes à essa parte do documento.
->
-> **Orientações**:
->
-> - [Histórias de usuários com exemplos e template](https://www.atlassian.com/br/agile/project-management/user-stories)
-> - [Como escrever boas histórias de usuário (User Stories)](https://medium.com/vertice/como-escrever-boas-users-stories-hist%C3%B3rias-de-usu%C3%A1rios-b29c75043fac)
 
 ## Proposta de Valor
 
