@@ -163,180 +163,198 @@ Nesta seção, detalhamos as Personas que representam nossos usuários reais, pe
 
 ---
 
-# Persona: Rafaela Silva Soares
+# 👥 Personas e Mapas de Empatia
 
-![Rafaela Silva Soares](images/PERSONA%201.png)
+Este documento apresenta as personas identificadas no projeto, juntamente com seus respectivos mapas de empatia, representando os principais usuários da solução.
+
+---
+
+# Persona 1: Rafaela Silva Soares
+
+![Rafaela](images/persona-1.png)
 
 **Idade:** 40 anos  
 **Ocupação:** Trabalhadora Informal (Manicure)
 
----
-
 ## Bio
-Rafaela é uma trabalhadora informal que atua como manicure e vive uma rotina corrida conciliando trabalho e família. Ela utiliza o celular como principal ferramenta para comunicação, entretenimento e aprendizado. Busca constantemente formas de melhorar sua renda e oferecer melhores condições de vida para seus filhos.
-
----
+Rafaela é uma trabalhadora informal que atua como manicure e busca estabilidade financeira para sustentar sua família. Utiliza o celular como principal ferramenta no dia a dia.
 
 ## Objetivos
-
-- Garantir mais estabilidade financeira para sua família  
-- Oferecer melhores condições de vida para seus filhos  
-- Entender melhor seus direitos  
-- Organizar e complementar sua renda  
-- Ter mais segurança e previsibilidade no dia a dia  
-
----
+- Estabilidade financeira  
+- Melhorar a vida dos filhos  
+- Entender seus direitos  
+- Organizar sua renda  
 
 ## Dores
-
-- Dificuldade em lidar com processos burocráticos  
-- Insegurança ao buscar informações formais  
-- Falta de clareza sobre seus direitos  
-- Dificuldade em organizar a renda sendo autônoma  
-- Perda de tempo com processos complicados  
-
----
+- Dificuldade com burocracia  
+- Informações confusas  
+- Falta de clareza sobre direitos  
 
 ## Objetos e Lugares
-
-- Smartphone Android intermediário  
-- Internet via dados móveis  
-- Apps: WhatsApp, Instagram, Google e YouTube  
-- Uso em casa (principalmente à noite) ou entre atendimentos  
-- Frequenta CRAS e postos da prefeitura  
-- Busca ajuda com vizinhos e conhecidos  
+- Smartphone Android  
+- WhatsApp, Instagram, Google, YouTube  
+- CRAS e postos da prefeitura  
 
 ---
 
-## Necessidades
+## Mapa de Empatia — Rafaela
 
-- Informações claras e objetivas  
-- Linguagem simples (sem termos técnicos)  
-- Processos rápidos e diretos  
-- Facilidade para entender seus direitos  
-- Soluções acessíveis pelo celular  
+### Vê
+- Pessoas em situação financeira semelhante  
+- Conteúdos em redes sociais  
+- Filas e burocracia  
 
----
+### Ouve
+- Conselhos de vizinhos e familiares  
+- Informações sobre benefícios  
 
-## Personalidade
+### Pensa e sente
+- Preocupação financeira  
+- Insegurança  
+- Desejo de estabilidade  
 
-Responsável, esforçada e resiliente.  
-Valoriza praticidade, clareza e agilidade.
+### Fala e faz
+- Busca ajuda de conhecidos  
+- Usa celular para aprender  
+- Trabalha diariamente  
 
----
+### Dores
+- Processos complicados  
+- Falta de clareza  
 
-## Como devemos tratá-la
-
-- Usar linguagem simples e direta  
-- Evitar termos técnicos ou complicados  
-- Oferecer passo a passo claro  
-- Priorizar rapidez e objetividade  
-- Garantir que ela se sinta no controle da situação  
-
----
-
-## Nunca devemos
-- Criar fluxos confusos ou longos  
-- Exigir esforço excessivo para tarefas simples  
-- Apresentar informações pouco claras  
-- Fazer com que ela perca tempo  
-- Gerar dúvidas ou insegurança  
+### Ganhos
+- Segurança financeira  
+- Autonomia  
+- Facilidade no acesso à informação  
 
 ---
 
-## Sonhos
-- Dar uma vida melhor para os filhos  
-- Alcançar estabilidade financeira  
-- Formalizar seu trabalho no futuro  |
+# Persona 2: Sônia da Silva
 
-# Persona: Sônia da Silva
-
-![Sônia da Silva](images/PERSONA-2.png)
+![Sônia](images/persona-2.png)
 
 **Idade:** 78 anos  
 **Ocupação:** Aposentada  
 
----
-
 ## Bio
-Sônia é uma senhora aposentada que depende de sua aposentadoria para sobreviver e pagar suas contas. Ela vive uma rotina tranquila, mas enfrenta dificuldades ao lidar com tecnologia e processos burocráticos. Apesar disso, tem interesse em aprender para conquistar mais autonomia no seu dia a dia.
-
----
+Sônia é aposentada e depende de sua renda para sobreviver. Possui dificuldade com tecnologia, mas deseja ser mais independente.
 
 ## Objetivos
-- Conseguir retirar sua aposentadoria com facilidade  
-- Entender processos burocráticos do governo  
-- Acessar informações de forma simples  
-- Realizar tarefas de forma autônoma  
-- Ter mais autonomia e liberdade  
-
----
+- Acessar aposentadoria com facilidade  
+- Ter autonomia  
+- Entender processos  
 
 ## Dores
-- Dificuldade com tecnologia e ferramentas digitais  
-- Não entende processos complexos ou com muitas etapas  
-- Depende de terceiros (filhos e netos)  
-- Frustração ao lidar com sistemas confusos  
-- Medo de errar ao utilizar aplicativos  
-
----
+- Dificuldade com tecnologia  
+- Dependência de terceiros  
+- Sistemas complexos  
 
 ## Objetos e Lugares
-- Smartphone Android antigo (com Wi-Fi)  
-- Apps: WhatsApp, Facebook e contatos do telefone  
-- Uso ao longo do dia, principalmente manhã e noite  
-- Frequenta lotérica e Caixa Econômica Federal  
-- Vai a postos de saúde públicos  
-- Pede ajuda a filhos e netos para resolver problemas  
+- Smartphone antigo  
+- WhatsApp, Facebook  
+- Lotérica, Caixa, postos de saúde  
 
 ---
 
-## Necessidades
-- Interface simples e fácil de entender  
-- Linguagem clara e objetiva  
-- Passo a passo prático  
-- Evitar processos demorados  
-- Apoio para ganhar autonomia digital  
+## Mapa de Empatia — Sônia
+
+### Vê
+- Pessoas usando tecnologia com facilidade  
+- Informações difíceis de entender  
+
+### Ouve
+- Ajuda de filhos e netos  
+- Informações sobre benefícios  
+
+### Pensa e sente
+- Insegurança  
+- Medo de errar  
+- Desejo de independência  
+
+### Fala e faz
+- Pede ajuda  
+- Evita tecnologia  
+- Resolve presencialmente  
+
+### Dores
+- Processos difíceis  
+- Falta de clareza  
+- Dependência  
+
+### Ganhos
+- Autonomia  
+- Tranquilidade  
+- Facilidade de uso  
 
 ---
 
-## Personalidade
-Meiga, responsável, calma e extrovertida.
+# Persona 3: Jailson Pereira
+
+![Jailson](images/persona-3.png)
+
+**Idade:** 62 anos  
+**Ocupação:** Agricultor  
+
+## Bio
+Jailson é agricultor e prefere soluções práticas. Não tem familiaridade com tecnologia, mas precisa dela para acessar benefícios.
+
+## Objetivos
+- Conseguir aposentadoria  
+- Resolver problemas rapidamente  
+- Comprar um lote  
+
+## Dores
+- Dificuldade com tecnologia  
+- Sistemas lentos  
+- Processos longos  
+
+## Objetos e Lugares
+- Smartphone antigo  
+- Uso ocasional  
+- TV, rádio  
+- Ajuda de terceiros  
 
 ---
 
-## Como devemos tratá-la
-- Usar linguagem simples e acessível  
-- Explicar de forma prática e objetiva  
-- Evitar termos técnicos  
-- Reduzir etapas e complexidade  
-- Ensinar passo a passo com clareza  
+## Mapa de Empatia — Jailson
+
+### Vê
+- Falta de acesso fácil a serviços  
+- Pessoas com mais facilidade digital  
+
+### Ouve
+- Orientações de familiares  
+- Informações sobre benefícios  
+
+### Pensa e sente
+- Frustração com tecnologia  
+- Desejo de praticidade  
+- Cansaço do trabalho  
+
+### Fala e faz
+- Prefere soluções diretas  
+- Evita tecnologia  
+- Busca ajuda quando necessário  
+
+### Dores
+- Sistemas complexos  
+- Demora  
+- Falta de clareza  
+
+### Ganhos
+- Rapidez  
+- Simplicidade  
+- Eficiência  
+- Independência  
 
 ---
 
-## Nunca devemos
-- Criar processos complexos ou longos  
-- Exigir conhecimento tecnológico avançado  
-- Apresentar informações confusas  
-- Fazer com que ela se sinta dependente  
-- Gerar frustração ou desânimo  
+# ✅ Conclusão
+
+As personas representam diferentes perfis de usuários que enfrentam dificuldades com tecnologia e acesso a serviços.  
+Os mapas de empatia ajudam a compreender melhor suas necessidades, dores e expectativas, orientando o desenvolvimento de soluções mais acessíveis, simples e eficientes.
 
 ---
-
-## Sonhos
-- Ser totalmente independente  
-- Ter uma vida tranquila até o fim  
-
-> ⚠️ **APAGUE ESSA PARTE ANTES DE ENTREGAR SEU TRABALHO**
->
-> Relacione as personas identificadas no seu projeto e os respectivos mapas de empatia. Lembre-se que você deve ser enumerar e descrever precisamente e de forma personalizada todos os principais envolvidos com a solução almeja.
->
-> **Orientações**:
->
-> - [Persona x Público-alvo](https://flammo.com.br/blog/persona-e-publico-alvo-qual-a-diferenca/)
-> - [O que é persona?](https://resultadosdigitais.com.br/blog/persona-o-que-e/)
-> - [Rock Content](https://rockcontent.com/blog/personas/)
-> - [Criar personas (Hotmart)](https://blog.hotmart.com/pt-br/como-criar-persona-negocio/)
 
 # Product Design
 
