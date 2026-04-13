@@ -345,7 +345,7 @@ Jailson é agricultor e prefere soluções práticas. Não tem familiaridade com
 
 ---
 
-# ✅ Conclusão
+# Conclusão
 
 As personas representam diferentes perfis de usuários que enfrentam dificuldades com tecnologia e acesso a serviços.  
 Os mapas de empatia ajudam a compreender melhor suas necessidades, dores e expectativas, orientando o desenvolvimento de soluções mais acessíveis, simples e eficientes.
@@ -360,10 +360,68 @@ Nesse momento, vamos transformar os insights e validações obtidos em soluçõe
 
 Com base na análise das personas foram identificadas as seguintes histórias de usuários:
 
-| EU COMO...`PERSONA` | QUERO/PRECISO ...`FUNCIONALIDADE`        | PARA ...`MOTIVO/VALOR`               |
-| --------------------- | ------------------------------------------ | -------------------------------------- |
-| Usuário do sistema   | Registrar minhas tarefas ⚠️ EXEMPLO ⚠️ | Não esquecer de fazê-las             |
-| Administrador         | Alterar permissões ⚠️ EXEMPLO ⚠️      | Permitir que possam administrar contas |
+---
+
+# Histórias de Usuário
+
+As histórias de usuário foram definidas com base nas necessidades, dores e objetivos das personas identificadas.
+
+---
+
+## Acesso à Informação
+
+| EU COMO... | QUERO/PRECISO... | PARA... |
+|-----------|----------------|--------|
+| Cidadã (Rafaela) | Consultar meus direitos e benefícios | Entender o que posso receber |
+| Idosa (Sônia) | Ver informações de forma simples e clara | Não me confundir com termos difíceis |
+| Trabalhador (Jailson) | Saber quais benefícios posso solicitar | Garantir minha aposentadoria |
+
+---
+
+## Usabilidade e Facilidade
+
+| EU COMO... | QUERO/PRECISO... | PARA... |
+|-----------|----------------|--------|
+| Usuária com pouca experiência digital (Sônia) | Navegar com botões grandes e claros | Conseguir usar o sistema sem ajuda |
+| Usuário com dificuldade tecnológica (Jailson) | Ter poucos passos para completar uma ação | Não perder tempo nem me frustrar |
+| Usuária prática (Rafaela) | Resolver tudo rapidamente pelo celular | Economizar tempo no dia a dia |
+
+---
+
+## Processos e Solicitações
+
+| EU COMO... | QUERO/PRECISO... | PARA... |
+|-----------|----------------|--------|
+| Cidadã (Rafaela) | Ver um passo a passo para solicitar benefícios | Não errar durante o processo |
+| Idosa (Sônia) | Saber quais documentos preciso levar | Evitar sair de casa várias vezes |
+| Trabalhador (Jailson) | Fazer solicitações de forma simples | Conseguir resolver sem depender de outros |
+
+---
+
+## Segurança e Confiança
+
+| EU COMO... | QUERO/PRECISO... | PARA... |
+|-----------|----------------|--------|
+| Usuária insegura (Sônia) | Ter confirmação de que o sistema é seguro | Não ter medo de usar |
+| Cidadã (Rafaela) | Saber que estou em um ambiente oficial | Confiar nas informações |
+| Usuário cauteloso (Jailson) | Evitar cometer erros no sistema | Não ter prejuízos |
+
+---
+
+## Atualizações e Acompanhamento
+
+| EU COMO... | QUERO/PRECISO... | PARA... |
+|-----------|----------------|--------|
+| Cidadã (Rafaela) | Receber atualizações sobre benefícios | Não perder prazos |
+| Idosa (Sônia) | Ser avisada sobre etapas concluídas | Saber que deu tudo certo |
+| Trabalhador (Jailson) | Acompanhar minhas solicitações | Ter controle do processo |
+
+---
+
+# Conclusão
+
+As histórias de usuário refletem diretamente as necessidades reais das personas, garantindo que a solução desenvolvida seja acessível, eficiente e centrada no usuário.  
+O foco principal é reduzir a complexidade, aumentar a confiança e promover autonomia no uso da tecnologia.
 
 > ⚠️ **APAGUE ESSA PARTE ANTES DE ENTREGAR SEU TRABALHO**
 >
