@@ -495,13 +495,13 @@ Estes são os protótipos de telas do sistema.
 
 Interface para captação de dados básicos e filtragem de benefícios.
 
-![Wireframe 1](images/wireframe-1.pdp)
+![Wireframe 1](images/wireframe-1.pdf)
 
 #### 2. Tela Inicial (Dashboard)
 
 Exibição dos benefícios disponíveis com foco em leitura e acessibilidade.
 
-![Wireframe 2](images/wireframe-2.pdp)
+![Wireframe 2](images/wireframe-2.pdf)
 
 #### 3. Detalhes do Benefício
 
@@ -513,7 +513,7 @@ Página com informações sobre documentos, valores e exigências.
 
 Calendário e informações sobre auxílios que ainda serão liberados.
 
-![Wireframe 4](images/wireframe-4.pdp)
+![Wireframe 4](images/wireframe-4.pdf)
 
 ### User Flow
 
