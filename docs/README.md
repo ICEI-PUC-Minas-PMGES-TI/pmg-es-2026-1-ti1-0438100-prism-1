@@ -157,13 +157,9 @@ O mapeamento abaixo descreve a rede de influência ao redor da solução:
 **✳️✳️✳️ APRESENTE OS DIAGRAMAS DE PERSONAS ✳️✳️✳️**
 
 
-# 👤 Personas e Mapas de Empatia
-
-Nesta seção, detalhamos as Personas que representam nossos usuários reais, permitindo que a solução seja desenhada focando em necessidades humanas específicas.
-
 ---
 
-# 👥 Personas e Mapas de Empatia
+# Personas e Mapas de Empatia
 
 Este documento apresenta as personas identificadas no projeto, juntamente com seus respectivos mapas de empatia, representando os principais usuários da solução.
 
