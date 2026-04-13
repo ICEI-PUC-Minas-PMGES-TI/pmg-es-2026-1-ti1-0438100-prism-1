@@ -494,24 +494,24 @@ Estes são os protótipos de telas do sistema.
 
 Interface inicial onde o usuário insere dados básicos (idade, faixa salarial, profissão) para filtrar os direitos compatíveis
 * **Destaque:** Uso de campos de seleção simples para evitar digitação excessiva
-![Wireframe Formulário](images/wireframe-formulario.png)
+![Wireframe Formulário](images/wireframe-1.pdf)
 
 #### 2. Tela Inicial (Dashboard de Benefícios)
 
 Exibe os benefícios em destaque e categorias como "Principais Benefícios" e "Novos Benefícios"
 * **Destaque:** Cards grandes com botões de "Saiba Mais" bem visíveis
-![Wireframe Home](images/wireframe-home.png)
+![Wireframe Home](images/wireframe-2.pdf)
 
 #### 3. Tela de Detalhes do Benefício
 
 Apresenta a descrição do auxílio, valor, exigências e a documentação necessária
 * **Destaque:** Botão de ação para visualizar locais físicos de solicitação
-![Wireframe Detalhes](images/wireframe-detalhes.png)
+![Wireframe Detalhes](images/wireframe-3.pdf)
 
 #### 4. Listagem de Benefícios Futuros
 
 Informa o usuário sobre auxílios que ainda serão liberados, permitindo o planejamento familiar
-![Wireframe Futuros](images/wireframe-futuros.png)
+![Wireframe Futuros](images/wireframe-4.pdf)
 
 ### User Flow
 
