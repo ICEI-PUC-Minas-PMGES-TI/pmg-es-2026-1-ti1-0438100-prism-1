@@ -553,8 +553,6 @@ O protótipo permite navegar pelas telas e validar a usabilidade da solução pr
 
 # Metodologia
 
-# 🛠️ Metodologia
-
 ## Ferramentas
 
 Relação de ferramentas empregadas pelo grupo para garantir a colaboração e a qualidade técnica
