@@ -495,37 +495,31 @@ Estes são os protótipos de telas do sistema.
 
 Interface para captação de dados básicos e filtragem de benefícios.
 
-![Wireframe 1](images/wireframe-1.pdf)
+![Wireframe 1](images/wireframe-1.jpg)
 
 #### 2. Tela Inicial (Dashboard)
 
 Exibição dos benefícios disponíveis com foco em leitura e acessibilidade.
 
-![Wireframe 2](images/wireframe-2.pdf)
+![Wireframe 2](images/wireframe-2.jpg)
 
 #### 3. Detalhes do Benefício
 
 Página com informações sobre documentos, valores e exigências.
 
-![Wireframe 3](images/wireframe-3.pdf)
+![Wireframe 3](images/wireframe-3.jpg)
 
 #### 4. Listagem de Benefícios Futuros
 
 Calendário e informações sobre auxílios que ainda serão liberados.
 
-![Wireframe 4](images/wireframe-4.pdf)
-
-### User Flow
-
-O fluxo de navegação completo desenhado para a jornada da Rafaela.
-
-![Fluxo de Usuário](images/fluxograma.pdf)
+![Wireframe 4](images/wireframe-4.jpg)
 
 ### User Flow
 
 O diagrama abaixo ilustra o caminho que a Rafaela percorre desde a entrada no sistema até a descoberta dos locais de atendimento.
 
-![User Flow do Projeto](images/fluxograma-tiaw.pdf)
+![User Flow do Projeto](images/fluxograma-tiaw.jpg)
 
 **Caminho Principal:**
 
