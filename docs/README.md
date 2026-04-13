@@ -450,7 +450,7 @@ A seguir estão os requisitos funcionais e não funcionais definidos para a solu
 
 ---
 
-## Proposta de Valor (Value Proposition Canvas)
+## Proposta de Valor 
 
 Com base na análise da nossa persona **Rafaela Silva Soares**, estruturamos a nossa proposta de valor para garantir que a solução técnica resolva as dificuldades reais de acesso à informação.
 
@@ -482,23 +482,6 @@ Com base na análise da nossa persona **Rafaela Silva Soares**, estruturamos a n
 
 Os requisitos e a proposta de valor foram definidos com foco na simplicidade, acessibilidade e eficiência. O objetivo central é garantir que utilizadores com baixa familiaridade tecnológica, como a **Rafaela Silva Soares**, consigam utilizar a plataforma com total autonomia, segurança e dignidade, eliminando as barreiras entre o cidadão e os seus direitos.
 ```
-
-> ⚠️ **APAGUE ESSA PARTE ANTES DE ENTREGAR SEU TRABALHO**
->
-> Os requisitos de um projeto são classificados em dois grupos:
->
-> - [Requisitos Funcionais (RF)](https://pt.wikipedia.org/wiki/Requisito_funcional):
->   correspondem a uma funcionalidade que deve estar presente na plataforma (ex: cadastro de usuário).
-> - [Requisitos Não Funcionais (RNF)](https://pt.wikipedia.org/wiki/Requisito_n%C3%A3o_funcional):
->   correspondem a uma característica técnica, seja de usabilidade, desempenho, confiabilidade, segurança ou outro (ex: suporte a dispositivos iOS e Android).
->
-> Lembre-se que cada requisito deve corresponder à uma e somente uma característica alvo da sua solução. Além disso, certifique-se de que todos os aspectos capturados nas Histórias de Usuário foram cobertos.
->
-> **Orientações**:
->
-> - [O que são Requisitos Funcionais e Requisitos Não Funcionais?](https://codificar.com.br/requisitos-funcionais-nao-funcionais/)
-> - [O que são requisitos funcionais e requisitos não funcionais?](https://analisederequisitos.com.br/requisitos-funcionais-e-requisitos-nao-funcionais-o-que-sao/)
-
 ## Projeto de Interface
 
 Artefatos relacionados com a interface e a interacão do usuário na proposta de solução.
@@ -507,90 +490,77 @@ Artefatos relacionados com a interface e a interacão do usuário na proposta de
 
 Estes são os protótipos de telas do sistema.
 
-**✳️✳️✳️ COLOQUE AQUI OS PROTÓTIPOS DE TELAS COM TÍTULO E DESCRIÇÃO ✳️✳️✳️**
+#### 1. Tela de Formulário de Perfil
 
-##### TELA XPTO ⚠️ EXEMPLO ⚠️
+Interface inicial onde o usuário insere dados básicos (idade, faixa salarial, profissão) para filtrar os direitos compatíveis
+* **Destaque:** Uso de campos de seleção simples para evitar digitação excessiva
+![Wireframe Formulário](images/wireframe-formulario.png)
 
-Descrição para a tela XPTO
+#### 2. Tela Inicial (Dashboard de Benefícios)
 
-![Exemplo de wireframe](images/exemplo-wireframe.png)
+Exibe os benefícios em destaque e categorias como "Principais Benefícios" e "Novos Benefícios"
+* **Destaque:** Cards grandes com botões de "Saiba Mais" bem visíveis
+![Wireframe Home](images/wireframe-home.png)
 
-> ⚠️ **APAGUE ESSA PARTE ANTES DE ENTREGAR SEU TRABALHO**
->
-> Wireframes são protótipos das telas da aplicação usados em design de interface para sugerir a estrutura de um site web e seu relacionamentos entre suas páginas. Um wireframe web é uma ilustração semelhante ao layout de elementos fundamentais na interface.
->
-> **Orientações**:
->
-> - [Ferramentas de Wireframes](https://rockcontent.com/blog/wireframes/)
-> - [Figma](https://www.figma.com/)
-> - [Adobe XD](https://www.adobe.com/br/products/xd.html#scroll)
-> - [MarvelApp](https://marvelapp.com/developers/documentation/tutorials/)
+#### 3. Tela de Detalhes do Benefício
+
+Apresenta a descrição do auxílio, valor, exigências e a documentação necessária
+* **Destaque:** Botão de ação para visualizar locais físicos de solicitação
+![Wireframe Detalhes](images/wireframe-detalhes.png)
+
+#### 4. Listagem de Benefícios Futuros
+
+Informa o usuário sobre auxílios que ainda serão liberados, permitindo o planejamento familiar
+![Wireframe Futuros](images/wireframe-futuros.png)
 
 ### User Flow
 
-**✳️✳️✳️ COLOQUE AQUI O DIAGRAMA DE FLUXO DE TELAS ✳️✳️✳️**
+O diagrama abaixo ilustra o caminho que a Rafaela percorre desde a entrada no sistema até a descoberta dos locais de atendimento.
 
-![Exemplo de fluxo de telas](images/exemplo-userflow.png)
+![User Flow do Projeto](images/fluxograma-tiaw.png)
 
-> ⚠️ **APAGUE ESSA PARTE ANTES DE ENTREGAR SEU TRABALHO**
->
-> Fluxo de usuário (User Flow) é uma técnica que permite ao desenvolvedor mapear todo fluxo de telas do site ou app. Essa técnica funciona para alinhar os caminhos e as possíveis ações que o usuário pode fazer junto com os membros de sua equipe.
->
-> **Orientações**:
->
-> - [User Flow: O Quê É e Como Fazer?](https://medium.com/7bits/fluxo-de-usu%C3%A1rio-user-flow-o-que-%C3%A9-como-fazer-79d965872534)
-> - [User Flow vs Site Maps](http://designr.com.br/sitemap-e-user-flow-quais-as-diferencas-e-quando-usar-cada-um/)
-> - [Top 25 User Flow Tools &amp; Templates for Smooth](https://www.mockplus.com/blog/post/user-flow-tools)
+**Caminho Principal:**
+
+1. Entrada no Formulário de Perfil.
+2. Visualização da Lista Personalizada (Home).
+3. Seleção de um Benefício Específico.
+4. Consulta de Documentos e Locais de Atendimento.
 
 ### Protótipo Interativo
 
-**✳️✳️✳️ COLOQUE AQUI UM IFRAME COM SEU PROTÓTIPO INTERATIVO ✳️✳️✳️**
+O protótipo permite navegar pelas telas e validar a usabilidade da solução proposta no Figma.
 
-✅ [Protótipo Interativo (MarvelApp)](https://marvelapp.com/prototype/4hd6091?emb=1&iosapp=false&frameless=false)  ⚠️ EXEMPLO ⚠️
-
-> ⚠️ **APAGUE ESSA PARTE ANTES DE ENTREGAR SEU TRABALHO**
->
-> Um protótipo interativo apresenta o projeto de interfaces e permite ao usuário navegar pelas funcionalidades como se estivesse lidando com o software pronto. Utilize as mesmas ferramentas de construção de wireframes para montagem do seu protótipo interativo. Inclua o link para o protótipo interativo do projeto.
+[Acesse o Protótipo Interativo aqui](https://marvelapp.com/prototype/1cgd0769/screen/98665964)
 
 # Metodologia
 
-Detalhes sobre a organização do grupo e o ferramental empregado.
+# 🛠️ Metodologia
 
 ## Ferramentas
 
-Relação de ferramentas empregadas pelo grupo durante o projeto.
+Relação de ferramentas empregadas pelo grupo para garantir a colaboração e a qualidade técnica.
 
-| Ambiente                    | Plataforma | Link de acesso                                     |
-| --------------------------- | ---------- | -------------------------------------------------- |
-| Processo de Design Thinking | Miro       | https://miro.com/XXXXXXX ⚠️ EXEMPLO ⚠️        |
-| Repositório de código     | GitHub     | https://github.com/XXXXXXX ⚠️ EXEMPLO ⚠️      |
-| Hospedagem do site          | Render     | https://site.render.com/XXXXXXX ⚠️ EXEMPLO ⚠️ |
-| Protótipo Interativo       | MarvelApp  | https://marvelapp.com/XXXXXXX ⚠️ EXEMPLO ⚠️   |
-|                             |            |                                                    |
-
-> ⚠️ **APAGUE ESSA PARTE ANTES DE ENTREGAR SEU TRABALHO**
->
-> Liste as ferramentas empregadas no desenvolvimento do projeto, justificando a escolha delas, sempre que possível. Inclua itens como: (1) Editor de código, (2) )ferramentas de comunicação, (3) )ferramentas de diagramação, (4) )plataformas de hospedagem, entre outras.
+| Ambiente                    | Plataforma   | Justificativa |
+| --------------------------- | ------------ | ------------- |
+| Processo de Design Thinking | Miro         | Centralização de brainstorms, Matriz CSD e Stakeholders. |
+| Repositório de código       | GitHub       | Controle de versão e documentação (Wiki/README). |
+| Design de Interface         | Figma        | Criação de wireframes de alta fidelidade e protótipo interativo. |
+| Diagramação de Fluxo        | Lucidchart/Figma | Mapeamento da jornada do usuário e fluxo de telas. |
+| Comunicação do Grupo        | WhatsApp/Teams | Alinhamento diário e reuniões de sprint. |
 
 ## Gerenciamento do Projeto
 
-Divisão de papéis no grupo e apresentação da estrutura da ferramenta de controle de tarefas (Kanban).
+O grupo utiliza metodologias ágeis (Scrum/Kanban) para a organização das tarefas.
 
-![Exemplo de Kanban](images/exemplo-kanban.png)
+* **Divisão de Papéis:**
 
-> ⚠️ **APAGUE ESSA PARTE ANTES DE ENTREGAR SEU TRABALHO**
->
-> Nesta parte do documento, você deve apresentar  o processo de trabalho baseado nas metodologias ágeis, a divisão de papéis e tarefas, as ferramentas empregadas e como foi realizada a gestão de configuração do projeto via GitHub.
->
-> Coloque detalhes sobre o processo de Design Thinking e a implementação do Framework Scrum seguido pelo grupo. O grupo poderá fazer uso de ferramentas on-line para acompanhar o andamento do projeto, a execução das tarefas e o status de desenvolvimento da solução.
->
-> **Orientações**:
->
-> - [Sobre Projects - GitHub Docs](https://docs.github.com/pt/issues/planning-and-tracking-with-projects/learning-about-projects/about-projects)
-> - [Gestão de projetos com GitHub | balta.io](https://balta.io/blog/gestao-de-projetos-com-github)
-> - [(460) GitHub Projects - YouTube](https://www.youtube.com/playlist?list=PLiO7XHcmTsldZR93nkTFmmWbCEVF_8F5H)
-> - [11 Passos Essenciais para Implantar Scrum no seu Projeto](https://mindmaster.com.br/scrum-11-passos/)
-> - [Scrum em 9 minutos](https://www.youtube.com/watch?v=XfvQWnRgxG0)
+    * **Scrum Master:** Responsável por remover impedimentos e organizar as cerimônias.
+    * **Product Owner:** Define as prioridades com base nas dores da persona Rafaela.
+    * **Equipe de Desenvolvimento:** Implementação técnica e design de interface.
+
+* **Processo:** As tarefas são gerenciadas via **GitHub Projects**, onde acompanhamos o status de cada requisito (Backlog, Em Andamento, Revisão e Concluído).
+
+![Quadro Kanban do Projeto](images/kanban-projeto.png)
 
 # Solução Implementada
 
