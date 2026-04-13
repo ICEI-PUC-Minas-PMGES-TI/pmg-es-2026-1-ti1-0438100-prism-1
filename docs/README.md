@@ -3,7 +3,7 @@
 Informações básicas do projeto.
 
 * **Projeto:** Guia-Beneficio
-* **Repositório GitHub:** [LINK PARA O REPOSITÓRIO NO GITHUB]
+* **Repositório GitHub:** (https://github.com/ICEI-PUC-Minas-PMGES-TI/pmg-es-2026-1-ti1-0438100-prism-1.git)
 * **Membros da equipe:**
 
   * [Theo Goulart Cardoso Vasconcelos](https://github.com/TheoGoulart333) 
