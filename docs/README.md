@@ -163,52 +163,85 @@ Nesta seção, detalhamos as Personas que representam nossos usuários reais, pe
 
 ---
 
-# 👤 Persona: Rafaela Silva Soares
+# Persona: Rafaela Silva Soares
 
-Abaixo estão os detalhes da persona principal do projeto, extraídos diretamente do mapeamento de perfil do usuário.
+![Rafaela Silva Soares](images/PERSONA%201.jpg)
 
-<div align="center">
-  <img src="images/PERSONA%201.jpg" alt="Rafaela Silva Soares" width="500">
-</div>
-
----
-
-### **📌 Perfil e Biografia**
-* **Nome:** Rafaela Silva Soares.
-* **Idade:** 65 anos.
-* **Ocupação:** Aposentada.
-* **Contexto:** Rafaela é uma senhora aposentada que vive em uma região periférica. Ela mora com seus dois netos e é a principal responsável por cuidar deles enquanto os pais trabalham. Rafaela possui um smartphone básico que utiliza majoritariamente para o WhatsApp e para ver vídeos. Ela sabe que tem direito a alguns benefícios governamentais, como o Auxílio Gás, mas se sente insegura e confusa com as informações que recebe.
-
-### **Dores (Frustrações)**
-
-* Sente-se incapaz ao lidar com termos técnicos e jurídicos.
-* Tem medo de clicar em algo errado e acabar cancelando sua aposentadoria.
-* Fica frustrada com a demora e as filas nos postos de atendimento físico.
-* Sente que a tecnologia não foi feita para pessoas da sua idade.
-
-### ** Necessidades**
-
-* Uma interface simples, com letras grandes e botões claros.
-* Informações traduzidas para uma linguagem do dia a dia (sem "juridiquês").
-* Um passo a passo visual de como solicitar cada benefício.
-* Confirmação visual de que as informações são oficiais e seguras.
-
-### ** Objetivos**
-* Conseguir consultar seus direitos de forma independente (sem depender dos netos).
-* Ter clareza sobre quais documentos são necessários para cada auxílio.
-* Acessar informações atualizadas sobre prazos e locais de retirada de benefícios.
-* Garantir que não está perdendo nenhuma ajuda financeira por falta de conhecimento.
+**Idade:** 40 anos  
+**Ocupação:** Trabalhadora Informal (Manicure)
 
 ---
 
-## Mapa de Empatia (Baseado na Persona)
+## Bio
+Rafaela é uma trabalhadora informal que atua como manicure e vive uma rotina corrida conciliando trabalho e família. Ela utiliza o celular como principal ferramenta para comunicação, entretenimento e aprendizado. Busca constantemente formas de melhorar sua renda e oferecer melhores condições de vida para seus filhos.
 
-| Quadrante | Descrição |
-| :--- | :--- |
-| **O que ela VÊ?** | Filas em bancos e órgãos públicos; propagandas de benefícios na TV; correntes com notícias falsas no WhatsApp. |
-| **O que ela OUVE?** | Amigos dizendo que "é tudo burocrático"; o rádio anunciando prazos; netos dizendo que "está tudo na internet". |
-| **O que ela PENSA/SENTE?** | Ansiedade por precisar de renda extra; medo de ser vítima de golpes digitais; desejo de ser autônoma. |
-| **O que ela FALA/FAZ?** | Pergunta sobre benefícios na igreja ou no bairro; anota tudo em cadernos; tenta usar o celular com cautela. |
+---
+
+## Objetivos
+- Garantir mais estabilidade financeira para sua família  
+- Oferecer melhores condições de vida para seus filhos  
+- Entender melhor seus direitos  
+- Organizar e complementar sua renda  
+- Ter mais segurança e previsibilidade no dia a dia  
+
+---
+
+## Dores
+- Dificuldade em lidar com processos burocráticos  
+- Insegurança ao buscar informações formais  
+- Falta de clareza sobre seus direitos  
+- Dificuldade em organizar a renda sendo autônoma  
+- Perda de tempo com processos complicados  
+
+---
+
+## Objetos e Lugares
+- Smartphone Android intermediário  
+- Internet via dados móveis  
+- Apps: WhatsApp, Instagram, Google e YouTube  
+- Uso em casa (principalmente à noite) ou entre atendimentos  
+- Frequenta CRAS e postos da prefeitura  
+- Busca ajuda com vizinhos e conhecidos  
+
+---
+
+## Necessidades
+- Informações claras e objetivas  
+- Linguagem simples (sem termos técnicos)  
+- Processos rápidos e diretos  
+- Facilidade para entender seus direitos  
+- Soluções acessíveis pelo celular  
+
+---
+
+## Personalidade
+Responsável, esforçada e resiliente.  
+Valoriza praticidade, clareza e agilidade.
+
+---
+
+## Como devemos tratá-la
+- Usar linguagem simples e direta  
+- Evitar termos técnicos ou complicados  
+- Oferecer passo a passo claro  
+- Priorizar rapidez e objetividade  
+- Garantir que ela se sinta no controle da situação  
+
+---
+
+## Nunca devemos
+- Criar fluxos confusos ou longos  
+- Exigir esforço excessivo para tarefas simples  
+- Apresentar informações pouco claras  
+- Fazer com que ela perca tempo  
+- Gerar dúvidas ou insegurança  
+
+---
+
+## Sonhos
+- Dar uma vida melhor para os filhos  
+- Alcançar estabilidade financeira  
+- Formalizar seu trabalho no futuro  |
 
 > ⚠️ **APAGUE ESSA PARTE ANTES DE ENTREGAR SEU TRABALHO**
 >
