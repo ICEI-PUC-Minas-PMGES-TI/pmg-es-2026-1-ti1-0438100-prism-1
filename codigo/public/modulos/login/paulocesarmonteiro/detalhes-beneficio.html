@@ -32,7 +32,7 @@
 
         <section>
             <div class="border border-dark rounded-3 bg-white mx-1">
-                <h1 class="text-center mt-4">Bolsa Família</h1>
+                <h1 id="nome-beneficio" class="text-center mt-4"></h1>
 
                 <div class="d-flex justify-content-center mt-4">
                     <ul class="nav nav-tabs" id="minhasAbas" role="tablist">
@@ -46,21 +46,27 @@
                             Requisitos
                           </button>
                         </li>
+                        <li class="nav-item">
+                            <button class="nav-link" data-bs-toggle="tab" data-bs-target="#condicoes">
+                                Condições
+                            </button>
+                        </li>
                     </ul>
                 </div>
                 <div class="tab-content mt-3 d-flex justify-content-center">
                     <div class="tab-pane fade show active" id="descricao">
                       <h3 class="text-center mt-3">Descrição</h3>
-                      <p class="text-center mx-4">O Bolsa Família é um dos principais programas de 
-                        transferência de renda do Brasil, voltado para o combate à pobreza 
-                        e à desigualdade social. Ele garante um apoio financeiro mensal a famílias 
-                        em situação de vulnerabilidade, condicionado ao cumprimento de 
-                        alguns compromissos nas áreas de saúde e educação.</p>
+                      <ul id="descricao-beneficio" class="text-center mx-4"></ul>
                     </div>
 
                     <div class="tab-pane fade" id="requisitos">
                       <h3 class="text-center mt-3">Requisitos</h3>
-                      <p class="text-center mx-4">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dignissimos obcaecati cum eligendi consequatur ipsa omnis voluptate in, quaerat quasi ratione tenetur laboriosam et consectetur, nulla explicabo nisi, molestiae sequi deleniti veniam ipsum beatae iusto veritatis? Aliquid odit aut quasi quis, esse quae eum, dolores aliquam necessitatibus minima repellendus accusamus a..</p>
+                      <ul id="requisitos-beneficio" class="text-center mx-4"></ul>
+                    </div>
+
+                    <div class="tab-pane fade" id="condicoes">
+                        <h3 class="text-center mt-3">Condições</h3>
+                        <ul id="condicoes-beneficio" class="text-center mx-4"></ul>
                     </div>
                 </div>
             </div>
