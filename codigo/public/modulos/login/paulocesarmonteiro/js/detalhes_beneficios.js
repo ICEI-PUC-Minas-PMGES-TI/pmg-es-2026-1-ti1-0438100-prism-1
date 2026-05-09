@@ -1,3 +1,4 @@
+// Simula JSON
 const dados = {
   "beneficios": [
     {
@@ -24,4 +25,46 @@ const dados = {
       "orgaoResponsavel": "Governo Federal"
     }
  ]
+};
+
+// Função que pega o ID da URL
+function obterIdUrl() {
+    const params = new URLSearchParams(window.location.search);
+    return params.get("id");
 }
+
+// Função que busca o benefício
+function buscarBeneficioPorId(id) {
+    return dados.beneficios.find(b => b.id === id);
+}
+
+function preencherLista(idElemento, lista) {
+  const ul = document.getElementById(idElemento);
+
+  ul.innerHTML = "";
+
+  lista.forEach(item => {
+    const li = document.createElement("li");
+    li.textContent = item;
+    ul.appendChild(li);
+  });
+}
+
+function carregarDados() {
+  const id = "BEN-001";
+  const beneficio = buscarBeneficioPorId(id);
+
+  if (beneficio) {
+    document.getElementById("nome-beneficio").textContent = beneficio.nome;
+    document.getElementById("descricao-beneficio").textContent = beneficio.descricao;
+    document.getElementById("valor-beneficio").textContent = "R$ " + beneficio.valorBase.toFixed(2);
+
+    preencherLista("requisitos-beneficio", beneficio.requisitos);
+    preencherLista("condicoes-beneficio", beneficio.condicoes);
+  } else {
+    document.getElementById("nome-beneficio").textContent = "Benefício não encontrado";
+  }
+
+}
+
+window.onload = carregarDados;
