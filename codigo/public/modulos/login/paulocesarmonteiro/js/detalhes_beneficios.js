@@ -5,7 +5,7 @@ const dados = {
       "id": "BEN-001",
       "nome": "Bolsa Família",
       "categoria": "alimentacao",
-      "descricao": "Auxílio mensal para famílias de baixa renda cadastradas em programas sociais.",
+      "descricao": "O Bolsa Família é o principal programa de transferência de renda do Governo Federal brasileiro, destinado a famílias em situação de pobreza e extrema pobreza. O programa visa garantir segurança alimentar, nutricional e cidadania, unindo o apoio financeiro a ações complementares nas áreas de saúde e educação",
       "requisitos": [
         "A soma de todos os rendimentos da casa, dividida pelo número de moradores, não deve passar de R$ 218.",
         "É obrigatório estar inscrito no Cadastro Único para Programas Sociais do Governo Federal.",
@@ -55,14 +55,23 @@ function carregarDados() {
   const beneficio = buscarBeneficioPorId(id);
 
   if (beneficio) {
-    document.getElementById("nome-beneficio").textContent = beneficio.nome;
-    document.getElementById("descricao-beneficio").textContent = beneficio.descricao;
-    document.getElementById("valor-beneficio").textContent = "R$ " + beneficio.valorBase.toFixed(2);
+    document.getElementById("nome-beneficio-mobile").textContent = beneficio.nome;
+    document.getElementById("nome-beneficio-desktop").textContent = beneficio.nome;
 
-    preencherLista("requisitos-beneficio", beneficio.requisitos);
-    preencherLista("condicoes-beneficio", beneficio.condicoes);
+    document.getElementById("descricao-beneficio-mobile").textContent = beneficio.descricao;
+    document.getElementById("descricao-beneficio-desktop").textContent = beneficio.descricao;
+
+    document.getElementById("valor-beneficio-mobile").textContent = "R$ " + beneficio.valorBase.toFixed(2);
+    document.getElementById("valor-beneficio-desktop").textContent = "R$ " + beneficio.valorBase.toFixed(2);
+
+    preencherLista("requisitos-beneficio-mobile", beneficio.requisitos);
+    preencherLista("requisitos-beneficio-desktop", beneficio.requisitos);
+
+    preencherLista("condicoes-beneficio-mobile", beneficio.condicoes);
+    preencherLista("condicoes-beneficio-desktop", beneficio.condicoes);
   } else {
-    document.getElementById("nome-beneficio").textContent = "Benefício não encontrado";
+    document.getElementById("nome-beneficio-mobile").textContent = "Benefício não encontrado";
+    document.getElementById("nome-beneficio-desktop").textContent = "Benefício não encontrado";
   }
 
 }
