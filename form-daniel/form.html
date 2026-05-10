@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário</title>
+    <link rel="stylesheet" href="form.css">
+    <script src="form.js" defer>e</script>
+</head>
+
+<body>
+    <form action="" class="form-wizard">
+        <h1>Registro</h1>
+
+        <div class="progress-container">
+            <div class="progress"></div>
+
+            <ol>
+                <li class="current">Informações</li>
+                <li>Trabalho</li>
+                <li>Família</li>
+                <li>Sáude</li>
+            </ol>
+        </div>
+
+        <div class="steps-container">
+            <div class="step">
+                <h3>Dados Pessoais</h3>
+
+                <div class="form-control">
+                    <label for="full-name">Nome Completo</label>
+                    <input type="text" id="full-name" name="full-name">
+                </div>
+
+                <div class="form-control">
+                    <label>Data de nascimento</label>
+                    <div class="date-inputs">
+                        <select id="day" name="day" required>
+                            <option value="" disabled selected hidden>Dia</option>
+                        </select>
+                        <select id="month" name="month" required>
+                            <option value="" disabled selected hidden>Mês</option>
+                            <option value="01">Janeiro</option>
+                            <option value="02">Fevereiro</option>
+                            <option value="03">Março</option>
+                            <option value="04">Abril</option>
+                            <option value="05">Maio</option>
+                            <option value="06">Junho</option>
+                            <option value="07">Julho</option>
+                            <option value="08">Agosto</option>
+                            <option value="09">Setembro</option>
+                            <option value="10">Outubro</option>
+                            <option value="11">Novembro</option>
+                            <option value="12">Dezembro</option>
+                        </select>
+                        <select id="year" name="year" required>
+                            <option value="" disabled selected hidden>Ano</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-control">
+                    <label for="cpf">CPF</label>
+                    <input type="text" id="cpf" name="cpf" maxlength="14">
+                </div>
+
+                <div class="form-control">
+                    <label for="gender">Sexo biológico</label>
+                    <select id="gender" name="gender" required>
+                        <option value="" disabled selected hidden>Selecione</option>
+                        <option value="feminino">Feminino</option>
+                        <option value="masculino">Masculino</option>
+                    </select>
+                </div>
+
+                <div class="form-control">
+                    <label for="maritalStatus">Estado civil</label>
+                    <select id="maritalStatus" name="maritalStatus">
+                        <option value="" disabled selected hidden>Selecione</option>
+                        <option value="solteiro">Solteiro(a)</option>
+                        <option value="casado">Casado(a)</option>
+                        <option value="uniao">União estável</option>
+                        <option value="separado">Separado(a)</option>
+                        <option value="viuvo">Viúvo(a)</option>
+                    </select>
+                </div>
+            </div>
+            <div class="step">
+                <h3>Trabalho e Renda</h3>
+
+                <div class="form-control">
+                    <label for="workStatus">Situação atual de trabalho</label>
+                    <select id="workStatus" name="workStatus" required>
+                        <option value="" disabled selected hidden>Selecione</option>
+                        <option value="formal">Empregado com carteira assinada (CLT)</option>
+                        <option value="informal">Trabalhador informal/autônomo</option>
+                        <option value="mei">Microempreendedor Individual (MEI)</option>
+                        <option value="desempregado">Desempregado</option>
+                        <option value="aposentado">Aposentado/Pensionista</option>
+                        <option value="nao_trabalha">Não trabalha atualmente</option>
+                    </select>
+                </div>
+
+                <div class="form-control">
+                    <label for="renda">Renda mensal familiar per capita</label>
+                    <select id="renda" name="renda" required>
+                        <option value="" disabled selected hidden>Selecione uma faixa</option>
+                        <option value="extrema">Até R$ 218</option>
+                        <option value="pobreza">R$ 218 a R$ 435</option>
+                        <option value="meio">Até 1/2 salário mínimo (até ~R$ 706)</option>
+                        <option value="1sm">1/2 a 1 salário mínimo (R$ 706 a R$ 1.412)</option>
+                        <option value="2sm">1 a 2 salários mínimos</option>
+                        <option value="3sm">2 a 3 salários mínimos</option>
+                        <option value="4sm">3 a 4 salários mínimos</option>
+                        <option value="acima">Acima de 4 salários mínimos</option>
+                    </select>
+                    <p class="hint">Divida a renda total da casa pelo número de moradores</p>
+                </div>
+
+                <div class="form-control">
+                    <label>Já está cadastrado no CadÚnico?</label>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="cadunico" value="sim">
+                            <span>Sim, estou cadastrado</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="cadunico" value="nao">
+                            <span>Não estou cadastrado</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="cadunico" value="nao_sei">
+                            <span>Não sei</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="step">
+                <h3>Família e Moradia</h3>
+
+                <div class="form-control">
+                    <label for="moradia">Situação da moradia</label>
+                    <select id="moradia" name="moradia" required>
+                        <option value="" disabled selected hidden>Selecione</option>
+                        <option value="propria_escritura">Própria (com escritura)</option>
+                        <option value="propria_financiada">Própria (financiada)</option>
+                        <option value="alugada">Alugada</option>
+                        <option value="cedida">Cedida por terceiros</option>
+                        <option value="ocupada">Ocupada</option>
+                        <option value="risco">Em área de risco/invasão</option>
+                        <option value="rua">Em situação de rua</option>
+                    </select>
+                </div>
+
+                <div class="form-control">
+                    <label>Possui dependentes?</label>
+                    <div class="radio-group">
+                        <label class="radio-option" onclick="toggleDependentes(true)">
+                            <input type="radio" name="dependents" value="sim" required>
+                            <span>Sim</span>
+                        </label>
+                        <label class="radio-option" onclick="toggleDependentes(false)">
+                            <input type="radio" name="dependents" value="nao">
+                            <span>Não</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-control">
+                    <label>Você é cuidador de algum idoso, criança ou PCD?</label>
+                    <div class="radio-group">
+                        <label class="radio-option">
+                            <input type="radio" name="cuidador" value="sim">
+                            <span>Sim</span>
+                        </label>
+                        <label class="radio-option">
+                            <input type="radio" name="cuidador" value="nao">
+                            <span>Não</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="step">
+                <h3>Saúde e Condições Especiais</h3>
+
+                <div class="form-control">
+                    <label>Você é uma pessoa com deficiência (PCD)?</label>
+                    <div class="radio-group">
+                        <label class="radio-option" onclick="togglePCD(true)">
+                            <input type="radio" name="pcd" value="sim" required>
+                            <span>Sim</span>
+                        </label>
+                        <label class="radio-option" onclick="togglePCD(false)">
+                            <input type="radio" name="pcd" value="nao">
+                            <span>Não</span>
+                        </label>
+                    </div>
+                </div>
+
+                <div class="form-control">
+                    <label>Possui alguma doença crônica ou condição grave de saúde?</label>
+                    <div class="checkbox-group">
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="doencas" value="cancer">
+                            <span>Câncer</span>
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="doencas" value="hiv">
+                            <span>HIV/AIDS</span>
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="doencas" value="renal">
+                            <span>Insuficiência renal</span>
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="doencas" value="cardiaca">
+                            <span>Doença cardíaca grave</span>
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="doencas" value="respiratoria">
+                            <span>Doença respiratória</span>
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="doencas" value="outra">
+                            <span>Outra condição grave</span>
+                        </label>
+                        <label class="checkbox-option">
+                            <input type="checkbox" name="doencas" value="nenhuma" onchange="toggleOutrasDoencas(this)">
+                            <span>Nenhuma das anteriores</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="controls">
+            <button type="button" class="prev-btn">Voltar</button>
+            <button type="button" class="next-btn">Próximo</button>
+            <button type="submit" class="submit-btn">Enviar</button>
+        </div>
+    </form>
+</body>
+
+</html>
