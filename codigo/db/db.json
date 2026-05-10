@@ -21,5 +21,127 @@
       "email": "rommel@gmail.com",
       "id": 3
     }
+  ],
+  "beneficios": [
+    {
+      "id": "BEN-001",
+      "nome": "Bolsa Família",
+      "categoria": "alimentacao",
+      "descricao": "Auxílio mensal para famílias de baixa renda cadastradas em programas sociais.",
+      "valorBase": 142.00,
+      "dataInicio": "2025-01-01",
+      "dataFim": "2025-12-31",
+      "prazoInscricao": null,
+      "publicoAlvo": ["BAIXA_RENDA"],
+      "orgaoResponsavel": "Governo Federal"
+    },
+    {
+      "id": "BEN-002",
+      "nome": "Auxílio Moradia",
+      "categoria": "moradia",
+      "descricao": "Subsídio mensal para famílias em vulnerabilidade habitacional.",
+      "valorBase": 600.00,
+      "dataInicio": "2025-01-01",
+      "dataFim": "2025-12-31",
+      "prazoInscricao": "2025-07-31",
+      "publicoAlvo": ["BAIXA_RENDA", "SEM_IMOVEL"],
+      "orgaoResponsavel": "Governo Estadual"
+    },
+    {
+      "id": "BEN-003",
+      "nome": "Auxílio Gás",
+      "categoria": "energia",
+      "descricao": "Benefício bimestral para subsidiar a compra de gás de cozinha para famílias de baixa renda.",
+      "valorBase": 102.00,
+      "dataInicio": "2025-01-01",
+      "dataFim": "2025-12-31",
+      "prazoInscricao": null,
+      "publicoAlvo": ["BAIXA_RENDA"],
+      "orgaoResponsavel": "Governo Federal"
+    },
+    {
+      "id": "BEN-004",
+      "nome": "BPC - Benefício de Prestação Continuada",
+      "categoria": "assistencia_social",
+      "descricao": "Renda mensal de um salário mínimo para idosos acima de 65 anos ou pessoas com deficiência em situação de baixa renda.",
+      "valorBase": 1518.00,
+      "dataInicio": "2025-01-01",
+      "dataFim": "2025-12-31",
+      "prazoInscricao": null,
+      "publicoAlvo": ["IDOSO", "PESSOA_COM_DEFICIENCIA", "BAIXA_RENDA"],
+      "orgaoResponsavel": "INSS"
+    },
+    {
+      "id": "BEN-005",
+      "nome": "Pé-de-Meia",
+      "categoria": "educacao",
+      "descricao": "Incentivo financeiro para estudantes do ensino médio de escolas públicas em situação de baixa renda.",
+      "valorBase": 200.00,
+      "dataInicio": "2025-01-01",
+      "dataFim": "2025-12-31",
+      "prazoInscricao": "2025-03-31",
+      "publicoAlvo": ["ESTUDANTE", "BAIXA_RENDA"],
+      "orgaoResponsavel": "Governo Federal"
+    },
+    {
+      "id": "BEN-006",
+      "nome": "Tarifa Social de Energia Elétrica",
+      "categoria": "energia",
+      "descricao": "Desconto na conta de energia elétrica para famílias de baixa renda cadastradas no CadÚnico.",
+      "valorBase": null,
+      "dataInicio": "2025-01-01",
+      "dataFim": "2025-12-31",
+      "prazoInscricao": null,
+      "publicoAlvo": ["BAIXA_RENDA"],
+      "orgaoResponsavel": "Governo Federal"
+    },
+    {
+      "id": "BEN-007",
+      "nome": "Farmácia Popular",
+      "categoria": "saude",
+      "descricao": "Programa que oferece medicamentos gratuitos ou com até 90% de desconto para tratamento de doenças crônicas.",
+      "valorBase": null,
+      "dataInicio": "2025-01-01",
+      "dataFim": "2025-12-31",
+      "prazoInscricao": null,
+      "publicoAlvo": ["BAIXA_RENDA", "DOENCA_CRONICA"],
+      "orgaoResponsavel": "Governo Federal"
+    },
+    {
+      "id": "BEN-008",
+      "nome": "ProUni",
+      "categoria": "educacao",
+      "descricao": "Bolsas de estudo integrais ou parciais em instituições privadas de ensino superior para estudantes de baixa renda.",
+      "valorBase": null,
+      "dataInicio": "2025-01-01",
+      "dataFim": "2025-12-31",
+      "prazoInscricao": "2025-02-28",
+      "publicoAlvo": ["ESTUDANTE", "BAIXA_RENDA"],
+      "orgaoResponsavel": "Governo Federal"
+    },
+    {
+      "id": "BEN-009",
+      "nome": "Seguro Desemprego",
+      "categoria": "trabalho",
+      "descricao": "Auxílio temporário para trabalhadores demitidos sem justa causa que estavam em emprego formal.",
+      "valorBase": 1518.00,
+      "dataInicio": "2025-01-01",
+      "dataFim": "2025-12-31",
+      "prazoInscricao": null,
+      "publicoAlvo": ["DESEMPREGADO"],
+      "orgaoResponsavel": "Governo Federal"
+    },
+    {
+      "id": "BEN-010",
+      "nome": "Carteira do Idoso",
+      "categoria": "transporte",
+      "descricao": "Garante gratuidade ou desconto de 50% em passagens interestaduais para idosos de baixa renda acima de 60 anos.",
+      "valorBase": null,
+      "dataInicio": "2025-01-01",
+      "dataFim": "2025-12-31",
+      "prazoInscricao": null,
+      "publicoAlvo": ["IDOSO", "BAIXA_RENDA"],
+      "orgaoResponsavel": "Governo Federal"
+    }
   ]
 }

@@ -1,10 +1,11 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="assets/css/styles-default.css">
 </head>
 
 <body>
@@ -12,6 +13,7 @@
         <section class="logo">
             <img src="assets/images/logo_site.jpeg" alt="Logo Guia-Benefício">
             <h1><span style="color: #003CA3;">Guia-</span><span style="color: #2B7F3A">Benefício</span></h1>
+            <button class="botao-menu">☰</button>
         </section>
         <nav>
             <a class="botao-azul" href="index.html">Início</a>
@@ -19,6 +21,15 @@
             <a class="botao-branco" href="">Recomendador</a>
         </nav>
     </header>
+    <script>
+        const botao_menu = document.querySelector('.botao-menu');
+        const nav = document.querySelector('nav');
+        const header = document.querySelector('header');
+        botao_menu.addEventListener('click', () => {
+            nav.classList.toggle('menu-aberto');
+            header.classList.toggle('menu-aberto');
+        });
+    </script>
 </body>
 
 </html>
