@@ -26,7 +26,7 @@
     {
       "id": "BEN-001",
       "nome": "Bolsa Família",
-      "categoria": "alimentacao",
+      "categoria": "Alimentação",
       "descricao": "Auxílio mensal para famílias de baixa renda cadastradas em programas sociais.",
       "valorBase": 142.00,
       "dataInicio": "2025-01-01",
@@ -38,7 +38,7 @@
     {
       "id": "BEN-002",
       "nome": "Auxílio Moradia",
-      "categoria": "moradia",
+      "categoria": "Moradia",
       "descricao": "Subsídio mensal para famílias em vulnerabilidade habitacional.",
       "valorBase": 600.00,
       "dataInicio": "2025-01-01",
@@ -50,7 +50,7 @@
     {
       "id": "BEN-003",
       "nome": "Auxílio Gás",
-      "categoria": "energia",
+      "categoria": "Energia",
       "descricao": "Benefício bimestral para subsidiar a compra de gás de cozinha para famílias de baixa renda.",
       "valorBase": 102.00,
       "dataInicio": "2025-01-01",
@@ -62,7 +62,7 @@
     {
       "id": "BEN-004",
       "nome": "BPC - Benefício de Prestação Continuada",
-      "categoria": "assistencia_social",
+      "categoria": "Assistência Social",
       "descricao": "Renda mensal de um salário mínimo para idosos acima de 65 anos ou pessoas com deficiência em situação de baixa renda.",
       "valorBase": 1518.00,
       "dataInicio": "2025-01-01",
@@ -74,7 +74,7 @@
     {
       "id": "BEN-005",
       "nome": "Pé-de-Meia",
-      "categoria": "educacao",
+      "categoria": "Educação",
       "descricao": "Incentivo financeiro para estudantes do ensino médio de escolas públicas em situação de baixa renda.",
       "valorBase": 200.00,
       "dataInicio": "2025-01-01",
@@ -86,7 +86,7 @@
     {
       "id": "BEN-006",
       "nome": "Tarifa Social de Energia Elétrica",
-      "categoria": "energia",
+      "categoria": "Energia",
       "descricao": "Desconto na conta de energia elétrica para famílias de baixa renda cadastradas no CadÚnico.",
       "valorBase": null,
       "dataInicio": "2025-01-01",
@@ -98,7 +98,7 @@
     {
       "id": "BEN-007",
       "nome": "Farmácia Popular",
-      "categoria": "saude",
+      "categoria": "Saúde",
       "descricao": "Programa que oferece medicamentos gratuitos ou com até 90% de desconto para tratamento de doenças crônicas.",
       "valorBase": null,
       "dataInicio": "2025-01-01",
@@ -110,7 +110,7 @@
     {
       "id": "BEN-008",
       "nome": "ProUni",
-      "categoria": "educacao",
+      "categoria": "Educação",
       "descricao": "Bolsas de estudo integrais ou parciais em instituições privadas de ensino superior para estudantes de baixa renda.",
       "valorBase": null,
       "dataInicio": "2025-01-01",
@@ -122,7 +122,7 @@
     {
       "id": "BEN-009",
       "nome": "Seguro Desemprego",
-      "categoria": "trabalho",
+      "categoria": "Trabalho",
       "descricao": "Auxílio temporário para trabalhadores demitidos sem justa causa que estavam em emprego formal.",
       "valorBase": 1518.00,
       "dataInicio": "2025-01-01",
@@ -134,7 +134,7 @@
     {
       "id": "BEN-010",
       "nome": "Carteira do Idoso",
-      "categoria": "transporte",
+      "categoria": "Transporte",
       "descricao": "Garante gratuidade ou desconto de 50% em passagens interestaduais para idosos de baixa renda acima de 60 anos.",
       "valorBase": null,
       "dataInicio": "2025-01-01",

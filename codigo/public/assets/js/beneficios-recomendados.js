@@ -21,17 +21,21 @@ function renderizarCards(beneficios) {
     container.innerHTML = '';
 
     const intro = document.querySelector('.intro p');
-    intro.textContent = `Encontramos ${beneficios.length} benefícios com base no seu perfil. Clique em cada um para saber mais sobre como solicitar.`;
+    intro.innerHTML = `Encontramos <strong>${beneficios.length} benefícios</strong> com base no seu perfil. Clique em cada um para saber mais sobre como solicitar.`;
 
     beneficios.forEach(beneficio => {
         const card = document.createElement('div');
         card.classList.add('card-beneficio');
         card.innerHTML = `
-            <h2>${beneficio.nome}</h2>
-            <p>${beneficio.descricao}</p>
+            <div class="card-header">
+                <h2>${beneficio.nome}</h2>
+                <span class="orgao">${beneficio.orgaoResponsavel}</span>
+            </div>
+            <p class="descricao">${beneficio.descricao}</p>
+            <div class="card-footer">
             <span class="categoria">${beneficio.categoria}</span>
-            ${beneficio.valorBase ? `<p class="valor">R$ ${beneficio.valorBase.toFixed(2)}</p>` : ''}
-            <p class="orgao">${beneficio.orgaoResponsavel}</p>
+            ${beneficio.valorBase ? `<p class="valor">Valor Base: R$ ${beneficio.valorBase.toFixed(2)}</p>` : ''}
+            </div>
             <button class="botao-azul">Acessar Benefício</button>
         `;
         container.appendChild(card);
