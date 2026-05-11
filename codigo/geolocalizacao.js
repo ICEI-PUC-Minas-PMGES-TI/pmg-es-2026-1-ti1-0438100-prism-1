@@ -39,5 +39,52 @@ const postos = [
   { nome: "CRAS Dandara", endereco: "R. José Simplício Moreira, 1144, Trevo, BH", tipo: "CRAS", lat: -19.8589, lon: -43.9845 },
   { nome: "CRAS Apolônia", endereco: "R. Visconde de Itaboraí, 304, Jardim Leblon, BH", tipo: "CRAS", lat: -19.8245, lon: -43.9534 },
   { nome: "CRAS Lagoa", endereco: "R. José Sabino Maciel, 120, Lagoa, BH", tipo: "CRAS", lat: -19.8178, lon: -43.9412 },
+  ]
+function calcularDistancia(lat1, lon1, lat2, lon2) {
+ const R = 6371;
+ const dLat = (lat2 - lat1) * Math.PI / 180;
+ const dLon = (lon2 - lon1) * Math.PI / 180;
+
+const a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
+        Math.cos(lat1 * Math.PI / 180) * Math.cos(lat2 * Math.PI / 180) *
+        Math.sin(dLon / 2) * Math.sin(dLon / 2);
+
+const c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+return R * c;
+}
+
+function encontrarMaisProximo() {
+  if (!navigator.geolocation) {
+    alert("Seu navegador não suporta geolocalização.");
+    return;
+  }
+
+navigator.geolocation.getCurrentPosition(function(posicao) {
+const minhaLat = posicao.coords.latitude;
+const minhaLon = posicao.coords.longitude;
+
+let postoMaisProximo = null;
+let menorDistancia = Infinity;
+
+for (let i = 0; i < postos.length; i++) {
+    const postoAtual = postos[i];
+    const d = calcularDistancia(minhaLat, minhaLon, postoAtual.lat, postoAtual.lon);
+
+    if (d < menorDistancia) {
+        menorDistancia = d;
+        postoMaisProximo = postoAtual;
+      }
+    }
+
+if (postoMaisProximo) {
+    alert("O local mais próximo é: " + postoMaisProximo.nome + 
+    "\nDistância: " + menorDistancia.toFixed(2) + " km");
+}
+
+}, function(erro) {
+    alert("Erro ao obter localização. Verifique se o GPS está ativo.");
+});
+}
+encontrarMaisProximo();
   { nome: "CRAS Mantiqueira", endereco: "R. Luzia Salomão, 300, Mantiqueira, BH", tipo: "CRAS", lat: -19.8089, lon: -43.9623 }
 ];
