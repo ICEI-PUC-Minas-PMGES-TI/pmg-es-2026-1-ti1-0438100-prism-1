@@ -1,45 +1,129 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
-  <meta charset="UTF-8">
-  <title>Catálogo de Benefícios</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia-Benefício</title>
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-  <header>
-    <h1>Guia-Benefício</h1>
-    <nav>   
-      <button class="inicio">Início</button>
-    </nav>
-  </header>
+    <header>
 
-  <div class="container">
-    <h2>Benefícios Disponíveis</h2>
-    <p>Veja o catálogo de benefícios disponíveis e clique para mais detalhes.</p>
+        <div class="logo">
+            <img src="img/logo.png" alt="Logo Guia-Benefício">
 
-    <div class="cards">
+            <h1>
+                <span style="color: #003CA3;">Guia-</span>
+                <span style="color: #2B7F3A;">Benefício</span>
+            </h1>
 
-      <div class="card">
-        <h3>Bolsa Família</h3>
-        <p>Auxílio financeiro para famílias de baixa renda.</p>
-        <button>Detalhes</button>
-      </div>
+            <button class="botao-menu">☰</button>
+        </div>
 
-      <div class="card">
-        <h3>Auxílio Gás</h3>
-        <p>Axuílio no custo do gás de cozinha.</p>
-        <button>Detalhes</button>
-      </div>
+        <nav>
+            <a class="botao-azul" href="index.html">Início</a>
+            <a class="botao-branco" href="">Benefícios</a>
+            <a class="botao-branco" href="">Recomendador</a>
+        </nav>
 
-      <div class="card">
-        <h3>INSS</h3>
-        <p>Benefícios para aposentadoria e auxílio doença.</p>
-        <button>Detalhes</button>
-      </div>
+    </header>
 
-    </div>
-  </div>
+    <main>
+
+        <div class="intro">
+            <h1>Catálogo de Benefícios</h1>
+
+            <p>
+                Veja o catálogo de benefícios disponíveis e clique para mais detalhes.
+            </p>
+        </div>
+
+        <div class="beneficios">
+
+            <div class="card-beneficio">
+
+                <div class="card-header">
+                    <h2>Bolsa Família</h2>
+                    <span class="orgao">Governo Federal</span>
+                </div>
+
+                <p class="descricao">
+                    Auxílio para famílias de baixa renda cadastradas em programas sociais.
+                </p>
+
+                <div class="card-footer">
+                    <span class="categoria">Alimentação</span>
+                    <span class="valor">R$ 142,00</span>
+                </div>
+
+                <button class="botao-azul">
+                    Acessar Benefício
+                </button>
+
+            </div>
+
+            <div class="card-beneficio">
+
+                <div class="card-header">
+                    <h2>Auxílio Gás</h2>
+                    <span class="orgao">Governo Federal</span>
+                </div>
+
+                <p class="descricao">
+                    Benefício para ajudar na compra do gás de cozinha.
+                </p>
+
+                <div class="card-footer">
+                    <span class="categoria">Energia</span>
+                    <span class="valor">R$ 102,00</span>
+                </div>
+
+                <button class="botao-azul">
+                    Acessar Benefício
+                </button>
+
+            </div>
+
+            <div class="card-beneficio">
+
+                <div class="card-header">
+                    <h2>INSS</h2>
+                    <span class="orgao">INSS</span>
+                </div>
+
+                <p class="descricao">
+                    Benefícios para aposentadoria e auxílio-doença.
+                </p>
+
+                <div class="card-footer">
+                    <span class="categoria">Previdência</span>
+                    <span class="valor">Variável</span>
+                </div>
+
+                <button class="botao-azul">
+                    Acessar Benefício
+                </button>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <script>
+        const botao_menu = document.querySelector('.botao-menu');
+        const nav = document.querySelector('nav');
+        const header = document.querySelector('header');
+
+        botao_menu.addEventListener('click', () => {
+            nav.classList.toggle('menu-aberto');
+            header.classList.toggle('menu-aberto');
+        });
+    </script>
 
 </body>
+
 </html>
