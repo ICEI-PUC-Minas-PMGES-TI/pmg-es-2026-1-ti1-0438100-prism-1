@@ -1,4 +1,5 @@
 /*Recebe uma lista com os filtros de categoria e publicoAlvo*/
+/*OBS: Novos Filtros serão adicionados após a escolha das informações coletadas do usuário.*/
 async function carregarBeneficios(filtro = {}) {
     try {
         const resposta = await fetch('http://localhost:3000/beneficios');
