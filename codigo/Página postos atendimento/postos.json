@@ -1,0 +1,298 @@
+[
+  {
+    "nome": "CRAS Independência",
+    "endereco": "R. Maria Antonieta Ferreira, 151, Independência, BH",
+    "tipo": "CRAS",
+    "lat": -20.01939346,
+    "lon": -44.03171182,
+    "atendimentos": 520  
+  },
+  {
+    "nome": "CRAS Petrópolis",
+    "endereco": "R. Frederico Boy Prussiano, 137, Petrópolis, BH",
+    "tipo": "CRAS",
+    "lat": -20.01253853,
+    "lon": -44.02702332,
+    "atendimentos": 240  
+  },
+  {
+    "nome": "CRAS Vila Cemig",
+    "endereco": "R. Faisão, 1071, Flávio Marques Lisboa, BH",
+    "tipo": "CRAS",
+    "lat": -19.99796072,
+    "lon": -43.99276614,
+    "atendimentos": 410    
+  },
+  {
+    "nome": "CRAS Vila Fátima",
+    "endereco": "R. Dona Benta, 145, Vila Fátima, BH",
+    "tipo": "CRAS",
+    "lat": -19.93422999,
+    "lon": -43.90431762,
+    "atendimentos": 180   
+  },
+  {
+    "nome": "CRAS Vila Marçola",
+    "endereco": "R. Engenheiro Lucas Júlio de Proença, 73, Serra, BH",
+    "tipo": "CRAS",
+    "lat": -19.93857700,
+    "lon": -43.91180634,
+    "atendimentos": 390  
+  },
+  {
+    "nome": "CRAS Vila Santa Rita de Cássia",
+    "endereco": "R. São Tomaz de Aquino, 640, Vila Santa Rita de Cássia, BH",
+    "tipo": "CRAS",
+    "lat": -19.95335191,
+    "lon": -43.94150376,
+    "atendimentos": 210   
+  },
+  {
+    "nome": "CRAS Alto Vera Cruz",
+    "endereco": "R. Padre Júlio Maria, 1550, Alto Vera Cruz, BH",
+    "tipo": "CRAS",
+    "lat": -19.91479304,
+    "lon": -43.88957620,
+    "atendimentos": 580   
+  },
+  {
+    "nome": "CRAS Granja de Freitas",
+    "endereco": "R. do Grupo, 12, Granja de Freitas, BH",
+    "tipo": "CRAS",
+    "lat": -19.90667259,
+    "lon": -43.88360023,
+    "atendimentos": 150   
+  },
+  {
+    "nome": "CRAS Mariano de Abreu",
+    "endereco": "R. Cinco de Janeiro, S/N, Mariano de Abreu, BH",
+    "tipo": "CRAS",
+    "lat": -19.89577743,
+    "lon": -43.89015555,
+    "atendimentos": 320
+  },
+  {
+    "nome": "CRAS Taquaril",
+    "endereco": "R. Ludgero Felipe Ferreira, 42, Taquaril, BH",
+    "tipo": "CRAS",
+    "lat": 19.92024007,
+    "lon": -43.87546778,
+    "atendimentos": 490
+  },
+  {
+    "nome": "CRAS União / Arthur de Sá",
+    "endereco": "R. Prof. Geraldo Fontes, 30, União, BH",
+    "tipo": "CRAS",
+    "lat": -19.88070454,
+    "lon": -43.92011046,
+    "atendimentos": 340
+  },
+  {
+    "nome": "CRAS Conjunto Paulo VI",
+    "endereco": "R. Neblina, 120, Conjunto Paulo VI, BH",
+    "tipo": "CRAS",
+    "lat": -19.83237891,
+    "lon": -43.88728023,
+    "atendimentos": 420   
+  },
+  {
+    "nome": "CRAS Vila Maria",
+    "endereco": "R. Prof. Amílcar Viana Martins, 65, Jardim Vitória, BH",
+    "tipo": "CRAS",
+    "lat": -19.84880866,
+    "lon": -43.88474822,
+    "atendimentos": 230  
+  },
+  {
+    "nome": "CRAS Vila Califórnia",
+    "endereco": "Av. Avaí, 700, Vila Califórnia, BH",
+    "tipo": "CRAS",
+    "lat": -19.91897920,
+    "lon": -44.00787234,
+    "atendimentos": 190
+  },
+  {
+    "nome": "CRAS Vila Coqueiral",
+    "endereco": "R. Rainha das Flores, 102, Jardim Filadélfia, BH",
+    "tipo": "CRAS",
+    "lat": -19.91674996,
+    "lon": -44.02460933,
+    "atendimentos": 280
+    },
+  {
+    "nome": "CRAS Pedreira Prado Lopes",
+    "endereco": "Av. José Bonifácio, 189, São Cristóvão, BH",
+    "tipo": "CRAS",
+    "lat": -19.90328307,
+    "lon": -43.94738317,
+    "atendimentos": 600
+    },
+  {
+    "nome": "CRAS Vila Sumaré",
+    "endereco": "R. Cirilo Gaspar Araújo, 522, Aparecida, BH",
+    "tipo": "CRAS",
+    "lat": -19.89021858,
+    "lon": -43.96452785,
+    "atendimentos": 310
+  },
+  {
+    "nome": "CRAS Vila Senhor dos Passos",
+    "endereco": "R. Evaristo da Veiga, 239, Vila Senhor dos Passos, BH",
+    "tipo": "CRAS",
+    "lat": -19.90563355,
+    "lon": -43.94874573,
+    "atendimentos": 290
+  },
+  {
+    "nome": "CRAS Novo Aarão Reis",
+    "endereco": "Av. Risoleta Neves, 347, Novo Aarão Reis, BH",
+    "tipo": "CRAS",
+    "lat": -19.84447936,
+    "lon": -43.91391993,
+    "atendimentos": 340
+  },
+  {
+    "nome": "CRAS Jardim Felicidade",
+    "endereco": "R. Cecília Trindade da Silva, 55, Jardim Felicidade, BH",
+    "tipo": "CRAS",
+    "lat": -19.82950253,
+    "lon": -43.92773867,
+    "atendimentos": 480
+  },
+  {
+    "nome": "CRAS Providência",
+    "endereco": "R. São Sebastião, 140, Minaslândia, BH",
+    "tipo": "CRAS",
+    "lat": -19.85330938,
+    "lon": -43.93139720,
+    "atendimentos": 220
+  },
+  {
+    "nome": "CRAS Zilah Spósito",
+    "endereco": "R. Coquilhos, 75, Zilah Spósito, BH",
+    "tipo": "CRAS",
+    "lat": -19.80127079,
+    "lon": -43.92399430,
+    "atendimentos": 450
+  },
+  {
+    "nome": "CRAS Vila Biquinhas",
+    "endereco": "R. Coronel Joaquim Tibúrcio, 850, Heliópolis, BH",
+    "tipo": "CRAS",
+    "lat": -19.84236008,
+    "lon": -43.94030213,
+    "atendimentos": 190
+  },
+  {
+    "nome": "CRAS Havaí, Ventosa",
+    "endereco": "R. Manila, 432, Havaí, BH",
+    "tipo": "CRAS",
+    "lat": -19.96285150,
+    "lon": -43.96930218,
+    "atendimentos": 510
+  },
+  {
+    "nome": "CRAS Graça Saboia / Morro das Pedras",
+    "endereco": "Av. Silva Lobo, 2379, Nova Granada, BH",
+    "tipo": "CRAS",
+    "lat": -19.93828451,
+    "lon": -43.96858335,
+    "atendimentos": 530
+  },
+  {
+    "nome": "CRAS Vila Antena",
+    "endereco": "R. Central, 78, Vila Antena, BH",
+    "tipo": "CRAS",
+    "lat": -19.94877335,
+    "lon": -43.96274686,
+    "atendimentos": 140
+  },
+  {
+    "nome": "CRAS Vista Alegre I",
+    "endereco": "R. Aguanil, 425, Vista Alegre, BH",
+    "tipo": "CRAS",
+    "lat": -19.95370488,
+    "lon": -43.99631739,
+    "atendimentos": 330
+  },
+  {
+    "nome": "CRAS Vila Betânia",
+    "endereco": "R. Demiza, 770, Betânia, BH",
+    "tipo": "CRAS",
+    "lat": -19.95530835,
+    "lon": -43.99260521,
+    "atendimentos": 260
+  },
+  {
+    "nome": "CRAS Cabana",
+    "endereco": "R. Capim Branco, 231, Vista Alegre, BH",
+    "tipo": "CRAS",
+    "lat": -19.95095171,
+    "lon": -44.00053382,
+    "atendimentos": 570
+  },
+  {
+    "nome": "CRAS Confisco",
+    "endereco": "R. Cecília Magalhães Gomes, 127, Confisco, BH",
+    "tipo": "CRAS",
+    "lat": -19.86525688,
+    "lon": -44.01899815,
+    "atendimentos": 380
+  },
+  {
+    "nome": "CRAS Novo Ouro Preto",
+    "endereco": "R. Geraldina Cândida de Jesus, 92, Novo Ouro Preto, BH",
+    "tipo": "CRAS",
+    "lat": -19.87631558,
+    "lon": -43.98799181,
+    "atendimentos": 170
+  },
+  {
+    "nome": "CRAS Santa Rosa",
+    "endereco": "Av. Major Delfino de Paula, 2553, São Francisco, BH",
+    "tipo": "CRAS",
+    "lat": -19.88100722,
+    "lon": -43.95918489,
+    "atendimentos": 210
+  },
+  {
+    "nome": "CRAS Vila São José",
+    "endereco": "R. Joaquim José Ribeiro, 50, Manacás, BH",
+    "tipo": "CRAS",
+    "lat": -19.900013558,
+    "lon": -43.99556637,
+    "atendimentos": 360
+  },
+  {
+    "nome": "CRAS Dandara",
+    "endereco": "R. José Simplício Moreira, 1144, Trevo, BH",
+    "tipo": "CRAS",
+    "lat": -19.83439740,
+    "lon": -44.01427746,
+    "atendimentos": 490
+  },
+  {
+    "nome": "CRAS Apolônia",
+    "endereco": "R. Visconde de Itaboraí, 304, Jardim Leblon, BH",
+    "tipo": "CRAS",
+    "lat": -19.82842261,
+    "lon": -43.98729444,
+    "atendimentos": 280
+  },
+  {
+    "nome": "CRAS Lagoa",
+    "endereco": "R. José Sabino Maciel, 120, Lagoa, BH",
+    "tipo": "CRAS",
+    "lat": -19.80933607,
+    "lon": -44.00087714,
+    "atendimentos": 390
+  },
+  {
+    "nome": "CRAS Mantiqueira",
+    "endereco": "R. Luzia Salomão, 300, Mantiqueira, BH",
+    "tipo": "CRAS",
+    "lat": -19.80030171,
+    "lon": -43.98111463,
+    "atendimentos": 410
+  }
+]

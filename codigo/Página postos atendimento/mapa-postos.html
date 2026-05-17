@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guia-Benefício · Mapa de Postos CRAS</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header>
+  <div class="header-interno">
+    <div class="logo-wrap">
+      <a href="#">
+        <img src="logo.png" alt="Guia-Benefício logo" onerror="this.style.display='none'" />
+      </a>
+      <span class="logo-text">Guia-<span class="verde">Benefício</span></span>
+    </div>
+    <nav>
+      <a href="#">Início</a>
+      <a href="#">Benefícios</a>
+      <a href="#" class="active">Postos CRAS</a>
+      <a href="#">Recomendador</a>
+    </nav>
+    <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-nav" id="mobileNav">
+    <a href="#">Início</a>
+    <a href="#">Benefícios</a>
+    <a href="#" class="active">Postos CRAS</a>
+    <a href="#">Recomendador</a>
+  </div>
+</header>
+
+<div class="hero">
+  <h1>🗺️ Mapa de Postos de Atendimento CRAS</h1>
+  <p>Encontre o posto mais próximo de você e veja a distribuição de demanda social em Belo Horizonte.</p>
+  <div class="hero-stats">
+    <div class="hero-stat"><div class="num">37</div><div class="lbl">Postos CRAS</div></div>
+    <div class="hero-stat"><div class="num">14.250+</div><div class="lbl">Atendimentos / mês</div></div>
+    <div class="hero-stat"><div class="num">9</div><div class="lbl">Regionais cobertas</div></div>
+  </div>
+</div>
+
+<div class="controls-bar">
+  <div class="controls-inner">
+    <button class="btn btn-green" onclick="encontrarMaisProximo()">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg>
+      Posto mais próximo
+    </button>
+    <button class="btn btn-outline" onclick="resetView()">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8"/><path d="M3 3v5h5"/></svg>
+      Ver todos
+    </button>
+  </div>
+</div>
+
+<div class="main-layout">
+  <aside class="sidebar">
+    <div class="card" id="nearbyCard" style="display:none">
+      <div class="card-header">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3"/></svg>
+        Posto mais próximo
+      </div>
+      <div class="nearby-result" id="nearbyResult">Buscando…</div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 10c0 6-8 12-8 12S4 16 4 10a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+        Postos de Atendimento
+      </div>
+      <div class="search-input-wrap">
+        <input type="text" class="search-input" id="searchInput" placeholder="Buscar posto…" oninput="filterPostos()" />
+      </div>
+      <div class="posto-list" id="postoList"></div>
+    </div>
+
+    <div class="card">
+      <div class="card-header">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect width="18" height="18" x="3" y="3" rx="2"/><path d="M3 9h18M3 15h18M9 3v18"/></svg>
+        Legenda
+      </div>
+      <div class="legend-wrap">
+        <div class="legend-title">MAPA DE CALOR — Demanda por benefícios</div>
+        <div class="legend-bar"></div>
+        <div class="legend-labels"><span>Baixa</span><span>Média</span><span>Alta</span></div>
+        <div class="legend-items">
+          <div class="legend-item"><div class="legend-marker" style="background:#1a3fa4"></div><span>Posto CRAS (marcador)</span></div>
+          <div class="legend-item"><div class="legend-marker" style="background:#ff4444"></div><span>Alta demanda (+500/mês)</span></div>
+          <div class="legend-item"><div class="legend-marker" style="background:#ff9900"></div><span>Média demanda (300–500/mês)</span></div>
+          <div class="legend-item"><div class="legend-marker" style="background:#44cc44"></div><span>Baixa demanda (&lt;300/mês)</span></div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <div class="map-wrap">
+    <div id="map"></div>
+    <div class="summary-row">
+      <div class="summary-item">
+        <div class="s-label">Total de postos</div>
+        <div class="s-val">37</div>
+      </div>
+      <div class="summary-item green">
+        <div class="s-label">Atendimentos estimados</div>
+        <div class="s-val">14.250</div>
+      </div>
+      <div class="summary-item yellow">
+        <div class="s-label">Posto com maior demanda</div>
+        <div class="s-val" id="topPosto">—</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer>
+  &copy; 2026 Guia-Benefício-Dados de atendimento estimados com base em indicadores da Prefeitura de Belo Horizonte.
+</footer>
+
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="geolocalizacao.js"></script>
+</body>
+</html> 
