@@ -1,4 +1,4 @@
-# 📋 Guia-Benefício · Postos de Saúde
+# Guia-Benefício · Postos de Saúde
 ## Documento de Orientação de Avaliação — Sprint 1 & 2
 > PUC Minas · Engenharia de Software · 2025
 
@@ -101,7 +101,7 @@ json-server --watch db.json --port 3000
 # abra diretamente: postos.html
 ```
 
-> ⚠️ O JSONServer deve estar rodando em http://localhost:3000 antes de abrir a página.
+>  O JSONServer deve estar rodando em http://localhost:3000 antes de abrir a página.
 
 ---
 
