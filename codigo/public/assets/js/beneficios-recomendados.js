@@ -1,20 +1,25 @@
 /*Recebe uma lista com os filtros de categoria e publicoAlvo*/
 async function carregarBeneficios(filtro = {}) {
-    const resposta = await fetch('/codigo/db/db.json');
-    const dados = await resposta.json();
-    let beneficios = dados.beneficios;
+    try {
+        const resposta = await fetch('http://localhost:3000/beneficios');
+        const beneficios = await resposta.json();
 
-    if (filtro.categoria) {
-        beneficios = beneficios.filter(b => b.categoria === filtro.categoria);
+        let beneficiosFiltrados = beneficios;
+
+        if (filtro.categoria) {
+            beneficiosFiltrados = beneficiosFiltrados.filter(b => b.categoria === filtro.categoria);
+        }
+
+        if (filtro.publicoAlvo) {
+            beneficiosFiltrados = beneficiosFiltrados.filter(b =>
+                filtro.publicoAlvo.some(perfil => b.publicoAlvo.includes(perfil))
+            );
+        }
+
+        renderizarCards(beneficiosFiltrados);
+    } catch (erro) {
+        console.error("Erro ao carregar os benefícios do servidor:", erro);
     }
-
-    if (filtro.publicoAlvo) {
-        beneficios = beneficios.filter(b =>
-            filtro.publicoAlvo.some(perfil => b.publicoAlvo.includes(perfil))
-        );
-    }
-
-    renderizarCards(beneficios);
 }
 
 function renderizarCards(beneficios) {
