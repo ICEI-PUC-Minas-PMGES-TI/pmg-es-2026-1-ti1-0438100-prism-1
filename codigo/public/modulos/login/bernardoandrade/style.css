@@ -240,3 +240,41 @@ header>nav {
         padding: 5%;
     }
 }
+.filtros {
+    display: flex;
+    gap: 1rem;
+    margin: 2% 1%;
+    flex-wrap: wrap;
+}
+
+.filtros input,
+.filtros select {
+    padding: 1rem;
+    border-radius: 20px;
+    font-family: "DM Sans";
+    font-size: 1rem;
+    flex: 1;
+    min-width: 220px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.card-beneficio button {
+    cursor: pointer;
+}
+input,
+select,
+button {
+    outline: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+.card-beneficio {
+    transition: transform 0.2s ease;
+}
+
+.card-beneficio:hover {
+    transform: translateY(-5px);
+}

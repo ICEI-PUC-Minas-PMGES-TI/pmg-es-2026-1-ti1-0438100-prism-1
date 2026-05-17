@@ -41,88 +41,34 @@
             </p>
         </div>
 
-        <div class="beneficios">
+        <div class="filtros">
 
-            <div class="card-beneficio">
+            <input type="text" id="pesquisa" placeholder="Pesquisar benefício">
 
-                <div class="card-header">
-                    <h2>Bolsa Família</h2>
-                    <span class="orgao">Governo Federal</span>
-                </div>
+            <select id="filtro-categoria">
+                <option value="">Todas as categorias</option>
+                <option value="Alimentação">Alimentação</option>
+                <option value="Energia">Energia</option>
+                <option value="Previdência">Previdência</option>
+                <option value="Habitação">Habitação</option>
+                <option value="Saúde">Saúde</option>
+                <option value="Educação">Educação</option>
+                <option value="Transporte">Transporte</option>
+            </select>
 
-                <p class="descricao">
-                    Auxílio para famílias de baixa renda cadastradas em programas sociais.
-                </p>
-
-                <div class="card-footer">
-                    <span class="categoria">Alimentação</span>
-                    <span class="valor">R$ 142,00</span>
-                </div>
-
-                <button class="botao-azul">
-                    Acessar Benefício
-                </button>
-
-            </div>
-
-            <div class="card-beneficio">
-
-                <div class="card-header">
-                    <h2>Auxílio Gás</h2>
-                    <span class="orgao">Governo Federal</span>
-                </div>
-
-                <p class="descricao">
-                    Benefício para ajudar na compra do gás de cozinha.
-                </p>
-
-                <div class="card-footer">
-                    <span class="categoria">Energia</span>
-                    <span class="valor">R$ 102,00</span>
-                </div>
-
-                <button class="botao-azul">
-                    Acessar Benefício
-                </button>
-
-            </div>
-
-            <div class="card-beneficio">
-
-                <div class="card-header">
-                    <h2>INSS</h2>
-                    <span class="orgao">INSS</span>
-                </div>
-
-                <p class="descricao">
-                    Benefícios para aposentadoria e auxílio-doença.
-                </p>
-
-                <div class="card-footer">
-                    <span class="categoria">Previdência</span>
-                    <span class="valor">Variável</span>
-                </div>
-
-                <button class="botao-azul">
-                    Acessar Benefício
-                </button>
-
-            </div>
+            <select id="ordenacao">
+                <option value="">Ordenar</option>
+                <option value="maior">Maior valor</option>
+                <option value="menor">Menor valor</option>
+            </select>
 
         </div>
 
+        <div class="beneficios" id="beneficios"></div>
+
     </main>
 
-    <script>
-        const botao_menu = document.querySelector('.botao-menu');
-        const nav = document.querySelector('nav');
-        const header = document.querySelector('header');
-
-        botao_menu.addEventListener('click', () => {
-            nav.classList.toggle('menu-aberto');
-            header.classList.toggle('menu-aberto');
-        });
-    </script>
+    <script src="script.js"></script>
 
 </body>
 
