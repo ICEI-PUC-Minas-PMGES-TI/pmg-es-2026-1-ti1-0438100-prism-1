@@ -1,3 +1,4 @@
+/*Recebe uma lista com os filtros de categoria e publicoAlvo*/
 async function carregarBeneficios(filtro = {}) {
     const resposta = await fetch('/codigo/db/db.json');
     const dados = await resposta.json();
@@ -24,6 +25,7 @@ function renderizarCards(beneficios) {
     intro.innerHTML = `Encontramos <strong>${beneficios.length} benefícios</strong> com base no seu perfil. Clique em cada um para saber mais sobre como solicitar.`;
 
     beneficios.forEach(beneficio => {
+        const linkDestino = `pagina-do-beneficio.html?id=${beneficio.id}`;
         const card = document.createElement('div');
         card.classList.add('card-beneficio');
         card.innerHTML = `
@@ -36,7 +38,7 @@ function renderizarCards(beneficios) {
             <span class="categoria">${beneficio.categoria}</span>
             ${beneficio.valorBase ? `<p class="valor">Valor Base: R$ ${beneficio.valorBase.toFixed(2)}</p>` : ''}
             </div>
-            <button class="botao-azul">Acessar Benefício</button>
+            <a href="${linkDestino}" class="botao-azul">Acessar Benefício</a>
         `;
         container.appendChild(card);
     });

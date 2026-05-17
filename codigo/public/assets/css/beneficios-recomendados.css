@@ -33,6 +33,8 @@ main {
 .botao-azul {
     color: #ffffff;
     background-color: #003CA3;
+    text-align: center;
+    display: inline-block;
 }
 
 .botao-branco {
