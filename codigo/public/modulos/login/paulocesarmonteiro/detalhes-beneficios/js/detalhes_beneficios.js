@@ -59,7 +59,7 @@ function preencherLista(idElemento, lista) {
  * @param {string} idBarra     - ID do <div> da barra de progresso
  * @param {string} idTexto     - ID do <span> com o texto "X de Y documentos"
  * @param {string[]} documentos - Array de strings com os nomes dos documentos
- * @param {string} prefixo     - Prefixo único para os IDs dos checkboxes (evita colisão mobile/desktop)
+ * @param {string} prefixo     - Prefixo único para os IDs dos checkboxes 
  */
 
 // Função que preenche o checklist
