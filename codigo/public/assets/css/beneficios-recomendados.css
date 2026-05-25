@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+8@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
 
 * {
     padding: 0;
@@ -209,5 +209,128 @@ header>nav {
     .card-beneficio {
         width: 100%;
         padding: 5%;
+    }
+}
+
+/* Estilização Controles E Pesquisa */
+.controles {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2% 1%;
+    flex-wrap: wrap;
+    gap: 1rem;
+    font-family: "DM Sans", sans-serif;
+}
+
+.barra-pesquisa {
+    display: flex;
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 40px;
+    padding: 0.8rem 1.2rem;
+    width: 100%;
+    max-width: 450px;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+}
+
+.barra-pesquisa input {
+    flex-grow: 1;
+    border: none;
+    outline: none;
+    font-family: "DM Sans", sans-serif;
+    font-size: 1rem;
+    color: #333;
+    background: transparent;
+}
+
+.barra-pesquisa input::placeholder {
+    color: #999;
+}
+
+.btn-pesquisa {
+    background: transparent;
+    cursor: pointer;
+    color: #333;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ordenacao {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    color: #333;
+    font-size: 1rem;
+}
+
+.ordenacao select {
+    font-family: "DM Sans", sans-serif;
+    font-size: 1rem;
+    padding: 0.6rem 2.5rem 0.6rem 1rem;
+    border-radius: 40px;
+    border: 1px solid #eee;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    outline: none;
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23333' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1em;
+}
+
+/* Estilização Ajustes Do Card */
+.titulo-beneficio {
+    font-size: 1.3rem;
+    color: #333;
+}
+
+.header-direita {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.btn-favorito {
+    background: transparent;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s ease;
+}
+
+.btn-favorito:hover {
+    transform: scale(1.1);
+}
+
+.btn-favorito svg {
+    transition: fill 0.2s ease, stroke 0.2s ease;
+}
+
+/* Coração Ativo Pelo JS */
+.btn-favorito.ativo svg {
+    fill: #003CA3; 
+    stroke: #003CA3;
+}
+
+/* Responsividade Controles E Pesquisa */
+/* Celulares */
+@media (max-width: 768px) {
+    .controles {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .barra-pesquisa {
+        max-width: 100%;
+    }
+    
+    .ordenacao {
+        width: 100%;
+        justify-content: flex-end;
     }
 }
