@@ -91,7 +91,22 @@ header>nav {
     gap: 1rem;
 }
 
-/* Responsividade para celulares */
+.titulo-sessao {
+    text-align: center;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+}
+
+.titulo-sessao h2 {
+    font-size: 3rem;
+}
+
+#img-assistente-social {
+    display: flex;
+    justify-content: center;
+}
+
+/* Responsividade para celulares do header */
 @media (max-width: 768px) {
     header {
         min-height: 9.47vh;
