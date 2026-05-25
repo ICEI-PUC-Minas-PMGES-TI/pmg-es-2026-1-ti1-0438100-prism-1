@@ -278,3 +278,42 @@ button {
 .card-beneficio:hover {
     transform: translateY(-5px);
 }
+
+.info-beneficios {
+    margin: 1%;
+    font-family: "DM Sans";
+    font-size: 1.1rem;
+    color: #333;
+}
+
+.sem-resultados {
+    font-family: "DM Sans";
+    font-size: 1.3rem;
+    color: #666;
+    margin-top: 2rem;
+}
+
+.card-beneficio {
+    transition: transform 0.2s ease,
+                box-shadow 0.2s ease;
+}
+
+.card-beneficio:hover {
+    transform: translateY(-5px);
+
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+input,
+select,
+button {
+    outline: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+#limpar-filtros {
+    border: none;
+}

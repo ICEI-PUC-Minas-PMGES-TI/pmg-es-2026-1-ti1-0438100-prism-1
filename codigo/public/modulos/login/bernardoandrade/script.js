@@ -85,39 +85,71 @@ const container = document.getElementById('beneficios');
 const pesquisa = document.getElementById('pesquisa');
 const filtroCategoria = document.getElementById('filtro-categoria');
 const ordenacao = document.getElementById('ordenacao');
+const contador = document.getElementById('contador-beneficios');
+const limparFiltros = document.getElementById('limpar-filtros');
+
+function atualizarContador(quantidade) {
+    contador.textContent = `${quantidade} benefício(s) encontrado(s)`;
+}
+
+function criarCard(beneficio) {
+
+    const card = document.createElement('div');
+
+    card.classList.add('card-beneficio');
+
+    card.innerHTML = `
+        <div class="card-header">
+            <h2>${beneficio.nome}</h2>
+            <span class="orgao">${beneficio.orgao}</span>
+        </div>
+
+        <p class="descricao">
+            ${beneficio.descricao}
+        </p>
+
+        <div class="card-footer">
+            <span class="categoria">${beneficio.categoria}</span>
+
+            <span class="valor">
+                ${beneficio.valor > 0 ? `R$ ${beneficio.valor},00` : 'Variável'}
+            </span>
+        </div>
+
+        <button class="botao-azul botao-detalhes">
+            Mais Detalhes
+        </button>
+    `;
+
+    const botaoDetalhes = card.querySelector('.botao-detalhes');
+
+    botaoDetalhes.addEventListener('click', () => {
+        window.location.href = `detalhes.html?id=${beneficio.id}`;
+    });
+
+    return card;
+}
 
 function mostrarBeneficios(lista) {
 
     container.innerHTML = '';
 
+    atualizarContador(lista.length);
+
+    if (lista.length === 0) {
+
+        container.innerHTML = `
+            <p class="sem-resultados">
+                Nenhum benefício encontrado.
+            </p>
+        `;
+
+        return;
+    }
+
     lista.forEach(beneficio => {
 
-        const card = document.createElement('div');
-
-        card.classList.add('card-beneficio');
-
-        card.innerHTML = `
-            <div class="card-header">
-                <h2>${beneficio.nome}</h2>
-                <span class="orgao">${beneficio.orgao}</span>
-            </div>
-
-            <p class="descricao">
-                ${beneficio.descricao}
-            </p>
-
-            <div class="card-footer">
-                <span class="categoria">${beneficio.categoria}</span>
-
-                <span class="valor">
-                    ${beneficio.valor > 0 ? `R$ ${beneficio.valor},00` : 'Variável'}
-                </span>
-            </div>
-
-            <button class="botao-azul">
-                Mais Detalhes
-            </button>
-        `;
+        const card = criarCard(beneficio);
 
         container.appendChild(card);
     });
@@ -127,18 +159,18 @@ function filtrarBeneficios() {
 
     let filtrados = [...beneficios];
 
-    const texto = pesquisa.value.toLowerCase();
+    const textoPesquisa = pesquisa.value.toLowerCase();
 
     filtrados = filtrados.filter(beneficio =>
-        beneficio.nome.toLowerCase().includes(texto)
+        beneficio.nome.toLowerCase().includes(textoPesquisa)
     );
 
-    const categoria = filtroCategoria.value;
+    const categoriaSelecionada = filtroCategoria.value;
 
-    if (categoria !== '') {
+    if (categoriaSelecionada !== '') {
 
         filtrados = filtrados.filter(beneficio =>
-            beneficio.categoria === categoria
+            beneficio.categoria === categoriaSelecionada
         );
     }
 
@@ -153,11 +185,22 @@ function filtrarBeneficios() {
     mostrarBeneficios(filtrados);
 }
 
+function resetarFiltros() {
+
+    pesquisa.value = '';
+    filtroCategoria.value = '';
+    ordenacao.value = '';
+
+    mostrarBeneficios(beneficios);
+}
+
 pesquisa.addEventListener('input', filtrarBeneficios);
 
 filtroCategoria.addEventListener('change', filtrarBeneficios);
 
 ordenacao.addEventListener('change', filtrarBeneficios);
+
+limparFiltros.addEventListener('click', resetarFiltros);
 
 window.addEventListener('load', () => {
     mostrarBeneficios(beneficios);
