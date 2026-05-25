@@ -18,9 +18,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const updateProgress = () => {
     let width = currentStep / (stepIndicators.length - 1);
     progress.style.transform = `scaleX(${width})`;
-
-    updateStepHeight();
-
     stepIndicators.forEach((indicator, index) => {
       indicator.classList.toggle("current", currentStep === index);
       indicator.classList.toggle("done", currentStep > index);
@@ -33,6 +30,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     updateButtons();
     syncPcdLayout();
+
+    updateStepHeight();
   };
 
   const updateButtons = () => {
@@ -61,6 +60,13 @@ document.addEventListener("DOMContentLoaded", () => {
       currentStep++;
       updateProgress();
     }
+  });
+
+  document.querySelectorAll('input[name="pcd"]').forEach((r) => {
+    r.addEventListener("change", (e) => {
+      const isYes = e.target.value === "sim" && e.target.checked;
+      togglePCD(isYes);
+    });
   });
 
   updateProgress();
@@ -139,7 +145,6 @@ function toggleDependentes(show) {
   refreshWizardHeight();
 }
 
-// Lógica condicional: PCD
 function togglePCD(show) {
   const box = document.getElementById("pcdBox");
 
@@ -156,7 +161,6 @@ function togglePCD(show) {
   refreshWizardHeight();
 }
 
-// Lógica condicional: Doenças (desmarcar "nenhuma" se marcar outras)
 function toggleOutrasDoencas(checkbox) {
   if (checkbox.checked) {
     document
