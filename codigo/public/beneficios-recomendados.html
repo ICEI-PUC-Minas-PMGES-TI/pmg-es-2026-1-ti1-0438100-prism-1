@@ -5,41 +5,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="assets/css/beneficios-recomendados.css">
 </head>
 
 <body>
-    <header>
-        <section class="logo">
-            <img src="assets/images/logo_site.jpeg" alt="Logo Guia-Benefício">
-            <h1><span style="color: #003CA3;">Guia-</span><span style="color: #2B7F3A">Benefício</span></h1>
+    <header class="bg-light shadow-sm py-2 px-3 d-flex justify-content-between align-items-center">
+        <section class="logo d-flex align-items-center gap-2">
+            <img src="assets/images/logo_site.jpeg" alt="Logo Guia-Benefício" style="max-height: 40px;">
+            <h1 class="m-0 fs-4"><span style="color: #003CA3;">Guia-</span><span style="color: #2B7F3A">Benefício</span></h1>
             <button class="botao-menu">☰</button>
         </section>
+        
         <nav>
             <a class="botao-azul" href="index.html">Início</a>
             <a class="botao-branco" href="">Benefícios</a>
             <a class="botao-branco" href="">Recomendador</a>
         </nav>
     </header>
+    
     <main>
         <section class="intro">
             <h1>Benefícios Recomendados</h1>
-            <p>Encontramos X benefícios com base no seu perfil. Clique em cada um para saber mais sobre como solicitar.
-            </p>
+            <p>Encontramos X benefícios com base no seu perfil. Clique em cada um para saber mais sobre como solicitar.</p>
         </section>
         <section class="beneficios">
             
         </section>
     </main>
-    <script>
-        const botao_menu = document.querySelector('.botao-menu');
-        const nav = document.querySelector('nav');
-        const header = document.querySelector('header');
-        botao_menu.addEventListener('click', () => {
-            nav.classList.toggle('menu-aberto');
-            header.classList.toggle('menu-aberto');
-        });
-    </script>
+    
     <script src="assets/js/beneficios-recomendados.js"></script>
 </body>
 
