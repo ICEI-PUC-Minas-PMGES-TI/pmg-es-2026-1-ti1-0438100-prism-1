@@ -23,27 +23,22 @@ fetch('postos.json')
 function inicializarDadosEMapa() {
   const maxAtt = Math.max(...postos.map(p => p.atendimentos));
   const minAtt = Math.min(...postos.map(p => p.atendimentos));
-  const heatLayer = L.layerGroup();
-  postos.forEach(p => {
-    const norm = (p.atendimentos - minAtt) / (maxAtt - minAtt);
-    const radius = 600 + norm * 1400;
-    let heatColor = '#ff2200';
-    let opacityBase = 0.35;
-    if (norm < 0.25) { heatColor = '#00aaff'; opacityBase = 0.18; }
-    else if (norm < 0.45) { heatColor = '#44dd66'; opacityBase = 0.22; }
-    else if (norm < 0.65) { heatColor = '#ffdd00'; opacityBase = 0.26; }
-    else if (norm < 0.82) { heatColor = '#ff8800'; opacityBase = 0.30; }
-    for (let i = 3; i >= 1; i--) {
-      L.circle([p.lat, p.lon], {
-        radius: radius * i * 0.55,
-        color: 'transparent',
-        fillColor: heatColor,
-        fillOpacity: opacityBase / i,
-        interactive: false
-      }).addTo(heatLayer);
+  
+  const heatPoints = postos.map(p => [p.lat, p.lon, p.atendimentos]);
+  L.heatLayer(heatPoints, {
+    radius: 45,
+    blur: 30,
+    maxZoom: 14,
+    max: maxAtt,
+    min: minAtt,
+    gradient: {
+      0.2: '#3388ff',
+      0.45: '#44dd66',
+      0.65: '#ffdd00',
+      0.82: '#ff8800',
+      1.0: '#ff2200'
     }
-  });
-  heatLayer.addTo(map);
+  }).addTo(map);
   postos.forEach((p, i) => {
     let col = '#1a3fa4';
     if (p.atendimentos >= 500) col = '#d32f2f';
@@ -73,6 +68,7 @@ function inicializarDadosEMapa() {
   const topPosto = postos.reduce((a, b) => a.atendimentos > b.atendimentos ? a : b);
   document.getElementById('topPosto').textContent = topPosto.nome.replace('CRAS ', '');
 }
+
 const listaContainer = document.getElementById('postoList');
 function renderizarListaLateral(filtro = '') {
   listaContainer.innerHTML = '';
@@ -134,8 +130,13 @@ function encontrarMaisProximo() {
   const card = document.getElementById('nearbyCard');
   if (card) card.style.display = 'block';
   const resultContainer = document.getElementById('nearbyResult');
-  if (resultContainer) resultContainer.innerHTML = '<div style="padding:4px 0">📍 Obtendo sua localização…</div>';
-  navigator.geolocation.getCurrentPosition(posicao => {
+  if (resultContainer) resultContainer.innerHTML = '<div style="padding:4px 0">📍 Obtendo sua localização precisa…</div>';
+  const geoOptions = {
+    enableHighAccuracy: true, 
+    timeout: 10000,      
+    maximumAge: 0            
+  };
+  navigator.geolocation.getCurrentPosition(async (posicao) => {
     const minhaLat = posicao.coords.latitude;
     const minhaLon = posicao.coords.longitude;
     if (userMarker) map.removeLayer(userMarker);
@@ -143,39 +144,63 @@ function encontrarMaisProximo() {
       radius: 10, color: '#fff', weight: 3,
       fillColor: '#1e7c44', fillOpacity: 1
     }).addTo(map).bindPopup('📍 Você está aqui').openPopup();
-    let postoMaisProximo = null;
-    let menorDistancia = Infinity;
-    let melhorIdx = 0;
-    postos.forEach((p, i) => {
-      const d = calcularDistanciaHaversine(minhaLat, minhaLon, p.lat, p.lon);
-      if (d < menorDistancia) { 
-        menorDistancia = d; 
-        postoMaisProximo = p; 
-        melhorIdx = i; 
-      }
+    if (resultContainer) resultContainer.innerHTML = '<div style="padding:4px 0">🔄 Calculando melhor rota pelas ruas…</div>';
+    let postosCandidatos = postos.map((p, originalIdx) => {
+      return { ...p, originalIdx, distHaversine: calcularDistanciaHaversine(minhaLat, minhaLon, p.lat, p.lon) };
     });
-    const urlWaze = `https://waze.com/ul?ll=${postoMaisProximo.lat},${postoMaisProximo.lon}&navigate=yes`;
+    postosCandidatos.sort((a, b) => a.distHaversine - b.distHaversine);
+    const topCandidatos = postosCandidatos.slice(0, 3);
+    let postoMaisProximo = null;
+    let menorDistanciaRua = Infinity;
+    let melhorIdx = 0;
+
+    for (const candidato of topCandidatos) {
+      try {
+        const urlOSRM = `https://router.project-osrm.org/route/v1/driving/${minhaLon},${minhaLat};${candidato.lon},${candidato.lat}?overview=false`;
+        const res = await fetch(urlOSRM);
+        const rData = await res.json();
+        if (rData.code === 'Ok' && rData.routes.length > 0) {
+          const distanciaMetros = rData.routes[0].distance; 
+          const distanciaKm = distanciaMetros / 1000;
+
+          if (distanciaKm < menorDistanciaRua) {
+            menorDistanciaRua = distanciaKm;
+            postoMaisProximo = candidato;
+            melhorIdx = candidato.originalIdx;
+          }
+        }
+      } catch (err) {
+        console.error("Erro ao consultar rota do OSRM, usando Haversine como fallback", err);
+        if (candidato.distHaversine < menorDistanciaRua) {
+          menorDistanciaRua = candidato.distHaversine;
+          postoMaisProximo = candidato;
+          melhorIdx = candidato.originalIdx;
+        }
+      }
+    }
+  const urlWaze = `https://waze.com/ul?ll=${postoMaisProximo.lat},${postoMaisProximo.lon}&navigate=yes`;
     if (resultContainer) {
       resultContainer.innerHTML = `
         <div>Posto mais próximo:</div>
-        <div class="posto-name">${postoMaisProximo.nome}</div>
+        <div class="posto-name" style="font-weight:700; color:#1a3fa4; margin: 2px 0;">${postoMaisProximo.nome}</div>
         <div style="font-size:.78rem;color:#5a6380;margin:4px 0 6px">${postoMaisProximo.endereco}</div>
         <div style="margin: 8px 0 12px 0;">
-          <span class="dist" style="background: var(--blue-light); color: var(--blue); display: block; padding: 8px 10px; border-radius: 8px; font-weight: 600; font-size: 0.85rem; text-align: left; border: 1px solid rgba(26,63,164,0.15)">
-            <strong>Raio de Proximidade:</strong> ${menorDistancia.toFixed(2)} km (linha reta)
+          <span class="dist" style="background: #e8eeff; color: #1a3fa4; display: block; padding: 8px 10px; border-radius: 8px; font-weight: 600; font-size: 0.85rem; text-align: left; border: 1px solid rgba(26,63,164,0.15)">
+            <strong>Distância real por ruas:</strong> ${menorDistanciaRua.toFixed(2)} km
           </span>
         </div>
         <div style="display: flex; flex-direction: column; gap: 8px;">
-          <a href="${urlWaze}" target="_blank" class="btn" style="display: inline-flex; justify-content: center; align-items: center; width: 100%; text-decoration: none; font-size: 0.82rem; padding: 10px 12px; color: #000 !important; font-weight: 600; border-radius: 8px; box-sizing: border-box; background: #33ccff; border: none;">
+          <a href="${urlWaze}" target="_blank" class="btn" style="display: inline-flex; justify-content: center; align-items: center; width: 100%; text-decoration: none; font-size: 0.82rem; padding: 10px 12px; color: #000 !important; font-weight: 600; border-radius: 8px; box-sizing: border-box; background: #33ccff; border: none; transition: background 0.2s;">
             🚙 Abrir no Waze
           </a>
         </div>
       `;
-    }
+}
     map.setView([postoMaisProximo.lat, postoMaisProximo.lon], 15, { animate: true });
     if (markers[melhorIdx]) markers[melhorIdx].openPopup();
     focarItemNaLista(melhorIdx);
+
   }, () => {
-    if (resultContainer) resultContainer.innerHTML = '<div style="color:#d32f2f">Não foi possível obter sua localização.</div>';
-  });
+    if (resultContainer) resultContainer.innerHTML = '<div style="color:#d32f2f">Não foi possível obter sua localização. Verifique as permissões de GPS do seu navegador.</div>';
+  }, geoOptions);
 }
