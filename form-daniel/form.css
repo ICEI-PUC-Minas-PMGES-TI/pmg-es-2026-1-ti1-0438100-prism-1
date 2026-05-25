@@ -12,7 +12,7 @@
   --dark-color: #07368d;
   --step-color: #ced7e8;
   --step-size: 32px;
-  --steps: 3;
+  --steps: 4;
   --progress-width: calc((var(--steps) - 1) / var(--steps) * 100%);
 }
 
@@ -80,7 +80,7 @@ select {
   gap: 12px;
   padding: 12px 14px;
   border: 1px solid #d9d9e6;
-  border-radius: 12px;
+  border-radius: 10px;
   background: #fafaff;
   cursor: pointer;
   transition: 0.2s ease;
@@ -284,6 +284,7 @@ button[type="submit"]:active {
 .steps-container {
   display: flex;
   overflow: hidden;
+  transition: height 0.3s ease;
 }
 
 .step {
@@ -296,6 +297,31 @@ button[type="submit"]:active {
   gap: 4px;
 }
 
+.form-wizard.pcd-compact {
+  zoom: 0.95;
+}
+
+.form-wizard.pcd-compact .controls {
+  margin-top: 0;
+}
+
+.form-wizard.pcd-compact .form-control {
+  margin-bottom: 10px;
+}
+
+.form-wizard.pcd-compact .conditional {
+  margin-top: 2px;
+  padding: 12px;
+}
+
+.form-wizard.pcd-compact .form-group {
+  margin-bottom: 6px;
+}
+
+.form-wizard.pcd-compact h3 {
+  margin-bottom: 6px;
+}
+
 .step.current {
   opacity: 1;
 }
@@ -305,10 +331,136 @@ button[type="submit"]:active {
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  margin-top: 16px;
+  /* margin-top: 16px; */
   padding-inline: 8px;
 }
 
 .controls button {
-  flex: 1f;
+  flex: 1;
+}
+
+.conditional {
+  display: none;
+  padding: 16px;
+  margin-top: 5px;
+  background: #f8faff;
+  border: 1px solid #d9d9e6;
+  border-radius: 10px;
+  animation: slideDown 0.24s ease;
+}
+
+.conditional.visible {
+  display: block;
+}
+
+.form-group {
+  margin-bottom: 10px;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  :root {
+    --step-size: 28px;
+  }
+
+  .form-wizard {
+    padding: 24px;
+    width: min(560px, 94%);
+  }
+
+  .date-inputs {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 6px;
+  }
+
+  .checkbox-group {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .progress-container ol {
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --step-size: 24px;
+  }
+
+  body {
+    padding: 12px;
+    align-items: start;
+  }
+
+  .form-wizard {
+    padding: 18px;
+    width: 100%;
+    border-radius: 6px;
+  }
+
+  h1 {
+    font-size: 20px;
+    margin-bottom: 12px;
+  }
+
+  input,
+  select {
+    font-size: 15px;
+    padding: 8px 12px;
+  }
+
+  .date-inputs {
+    grid-template-columns: 1fr;
+  }
+
+  .radio-group,
+  .checkbox-group {
+    grid-template-columns: 1fr;
+  }
+
+  .radio-option,
+  .checkbox-option {
+    padding: 10px;
+    gap: 8px;
+  }
+
+  .progress-container ol {
+    gap: 6px;
+    font-size: 13px;
+  }
+
+  .controls {
+    flex-direction: column-reverse;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .controls button {
+    width: 100%;
+    padding: 12px;
+  }
+}
+
+@media (max-width: 360px) {
+  input,
+  select {
+    font-size: 14px;
+  }
+
+  .radio-option input,
+  .checkbox-option input {
+    width: 16px;
+    height: 16px;
+  }
 }

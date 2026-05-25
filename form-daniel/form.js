@@ -11,11 +11,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let currentStep = 0;
 
+  const updateStepHeight = () => {
+    stepsContainer.style.height = steps[currentStep].offsetHeight + "px";
+  };
+
   const updateProgress = () => {
     let width = currentStep / (stepIndicators.length - 1);
     progress.style.transform = `scaleX(${width})`;
 
-    stepsContainer.style.height = steps[currentStep].offsetHeight + "px";
+    updateStepHeight();
 
     stepIndicators.forEach((indicator, index) => {
       indicator.classList.toggle("current", currentStep === index);
@@ -28,6 +32,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     updateButtons();
+    syncPcdLayout();
   };
 
   const updateButtons = () => {
@@ -35,6 +40,10 @@ document.addEventListener("DOMContentLoaded", () => {
     nextButton.hidden = currentStep >= stepIndicators.length - 1;
     submitButton.hidden = !nextButton.hidden;
   };
+
+  window.addEventListener("resize", () => {
+    requestAnimationFrame(updateStepHeight);
+  });
 
   prevButton.addEventListener("click", (e) => {
     e.preventDefault();
@@ -57,6 +66,30 @@ document.addEventListener("DOMContentLoaded", () => {
   updateProgress();
 });
 
+function syncPcdLayout() {
+  const formWizard = document.querySelector(".form-wizard");
+  const pcdStep = document.getElementById("pcdBox")?.closest(".step");
+  const pcdYes = document.querySelector('input[name="pcd"][value="sim"]');
+
+  if (!formWizard || !pcdStep || !pcdYes) {
+    return;
+  }
+
+  formWizard.classList.toggle(
+    "pcd-compact",
+    pcdStep.classList.contains("current") && pcdYes.checked
+  );
+}
+
+function refreshWizardHeight() {
+  const currentStep = document.querySelector(".step.current");
+  const stepsContainer = document.querySelector(".steps-container");
+
+  if (currentStep && stepsContainer) {
+    stepsContainer.style.height = currentStep.offsetHeight + "px";
+  }
+}
+
 const daySelect = document.getElementById("day");
 for (let i = 1; i <= 31; i++) {
   const option = document.createElement("option");
@@ -72,4 +105,62 @@ for (let year = 2026; year >= 1900; year--) {
   option.value = String(year);
   option.textContent = String(year);
   yearSelect.appendChild(option);
+}
+
+document.getElementById("workStatus").addEventListener("change", function (e) {
+  const val = e.target.value;
+  const contribBox = document.getElementById("contribuicaoBox");
+  const desempregoBox = document.getElementById("desempregoBox");
+
+  contribBox.classList.remove("visible");
+  desempregoBox.classList.remove("visible");
+
+  if (["formal", "mei"].includes(val)) {
+    contribBox.classList.add("visible");
+  } else if (val === "desempregado") {
+    desempregoBox.classList.add("visible");
+  }
+
+  refreshWizardHeight();
+});
+
+function toggleDependentes(show) {
+  const box = document.getElementById("dependentesBox");
+  if (show) {
+    box.classList.add("visible");
+    document.getElementById("qtdDependentes").required = true;
+  } else {
+    box.classList.remove("visible");
+    document.getElementById("qtdDependentes").required = false;
+    document.getElementById("qtdDependentes").value = "";
+    document.getElementById("idadesDependentes").value = "";
+  }
+
+  refreshWizardHeight();
+}
+
+// Lógica condicional: PCD
+function togglePCD(show) {
+  const box = document.getElementById("pcdBox");
+
+  if (show) {
+    box.classList.add("visible");
+    document.getElementById("tipoDeficiencia").required = true;
+  } else {
+    box.classList.remove("visible");
+    document.getElementById("tipoDeficiencia").required = false;
+    document.getElementById("tipoDeficiencia").value = "";
+  }
+
+  syncPcdLayout();
+  refreshWizardHeight();
+}
+
+// Lógica condicional: Doenças (desmarcar "nenhuma" se marcar outras)
+function toggleOutrasDoencas(checkbox) {
+  if (checkbox.checked) {
+    document
+      .querySelectorAll('input[name="doencas"]:not([value="nenhuma"])')
+      .forEach((cb) => (cb.checked = false));
+  }
 }
