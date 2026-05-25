@@ -77,7 +77,7 @@ function syncPcdLayout() {
 
   formWizard.classList.toggle(
     "pcd-compact",
-    pcdStep.classList.contains("current") && pcdYes.checked
+    pcdStep.classList.contains("current") && pcdYes.checked,
   );
 }
 
