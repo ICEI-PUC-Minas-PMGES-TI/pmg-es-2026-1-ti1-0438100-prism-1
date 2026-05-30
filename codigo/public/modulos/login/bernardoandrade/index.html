@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guia-Benefício</title>
-
     <link rel="stylesheet" href="style.css">
 </head>
 
@@ -29,113 +28,76 @@
         </div>
 
         <nav>
-            <a class="botao-azul" href="index.html">
-                Início
-            </a>
-
-            <a class="botao-branco" href="">
-                Recomendador
-            </a>
+            <a class="botao-azul" href="index.html">Início</a>
+            <a class="botao-branco" href="">Recomendador</a>
         </nav>
 
     </header>
 
     <main>
 
-        <section class="intro">
+        <div class="intro">
 
-            <h1>
-                Catálogo de Benefícios
-            </h1>
+            <h1>Catálogo de Benefícios</h1>
 
             <p>
                 Veja o catálogo de benefícios disponíveis e clique para mais detalhes.
             </p>
 
-        </section>
+        </div>
 
-        <section class="filtros">
+        <div class="filtros">
 
             <input
                 type="text"
                 id="pesquisa"
-                placeholder="Pesquisar benefício"
-            >
+                placeholder="Pesquisar benefício">
 
             <select id="filtro-categoria">
-
-                <option value="">
-                    Todas as categorias
-                </option>
-
-                <option value="Alimentação">
-                    Alimentação
-                </option>
-
-                <option value="Energia">
-                    Energia
-                </option>
-
-                <option value="Previdência">
-                    Previdência
-                </option>
-
-                <option value="Habitação">
-                    Habitação
-                </option>
-
-                <option value="Saúde">
-                    Saúde
-                </option>
-
-                <option value="Educação">
-                    Educação
-                </option>
-
-                <option value="Transporte">
-                    Transporte
-                </option>
-
+                <option value="">Todas as categorias</option>
+                <option value="Alimentação">Alimentação</option>
+                <option value="Energia">Energia</option>
+                <option value="Previdência">Previdência</option>
+                <option value="Habitação">Habitação</option>
+                <option value="Saúde">Saúde</option>
+                <option value="Educação">Educação</option>
+                <option value="Transporte">Transporte</option>
             </select>
 
             <select id="ordenacao">
-
-                <option value="">
-                    Ordenar
-                </option>
-
-                <option value="maior">
-                    Maior valor
-                </option>
-
-                <option value="menor">
-                    Menor valor
-                </option>
-
+                <option value="">Ordenar</option>
+                <option value="maior">Maior valor</option>
+                <option value="menor">Menor valor</option>
             </select>
 
             <button
                 id="limpar-filtros"
-                class="botao-azul"
-            >
+                class="botao-azul">
                 Limpar
             </button>
 
-        </section>
+        </div>
 
-        <section class="info-beneficios">
+        <div class="info-beneficios">
 
-            <p id="contador-beneficios">
+            <p id="contador-beneficios"></p>
+
+            <p id="contador-favoritos">
+                Favoritos: 0
             </p>
 
-        </section>
+            <button
+                id="mostrar-favoritos"
+                class="botao-branco">
+                Mostrar Favoritos
+            </button>
 
-        <section
+        </div>
+
+        <div
             class="beneficios"
-            id="beneficios"
-        >
-
-        </section>
+            id="beneficios">
+        </div>
 
     </main>
 

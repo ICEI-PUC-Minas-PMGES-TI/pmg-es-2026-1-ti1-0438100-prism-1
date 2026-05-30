@@ -317,3 +317,24 @@ button {
 #limpar-filtros {
     border: none;
 }
+#contador-favoritos {
+    font-weight: 600;
+}
+
+.favoritar {
+
+    padding: 0.8rem;
+
+    border-radius: 20px;
+
+    background-color: #f2f0ec;
+
+    font-family: "DM Sans";
+
+    transition: 0.2s;
+}
+
+.favoritar:hover {
+
+    background-color: #ffeecc;
+}

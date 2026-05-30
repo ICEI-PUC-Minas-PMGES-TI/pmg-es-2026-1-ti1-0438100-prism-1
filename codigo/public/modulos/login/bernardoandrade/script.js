@@ -16,7 +16,6 @@ const beneficios = [
         categoria: "Alimentação",
         valor: 142
     },
-
     {
         id: 2,
         nome: "Auxílio Gás",
@@ -25,7 +24,6 @@ const beneficios = [
         categoria: "Energia",
         valor: 102
     },
-
     {
         id: 3,
         nome: "INSS",
@@ -34,7 +32,6 @@ const beneficios = [
         categoria: "Previdência",
         valor: 0
     },
-
     {
         id: 4,
         nome: "Minha Casa Minha Vida",
@@ -43,7 +40,6 @@ const beneficios = [
         categoria: "Habitação",
         valor: 500
     },
-
     {
         id: 5,
         nome: "Tarifa Social de Energia",
@@ -52,7 +48,6 @@ const beneficios = [
         categoria: "Energia",
         valor: 65
     },
-
     {
         id: 6,
         nome: "Auxílio Brasil Educação",
@@ -61,7 +56,6 @@ const beneficios = [
         categoria: "Educação",
         valor: 200
     },
-
     {
         id: 7,
         nome: "Passe Livre Estudantil",
@@ -70,7 +64,6 @@ const beneficios = [
         categoria: "Transporte",
         valor: 150
     },
-
     {
         id: 8,
         nome: "Farmácia Popular",
@@ -87,13 +80,22 @@ const filtroCategoria = document.getElementById('filtro-categoria');
 const ordenacao = document.getElementById('ordenacao');
 const contador = document.getElementById('contador-beneficios');
 const limparFiltros = document.getElementById('limpar-filtros');
+const contadorFavoritos = document.getElementById('contador-favoritos');
+const mostrarFavoritosBtn = document.getElementById('mostrar-favoritos');
+
+let favoritos = JSON.parse(localStorage.getItem('favoritos')) || [];
+let exibindoFavoritos = false;
 
 function atualizarContador(quantidade) {
     contador.textContent = `${quantidade} benefício(s) encontrado(s)`;
 }
 
-function criarCard(beneficio) {
+function atualizarFavoritos() {
+    localStorage.setItem('favoritos', JSON.stringify(favoritos));
+    contadorFavoritos.textContent = `Favoritos: ${favoritos.length}`;
+}
 
+function criarCard(beneficio) {
     const card = document.createElement('div');
 
     card.classList.add('card-beneficio');
@@ -116,10 +118,29 @@ function criarCard(beneficio) {
             </span>
         </div>
 
+        <button class="favoritar">
+            ${favoritos.includes(beneficio.id)
+                ? '★ Favoritado'
+                : '☆ Favoritar'}
+        </button>
+
         <button class="botao-azul botao-detalhes">
             Mais Detalhes
         </button>
     `;
+
+    const botaoFavorito = card.querySelector('.favoritar');
+
+    botaoFavorito.addEventListener('click', () => {
+        if (favoritos.includes(beneficio.id)) {
+            favoritos = favoritos.filter(id => id !== beneficio.id);
+        } else {
+            favoritos.push(beneficio.id);
+        }
+
+        atualizarFavoritos();
+        filtrarBeneficios();
+    });
 
     const botaoDetalhes = card.querySelector('.botao-detalhes');
 
@@ -131,32 +152,26 @@ function criarCard(beneficio) {
 }
 
 function mostrarBeneficios(lista) {
-
     container.innerHTML = '';
 
     atualizarContador(lista.length);
 
     if (lista.length === 0) {
-
         container.innerHTML = `
             <p class="sem-resultados">
                 Nenhum benefício encontrado.
             </p>
         `;
-
         return;
     }
 
     lista.forEach(beneficio => {
-
         const card = criarCard(beneficio);
-
         container.appendChild(card);
     });
 }
 
 function filtrarBeneficios() {
-
     let filtrados = [...beneficios];
 
     const textoPesquisa = pesquisa.value.toLowerCase();
@@ -168,9 +183,8 @@ function filtrarBeneficios() {
     const categoriaSelecionada = filtroCategoria.value;
 
     if (categoriaSelecionada !== '') {
-
-        filtrados = filtrados.filter(beneficio =>
-            beneficio.categoria === categoriaSelecionada
+        filtrados = filtrados.filter(
+            beneficio => beneficio.categoria === categoriaSelecionada
         );
     }
 
@@ -182,11 +196,16 @@ function filtrarBeneficios() {
         filtrados.sort((a, b) => a.valor - b.valor);
     }
 
+    if (exibindoFavoritos) {
+        filtrados = filtrados.filter(
+            beneficio => favoritos.includes(beneficio.id)
+        );
+    }
+
     mostrarBeneficios(filtrados);
 }
 
 function resetarFiltros() {
-
     pesquisa.value = '';
     filtroCategoria.value = '';
     ordenacao.value = '';
@@ -195,13 +214,23 @@ function resetarFiltros() {
 }
 
 pesquisa.addEventListener('input', filtrarBeneficios);
-
 filtroCategoria.addEventListener('change', filtrarBeneficios);
-
 ordenacao.addEventListener('change', filtrarBeneficios);
 
 limparFiltros.addEventListener('click', resetarFiltros);
 
+mostrarFavoritosBtn.addEventListener('click', () => {
+    exibindoFavoritos = !exibindoFavoritos;
+
+    mostrarFavoritosBtn.textContent =
+        exibindoFavoritos
+            ? 'Mostrar Todos'
+            : 'Mostrar Favoritos';
+
+    filtrarBeneficios();
+});
+
 window.addEventListener('load', () => {
+    atualizarFavoritos();
     mostrarBeneficios(beneficios);
 });
