@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll(".progress-container li"),
   );
   const prevButton = document.querySelector(".prev-btn");
+  const resetButton = document.querySelector(".reset-btn");
   const nextButton = document.querySelector(".next-btn");
   const submitButton = document.querySelector(".submit-btn");
   const reviewContent = document.getElementById("reviewContent");
@@ -435,11 +436,12 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const updateButtons = () => {
     prevButton.hidden = currentStep === 0;
+    resetButton.hidden = currentStep < lastStepIndex;
     nextButton.hidden = currentStep >= lastStepIndex;
     submitButton.hidden = !nextButton.hidden;
   };
 
-  const updateProgress = () => {
+  const updateProgress = (persist = true) => {
     const width = lastStepIndex === 0 ? 1 : currentStep / lastStepIndex;
 
     progress.style.transform = `scaleX(${width})`;
@@ -462,7 +464,32 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     updateStepHeight();
-    saveDraft();
+
+    if (persist) {
+      saveDraft();
+    }
+  };
+
+  const resetForm = () => {
+    form.reset();
+    currentStep = 0;
+
+    try {
+      localStorage.removeItem(draftStorageKey);
+    } catch (error) {
+      console.warn("Não foi possível limpar o rascunho do formulário.", error);
+    }
+
+    toggleDependentes(false);
+    togglePCD(false);
+    document.getElementById("contribuicaoBox").classList.remove("visible");
+    document.getElementById("desempregoBox").classList.remove("visible");
+    document.getElementById("reviewContent").innerHTML = "";
+    document
+      .getElementById("workStatus")
+      .dispatchEvent(new Event("change", { bubbles: true }));
+
+    updateProgress(false);
   };
 
   window.addEventListener("resize", () => {
@@ -485,6 +512,20 @@ document.addEventListener("DOMContentLoaded", () => {
       currentStep++;
       updateProgress();
     }
+  });
+
+  resetButton.addEventListener("click", (e) => {
+    e.preventDefault();
+
+    const shouldReset = window.confirm(
+      "Tem certeza que deseja apagar todas as informações e recomeçar?",
+    );
+
+    if (!shouldReset) {
+      return;
+    }
+
+    resetForm();
   });
 
   form.addEventListener("input", () => {
@@ -531,23 +572,15 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   form.addEventListener("submit", (event) => {
-    event.preventDefault();
-
     if (currentStep < lastStepIndex) {
+      event.preventDefault();
       currentStep = lastStepIndex;
       updateProgress();
       return;
     }
 
     generateReview();
-    try {
-      localStorage.removeItem(draftStorageKey);
-    } catch (error) {
-      console.warn("Não foi possível limpar o rascunho do formulário.", error);
-    }
-    alert(
-      "Revisão concluída. Conecte esta etapa ao envio final quando tiver o backend pronto.",
-    );
+    saveDraft();
   });
 
   restoreDraft();

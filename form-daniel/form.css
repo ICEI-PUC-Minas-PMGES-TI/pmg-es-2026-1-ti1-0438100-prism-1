@@ -197,6 +197,15 @@ button[type="submit"]:active {
   background-color: #444;
 }
 
+.reset-btn {
+  background-color: #8f3a4d;
+}
+
+.reset-btn:hover,
+.reset-btn:active {
+  background-color: #742d3d;
+}
+
 .form-wizard {
   background-color: #fff;
   padding: 32px;
