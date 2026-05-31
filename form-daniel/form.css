@@ -20,6 +20,7 @@ body {
   height: 100vh;
   display: grid;
   place-items: center;
+  padding: 10px 10px;
   background-color: lavender;
   color: #333;
 }
@@ -324,6 +325,62 @@ button[type="submit"]:active {
 
 .step.current {
   opacity: 1;
+}
+
+.review-step {
+  gap: 12px;
+}
+
+.review-intro {
+  margin-bottom: 8px;
+}
+
+.review-summary {
+  display: grid;
+  gap: 16px;
+}
+
+.review-section {
+  padding: 16px;
+  border: 1px solid #d9d9e6;
+  border-radius: 14px;
+  background: linear-gradient(180deg, #fbfcff 0%, #f5f7ff 100%);
+}
+
+.review-section h4 {
+  margin-bottom: 12px;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--main-color);
+}
+
+.review-list {
+  display: grid;
+  gap: 10px;
+}
+
+.review-item {
+  display: grid;
+  gap: 4px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  background: #fff;
+  border: 1px solid #e6eaf5;
+}
+
+.review-label {
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: #64708a;
+}
+
+.review-value {
+  font-size: 15px;
+  line-height: 1.4;
+  color: #1f2430;
+  word-break: break-word;
 }
 
 .controls {
