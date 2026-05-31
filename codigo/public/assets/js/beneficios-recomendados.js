@@ -1,4 +1,23 @@
-let beneficiosRecomendados = []
+// ==========================================
+// 1. VARIÁVEIS GLOBAIS E DE ESTADO
+// ==========================================
+let beneficiosRecomendados = [];
+let favoritos = JSON.parse(localStorage.getItem('favoritos')) || [];
+let exibindoFavoritos = false;
+
+// ==========================================
+// 2. SELEÇÃO DE ELEMENTOS DO DOM
+// ==========================================
+const filtroCategoria = document.getElementById('filtro-categoria');
+const ordenacao = document.getElementById('ordenacao');
+const contador = document.getElementById('contador-beneficios');
+const limparFiltros = document.getElementById('limpar-filtros');
+const contadorFavoritos = document.getElementById('contador-favoritos');
+const mostrarFavoritosBtn = document.getElementById('mostrar-favoritos');
+
+// ==========================================
+// 3. FUNÇÕES DE DADOS E API
+// ==========================================
 /*Recebe uma lista com os filtros de categoria e publicoAlvo*/
 /*OBS: Novos Filtros serão adicionados após a escolha das informações coletadas do usuário.*/
 async function carregarBeneficios(filtro = {}) {
@@ -24,6 +43,14 @@ async function carregarBeneficios(filtro = {}) {
     }
 }
 
+function atualizarFavoritos() {
+    localStorage.setItem('favoritos', JSON.stringify(favoritos));
+    contadorFavoritos.textContent = `Favoritos: ${favoritos.length}`;
+}
+
+// ==========================================
+// 4. FUNÇÕES DE RENDERIZAÇÃO E INTERFACE
+// ==========================================
 function renderizarCards(beneficios) {
     const container = document.querySelector('.beneficios');
     container.innerHTML = '';
@@ -70,26 +97,9 @@ function renderizarCards(beneficios) {
     });
 }
 
-async function inicializar() {
-    beneficiosRecomendados = await carregarBeneficios();
-    renderizarCards(beneficiosRecomendados);
-    atualizarFavoritos();
-}
-
-
-const filtroCategoria = document.getElementById('filtro-categoria');
-const ordenacao = document.getElementById('ordenacao');
-const contador = document.getElementById('contador-beneficios');
-const limparFiltros = document.getElementById('limpar-filtros');
-const contadorFavoritos = document.getElementById('contador-favoritos');
-const mostrarFavoritosBtn = document.getElementById('mostrar-favoritos');
-let favoritos = JSON.parse(localStorage.getItem('favoritos')) || [];
-let exibindoFavoritos = false;
-function atualizarFavoritos() {
-    localStorage.setItem('favoritos', JSON.stringify(favoritos));
-    contadorFavoritos.textContent = `Favoritos: ${favoritos.length}`;
-}
-
+// ==========================================
+// 5. FUNÇÕES DE LÓGICA E REGRAS DE NEGÓCIO
+// ==========================================
 function filtrarBeneficios() {
     let filtrados = beneficiosRecomendados;
 
@@ -132,10 +142,18 @@ function resetarFiltros() {
     renderizarCards(beneficiosRecomendados);
 }
 
+// ==========================================
+// 6. INICIALIZAÇÃO E EVENT LISTENERS
+// ==========================================
+async function inicializar() {
+    beneficiosRecomendados = await carregarBeneficios();
+    renderizarCards(beneficiosRecomendados);
+    atualizarFavoritos();
+}
+
 pesquisa.addEventListener('input', filtrarBeneficios);
 filtroCategoria.addEventListener('change', filtrarBeneficios);
 ordenacao.addEventListener('change', filtrarBeneficios);
-
 limparFiltros.addEventListener('click', resetarFiltros);
 
 mostrarFavoritosBtn.addEventListener('click', () => {
