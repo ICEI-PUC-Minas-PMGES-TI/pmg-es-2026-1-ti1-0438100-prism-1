@@ -134,21 +134,23 @@ header {
         height: 3.5rem;
     }
 
-    .botoesNavegacao{
+    .botoesNavegacao {
         display: flex;
         flex-direction: column;
     }
+
     .navbar-brand {
         font-size: 1.6rem;
     }
 
-    .headerMobile .botao-branco{
+    .headerMobile .botao-branco {
         font-size: 1.3rem !important;
     }
-    .headerMobile .botao-azul{
+
+    .headerMobile .botao-azul {
         font-size: 1.3rem !important;
     }
-    
+
 }
 
 
@@ -168,7 +170,7 @@ header {
     font-size: 3.5rem;
 }
 
-.intro>p {
+.intro p {
     font-weight: 400;
     font-size: 1.5rem;
 }
@@ -257,6 +259,17 @@ header {
         font-weight: 400;
         font-size: 1.25rem;
     }
+
+    .alterarPerfil {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .alterarPerfil>p {
+        margin: 0;
+    }
 }
 
 /* Celulares */
@@ -275,4 +288,77 @@ header {
         width: 100%;
         padding: 5%;
     }
+
+    .info-beneficios {
+        justify-content: center;
+        margin: 0.5rem 0 3rem 0;
+    }
+
+    .info-beneficios button {
+        font-size: 1.2rem;
+    }
+
+    #contador-favoritos {
+        font-size: 1.2rem !important;
+    }
+
+    .filtros {
+        margin-top: 3rem !important;
+    }
+
+}
+
+.filtros {
+    display: flex;
+    gap: 1rem;
+    margin: 2% 1%;
+    flex-wrap: wrap;
+}
+
+.filtros input,
+.filtros select {
+    padding: 1rem;
+    border-radius: 20px;
+    font-family: "DM Sans";
+    font-size: 1rem;
+    flex: 1;
+    min-width: 220px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+#contador-favoritos {
+    font-weight: 600;
+    font-size: 1.4rem;
+    margin: 0;
+    text-align: center;
+    white-space: nowrap;
+    color: #333;
+    padding: 0.5rem 1rem 0.5rem 1rem;
+    background-color: rgba(255, 238, 204, 1);
+    border-radius: 40px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.info-beneficios {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.favoritar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.favoritar>button {
+    border-radius: 40px;
+    margin: 0 !important;
+    width: 40%;
+}
+
+.alterarPerfil {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
 }

@@ -1,3 +1,4 @@
+let beneficiosRecomendados = []
 /*Recebe uma lista com os filtros de categoria e publicoAlvo*/
 /*OBS: Novos Filtros serão adicionados após a escolha das informações coletadas do usuário.*/
 async function carregarBeneficios(filtro = {}) {
@@ -17,7 +18,7 @@ async function carregarBeneficios(filtro = {}) {
             );
         }
 
-        renderizarCards(beneficiosFiltrados);
+        return beneficiosFiltrados;
     } catch (erro) {
         console.error("Erro ao carregar os benefícios do servidor:", erro);
     }
@@ -44,10 +45,110 @@ function renderizarCards(beneficios) {
             <span class="categoria">${beneficio.categoria}</span>
             ${beneficio.valorBase ? `<p class="valor">Valor Base: R$ ${beneficio.valorBase.toFixed(2)}</p>` : ''}
             </div>
-            <a href="${linkDestino}" class="botao-azul">Acessar Benefício</a>
+            <div class=favoritar>
+            <button>
+            ${favoritos.includes(beneficio.id)
+                ? '<img width="20" height="20" src="https://img.icons8.com/ios-filled/50/like--v1.png" alt="like--v1"/> Favoritado'
+                : '<img width="20" height="20" src="https://img.icons8.com/ios/50/like--v1.png" alt="like"/> Favoritar'}
+        </button>
+        </div>
+            <a href="${linkDestino}" class="botao-azul">Mais Detalhes</a>
         `;
         container.appendChild(card);
+        const botaoFavorito = card.querySelector('.favoritar');
+
+        botaoFavorito.addEventListener('click', () => {
+            if (favoritos.includes(beneficio.id)) {
+                favoritos = favoritos.filter(id => id !== beneficio.id);
+            } else {
+                favoritos.push(beneficio.id);
+            }
+
+            atualizarFavoritos();
+            filtrarBeneficios();
+        });
     });
 }
 
-carregarBeneficios();
+async function inicializar() {
+    beneficiosRecomendados = await carregarBeneficios();
+    renderizarCards(beneficiosRecomendados);
+    atualizarFavoritos();
+}
+
+
+const filtroCategoria = document.getElementById('filtro-categoria');
+const ordenacao = document.getElementById('ordenacao');
+const contador = document.getElementById('contador-beneficios');
+const limparFiltros = document.getElementById('limpar-filtros');
+const contadorFavoritos = document.getElementById('contador-favoritos');
+const mostrarFavoritosBtn = document.getElementById('mostrar-favoritos');
+let favoritos = JSON.parse(localStorage.getItem('favoritos')) || [];
+let exibindoFavoritos = false;
+function atualizarFavoritos() {
+    localStorage.setItem('favoritos', JSON.stringify(favoritos));
+    contadorFavoritos.textContent = `Favoritos: ${favoritos.length}`;
+}
+
+function filtrarBeneficios() {
+    let filtrados = beneficiosRecomendados;
+
+    const textoPesquisa = pesquisa.value.toLowerCase();
+
+    filtrados = filtrados.filter(beneficio =>
+        beneficio.nome.toLowerCase().includes(textoPesquisa)
+    );
+
+    const categoriaSelecionada = filtroCategoria.value;
+
+    if (categoriaSelecionada !== '') {
+        filtrados = filtrados.filter(
+            beneficio => beneficio.categoria === categoriaSelecionada
+        );
+    }
+
+    if (ordenacao.value === 'maior') {
+        filtrados.sort((a, b) => b.valorBase - a.valorBase);
+    }
+
+    if (ordenacao.value === 'menor') {
+        filtrados.sort((a, b) => a.valorBase - b.valorBase);
+    }
+
+    if (exibindoFavoritos) {
+        filtrados = filtrados.filter(
+            beneficio => favoritos.includes(beneficio.id)
+        );
+    }
+
+    renderizarCards(filtrados);
+}
+
+function resetarFiltros() {
+    pesquisa.value = '';
+    filtroCategoria.value = '';
+    ordenacao.value = '';
+
+    renderizarCards(beneficiosRecomendados);
+}
+
+pesquisa.addEventListener('input', filtrarBeneficios);
+filtroCategoria.addEventListener('change', filtrarBeneficios);
+ordenacao.addEventListener('change', filtrarBeneficios);
+
+limparFiltros.addEventListener('click', resetarFiltros);
+
+mostrarFavoritosBtn.addEventListener('click', () => {
+    exibindoFavoritos = !exibindoFavoritos;
+
+    mostrarFavoritosBtn.textContent =
+        exibindoFavoritos
+            ? 'Mostrar Todos'
+            : 'Mostrar Favoritos';
+
+    filtrarBeneficios();
+});
+
+window.addEventListener('load', () => {
+    inicializar();
+});
