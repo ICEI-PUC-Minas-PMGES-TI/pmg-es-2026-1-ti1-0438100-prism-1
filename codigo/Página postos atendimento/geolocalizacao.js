@@ -24,21 +24,27 @@ function inicializarDadosEMapa() {
   const maxAtt = Math.max(...postos.map(p => p.atendimentos));
   const minAtt = Math.min(...postos.map(p => p.atendimentos));
   
-  const heatPoints = postos.map(p => [p.lat, p.lon, p.atendimentos]);
-  L.heatLayer(heatPoints, {
-    radius: 45,
-    blur: 30,
-    maxZoom: 14,
-    max: maxAtt,
-    min: minAtt,
-    gradient: {
-      0.2: '#3388ff',
-      0.45: '#44dd66',
-      0.65: '#ffdd00',
-      0.82: '#ff8800',
-      1.0: '#ff2200'
-    }
-  }).addTo(map);
+  const heatLayer = L.layerGroup();
+  postos.forEach(p => {
+    const norm = (p.atendimentos - minAtt) / (maxAtt - minAtt);
+    const radius = 600 + norm * 1400;
+    let heatColor = '#ff2200';
+    let opacityBase = 0.35;
+    if (norm < 0.25) { heatColor = '#00aaff'; opacityBase = 0.18; }
+    else if (norm < 0.45) { heatColor = '#44dd66'; opacityBase = 0.22; }
+    else if (norm < 0.65) { heatColor = '#ffdd00'; opacityBase = 0.26; }
+    else if (norm < 0.82) { heatColor = '#ff8800'; opacityBase = 0.30; }
+    for (let i = 3; i >= 1; i--) {
+      L.circle([p.lat, p.lon], {
+        radius: radius * i * 0.55,
+        color: 'transparent',
+        fillColor: heatColor,
+        fillOpacity: opacityBase / i,
+        interactive: false
+      }).addTo(heatLayer);
+   }
+  });
+  heatLayer.addTo(map);
   postos.forEach((p, i) => {
     let col = '#1a3fa4';
     if (p.atendimentos >= 500) col = '#d32f2f';
@@ -68,7 +74,6 @@ function inicializarDadosEMapa() {
   const topPosto = postos.reduce((a, b) => a.atendimentos > b.atendimentos ? a : b);
   document.getElementById('topPosto').textContent = topPosto.nome.replace('CRAS ', '');
 }
-
 const listaContainer = document.getElementById('postoList');
 function renderizarListaLateral(filtro = '') {
   listaContainer.innerHTML = '';
@@ -153,7 +158,6 @@ function encontrarMaisProximo() {
     let postoMaisProximo = null;
     let menorDistanciaRua = Infinity;
     let melhorIdx = 0;
-
     for (const candidato of topCandidatos) {
       try {
         const urlOSRM = `https://router.project-osrm.org/route/v1/driving/${minhaLon},${minhaLat};${candidato.lon},${candidato.lat}?overview=false`;
@@ -162,7 +166,6 @@ function encontrarMaisProximo() {
         if (rData.code === 'Ok' && rData.routes.length > 0) {
           const distanciaMetros = rData.routes[0].distance; 
           const distanciaKm = distanciaMetros / 1000;
-
           if (distanciaKm < menorDistanciaRua) {
             menorDistanciaRua = distanciaKm;
             postoMaisProximo = candidato;
