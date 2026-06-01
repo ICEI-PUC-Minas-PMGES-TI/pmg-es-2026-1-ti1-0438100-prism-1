@@ -28,9 +28,9 @@ body {
 
 main {
     width: 100%;
-    padding-top: 9.47vh;
     padding-left: 2%;
     padding-right: 2%;
+    padding-bottom: 4rem;
 }
 
 .botao-azul {
@@ -66,7 +66,6 @@ header {
     justify-content: space-between;
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
     padding: 0% 3% 0% 1%;
-    position: fixed;
 }
 
 .botao-menu {
@@ -95,15 +94,70 @@ header>nav {
     text-align: center;
     margin-top: 3rem;
     margin-bottom: 2rem;
+    text-transform: uppercase;
+    letter-spacing: .04em;
+    font-weight: 700;
+    font-family: montserrat;
 }
 
 .titulo-sessao h2 {
     font-size: 3rem;
 }
+ 
+/* Label de detalhe (micro-texto acima do valor) */
+.label-detalhe {
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+    color: #6c757d;
+    display: block;
+}
 
-#img-assistente-social {
+.assistente-info {
+    color: black;
+    font-family: jomhuria;
+    font-size: 1rem;
+    font-weight: 900;
+}
+ 
+/* Foto do membro — círculo fixo */
+.foto-membro {
+    width: 72px;
+    height: 72px;
+    object-fit: cover;
+    border: 3px solid #d9e4ff;
+}
+ 
+/* Badges de categoria */
+.badge-responsavel { background-color: #d9e4ff; }
+.badge-dependente  { background-color: #d4edda; }
+ 
+/* Hover nos cards */
+.card-hover { transition: box-shadow .2s, transform .2s; }
+.card-hover:hover {
+    box-shadow: 0 6px 20px rgba(0,60,163,.12);
+    transform: translateY(-2px);
+}
+ 
+/* Bloco da foto da assistente (altura fixa, cobre a coluna) */
+.foto-assistente-wrapper {
+    min-height: 220px;
+    background: linear-gradient(135deg, #d9e4ff, #d4edda);
+    overflow: hidden;
+}
+ 
+/* Ícone de benefício */
+.icone-beneficio {
+    width: 52px;
+    height: 52px;
+    border-radius: 12px;
+    background: #d9e4ff;
     display: flex;
+    align-items: center;
     justify-content: center;
+    font-size: 1.6rem;
+    flex-shrink: 0;
 }
 
 /* Responsividade para celulares do header */
