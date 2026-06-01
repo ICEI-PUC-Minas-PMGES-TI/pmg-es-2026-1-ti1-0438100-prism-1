@@ -1,4 +1,5 @@
-[
+{
+"postos":[
   {
     "nome": "CRAS Independência",
     "endereco": "R. Maria Antonieta Ferreira, 151, Independência, BH",
@@ -296,3 +297,4 @@
     "atendimentos": 410
   }
 ]
+}

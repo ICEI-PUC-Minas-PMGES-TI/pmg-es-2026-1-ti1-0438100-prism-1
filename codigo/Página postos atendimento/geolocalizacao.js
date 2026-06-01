@@ -7,7 +7,9 @@ L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
   attribution: '© <a href="https://www.openstreetmap.org">OpenStreetMap</a> contributors © <a href="https://carto.com">CARTO</a>',
   subdomains: 'abcd', maxZoom: 19
 }).addTo(map);
-fetch('postos.json')
+
+
+fetch('http://localhost:3000/postos')
   .then(response => {
     if (!response.ok) throw new Error();
     return response.json();
