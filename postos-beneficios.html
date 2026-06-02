@@ -5,9 +5,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Postos de Benefícios | PRISM</title>
 
-  <!-- Leaflet CSS -->
+  
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.9.4/leaflet.min.css" />
-  <!-- Leaflet MarkerCluster CSS -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.3/MarkerCluster.css" />
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.5.3/MarkerCluster.Default.css" />
   <!-- Fontes Google -->
@@ -50,7 +49,7 @@
       min-height: 100vh;
     }
 
-    /* ── Sidebar ────────────────────── */
+    /* ── Barra Lateral ────────────────────── */
     .sidebar {
       width: 220px;
       min-height: 100vh;
@@ -104,7 +103,7 @@
       border-top: 1px solid rgba(255,255,255,0.08);
     }
 
-    /* ── Main Content ───────────────────────────────────────── */
+    /* ── Conteúdo do Main ───────────────────────────────────────── */
     .main {
       margin-left: 220px;
       flex: 1;
@@ -113,7 +112,7 @@
       min-height: 100vh;
     }
 
-    /* ── Topbar ─────────────────────────────────────────────── */
+    /* ── Barra do topo ─────────────────────────────────────────────── */
     .topbar {
       background: var(--white);
       border-bottom: 1px solid var(--gray-200);
@@ -192,7 +191,7 @@
       font-size: 1rem;
     }
 
-    /* ── Page Content ───────────────────────────────────────── */
+    /* ── Conteúdo da página ───────────────────────────────────────── */
     .content {
       padding: 28px;
       flex: 1;
@@ -226,7 +225,7 @@
       margin-left: 48px;
     }
 
-    /* ── Stats Strip ────────────────────────────────────────── */
+    /* ── Estatísticas ────────────────────────────────────────── */
     .stats-strip {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
@@ -261,7 +260,7 @@
     .stat-value { font-size: 1.6rem; font-weight: 800; line-height: 1; color: var(--gray-800); }
     .stat-label { font-size: 0.78rem; font-weight: 600; color: var(--gray-600); margin-top: 2px; }
 
-    /* ── Layout: Map + Panel ────────────────────────────────── */
+    /* ── Layout: Mapa + Painel ────────────────────────────────── */
     .map-layout {
       display: grid;
       grid-template-columns: 1fr 340px;
@@ -269,7 +268,7 @@
       align-items: start;
     }
 
-    /* ── Map Card ───────────────────────────────────────────── */
+    /* ── Cartão do Mapa ───────────────────────────────────────────── */
     .map-card {
       background: var(--white);
       border-radius: var(--radius);
@@ -347,14 +346,14 @@
       border-radius: 50%;
     }
 
-    /* ── Side Panel ─────────────────────────────────────────── */
+    /* ── Painel Lateral ─────────────────────────────────────────── */
     .side-panel {
       display: flex;
       flex-direction: column;
       gap: 16px;
     }
 
-    /* Search Box */
+    /* Buscar */
     .search-card {
       background: var(--white);
       border-radius: var(--radius);
@@ -395,7 +394,7 @@
       font-size: 0.9rem;
     }
 
-    /* List Card */
+    /* Listagem */
     .list-card {
       background: var(--white);
       border-radius: var(--radius);
@@ -471,7 +470,7 @@
       margin-top: 2px;
     }
 
-    /* ── Leaflet Popup custom ───────────────────────────────── */
+    /* ── Popup customizado ───────────────────────────────── */
     .leaflet-popup-content-wrapper {
       border-radius: 12px !important;
       box-shadow: 0 8px 30px rgba(0,0,0,0.15) !important;
@@ -555,7 +554,7 @@
     }
     .popup-btn-outline:hover { background: #e2e8f0; }
 
-    /* ── Loading overlay ────────────────────────────────────── */
+    /* ── Carregamento ────────────────────────────────────── */
     .map-loading {
       position: absolute;
       inset: 0;
@@ -608,7 +607,7 @@
       to   { opacity: 1; transform: translateX(0); }
     }
 
-    /* ── Responsive ─────────────────────────────────────────── */
+    /* ── Responsividade ─────────────────────────────────────────── */
     @media (max-width: 1100px) {
       .map-layout { grid-template-columns: 1fr; }
       .stats-strip { grid-template-columns: repeat(2, 1fr); }
@@ -625,7 +624,7 @@
 </head>
 <body>
 
-  <!-- ═══════════════ SIDEBAR ═══════════════ -->
+  <!-- ═══════════════ Barra Lateral ═══════════════ -->
   <aside class="sidebar">
     <div class="sidebar-logo">
       <div class="dot"></div>
@@ -647,7 +646,7 @@
   <!-- ═══════════════ MAIN ═══════════════ -->
   <div class="main">
 
-    <!-- Topbar -->
+    <!-- Barra do topo -->
     <header class="topbar">
       <div class="topbar-left">
         <button class="back-btn" onclick="history.back()">← Voltar</button>
@@ -667,10 +666,10 @@
       </div>
     </header>
 
-    <!-- Content -->
+    <!-- Conteúdo -->
     <div class="content">
 
-      <!-- Page Header -->
+      <!-- Header da página -->
       <div class="page-header">
         <div class="page-title">
           <div class="title-icon"></div>
@@ -679,7 +678,7 @@
         <p class="page-subtitle">Mapa interativo de unidades de assistência social e previdência em Belo Horizonte</p>
       </div>
 
-      <!-- Stats Strip -->
+      <!-- Estatísticas -->
       <div class="stats-strip" id="stats-strip">
         <div class="stat-card">
           <div class="stat-icon blue">🏢</div>
@@ -742,10 +741,10 @@
           </div>
         </div>
 
-        <!-- Side Panel -->
+        <!-- Painel Lateral -->
         <div class="side-panel">
 
-          <!-- Search -->
+          <!-- Busca -->
           <div class="search-card">
             <div class="search-title">Buscar posto</div>
             <div class="search-input-wrap">
@@ -754,7 +753,7 @@
             </div>
           </div>
 
-          <!-- List -->
+          <!-- Lista -->
           <div class="list-card">
             <div class="list-header">
               Postos encontrados
@@ -780,8 +779,6 @@
   <script>
   /* ════════════════════════════════════════════════════════════
      POSTOS DE BENEFÍCIOS GOVERNAMENTAIS — BH
-     Dados baseados nas unidades reais da PBH (SMAS / INSS / CAIXA)
-     Coordenadas verificadas via Nominatim / Google Maps
   ════════════════════════════════════════════════════════════ */
 
   const POSTOS_BH = [
@@ -914,11 +911,11 @@
 
   /* ── Estado ─────────────────────────────────────────────── */
   let mapa, clusterGroup;
-  let marcadores = [];     // { posto, marker }
+  let marcadores = [];     
   let filtroAtivo = 'todos';
   let searchTerm = '';
 
-  /* ── Init mapa ──────────────────────────────────────────── */
+  /* ── Iniciar mapa ──────────────────────────────────────────── */
   window.addEventListener('DOMContentLoaded', () => {
     mapa = L.map('mapa-beneficios', {
       center: [-19.9191, -43.9387],
@@ -1084,7 +1081,7 @@
     }
   }
 
-  /* ── Stats ──────────────────────────────────────────────── */
+  /* ── Status ──────────────────────────────────────────────── */
   function atualizarStats() {
     const counts = { CRAS: 0, CREAS: 0, 'Bolsa Família': 0, 'Previdência': 0 };
     POSTOS_BH.forEach(p => { if (counts[p.tipo] !== undefined) counts[p.tipo]++; });
@@ -1094,7 +1091,7 @@
     document.getElementById('stat-prev').textContent = counts['Previdência'];
   }
 
-  /* ── Helpers ────────────────────────────────────────────── */
+  /* ── Ajuda ────────────────────────────────────────────── */
   function abrirMaps(lat, lng, nome) {
     window.open(`https://www.google.com/maps/dir/?api=1&destination=${lat},${lng}&destination_place_id=${encodeURIComponent(nome)}`, '_blank');
   }
