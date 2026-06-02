@@ -20,7 +20,7 @@ fetch('http://localhost:3000/postos')
   })
   .catch(() => {
     document.getElementById('postoList').innerHTML =
-      '<div style="padding:16px;color:#d32f2f;font-size:.85rem;">⚠️ Se deu isso é porque o json não carregou.</div>';
+      '<div style="padding:16px;color:#d32f2f;font-size:.85rem;"> Se deu isso é porque o json não carregou.</div>';
   });
 function inicializarDadosEMapa() {
   const maxAtt = Math.max(...postos.map(p => p.atendimentos));
@@ -151,7 +151,7 @@ function encontrarMaisProximo() {
       radius: 10, color: '#fff', weight: 3,
       fillColor: '#1e7c44', fillOpacity: 1
     }).addTo(map).bindPopup('📍 Você está aqui').openPopup();
-    if (resultContainer) resultContainer.innerHTML = '<div style="padding:4px 0">🔄 Calculando melhor rota pelas ruas…</div>';
+    if (resultContainer) resultContainer.innerHTML = '<div style="padding:4px 0"> Calculando melhor rota pelas ruas…</div>';
     let postosCandidatos = postos.map((p, originalIdx) => {
       return { ...p, originalIdx, distHaversine: calcularDistanciaHaversine(minhaLat, minhaLon, p.lat, p.lon) };
     });
