@@ -11,20 +11,46 @@
 </head>
 
 <body>
-    <header>
-        <section class="logo">
-            <img src="img/logo.jpeg" alt="Logo Guia-Benefício">
-            <h1><span style="color: #003CA3;">Guia-</span><span style="color: #2B7F3A">Benefício</span></h1>
-            <button class="botao-menu">☰</button>
-        </section>
-        <nav class="botoes">
-            <a class="botao-azul" href="index.html">Início</a>
-            <a class="botao-branco" href="">Benefícios</a>
-            <a class="botao-branco" href="">Recomendador</a>
+    <header class="headerMobile">
+        <nav class="navbar navbar-dark bg-dark navbarMobile">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="img/logo.jpeg" alt="Logo" class="d-inline-block align-text-center">
+                    <span style="color: #003CA3;">Guia-</span><span style="color: #2B7F3A">Benefício</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        </nav>
+        <div class="collapse" id="navbarToggleExternalContent" data-bs-theme="dark">
+            <nav class="botoesNavegacao">
+                <a class="botao-azul" href="index.html">Início</a>
+                <a class="botao-branco" href="">Benefícios</a>
+                <a class="botao-branco" href="">Recomendador</a>
+            </nav>
+        </div>
+    </header>
+
+    <header class="headerDesktop">
+        <nav class="navbar navbar-dark navbarDesktop">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="img/logo.jpeg" alt="Logo" class="d-inline-block align-text-center">
+                    <span style="color: #003CA3;">Guia-</span><span style="color: #2B7F3A">Benefício</span>
+                </a>
+                <nav class="botoesNavegacao">
+                    <a class="botao-azul" href="index.html">Início</a>
+                    <a class="botao-branco" href="modulos/login/bernardoandrade/index.html">Benefícios</a>
+                    <a class="botao-branco" href="">Recomendador</a>
+                </nav>
+            </div>
         </nav>
     </header>
 
-    <main>
+    <main id="info-beneficios">
         <section id="titulo">
             <h1 id="titulo-site" class="text-center my-4">DETALHES DO BENEFÍCIO</h1>
         </section>

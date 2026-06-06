@@ -7,8 +7,13 @@
 }
 
 /* Estilos Padrões */
-.botoes a {
-    text-decoration: none;
+body {
+    background-color: #f5f5f5;
+}
+
+main {
+    width: 100%;
+    
 }
 
 .botao-azul,
@@ -19,15 +24,7 @@
     padding: 0.6rem 1.4rem;
     border-radius: 40px;
     transition: transform 0.2s ease;
-}
-
-body {
-    background-color: #f5f5f5;
-}
-
-main {
-    width: 100%;
-    
+    text-decoration: none;
 }
 
 .botao-azul {
@@ -37,6 +34,11 @@ main {
     display: inline-block;
 }
 
+.botao-azul:hover {
+    background-color: #3360ad;
+    transform: scale(1.01);
+}
+
 .botao-branco {
     color: #333;
     box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.25);
@@ -44,48 +46,52 @@ main {
 
 .botao-branco:hover {
     background-color: rgba(255, 238, 204, 1);
-    transform: scale(1.05);
-}
-
-.botao-azul:hover {
-    background-color: #0D43A1;
-    transform: scale(1.05);
+    transform: scale(1.01);
 }
 
 /* Estilização Do Header */
 header {
     font-family: "DM Sans";
     width: 100vw;
-    height: 9.47vh;
     background-color: #f7f7f7;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: space-between;
     box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
     padding: 0% 3% 0% 1%;
-    margin-top: 1rem;
 }
 
-.botao-menu {
-    display: none;
-    font-size: 2rem;
-    background-color: #f7f7f7;
+ .navbarDesktop,
+.container-fluid {
+    width: 100%;
+    display: flex !important;
+    justify-content: space-between !important;
 }
 
-.logo {
-    height: 100%;
+.headerMobile {
+    display: none !important;
+}
+
+.navbar-brand {
+    height: 100% !important;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.navbar-brand>img {
+    height: 4.7rem;
+}
+
+.botoesNavegacao {
     display: flex;
-    align-items: center;
-}
-
-.logo img {
-    max-height: 100%;
-}
-
-header>nav {
-    display: flex;
+    justify-content: center;
     align-items: center;
     gap: 1rem;
+}
+
+.navbar-toggler {
+    background-color: #003CA3;
 }
 
 #titulo {
@@ -97,6 +103,7 @@ header>nav {
 
 #titulo-site {
     font-family: montserrat;
+    letter-spacing: 0.5rem;
     font-weight: 500;
     padding-top: 5rem;
     color: #ffffff;
@@ -137,42 +144,51 @@ header>nav {
     transition: transform 0.2s ease;
 }
 
-/* Responsividade para celulares do header */
+/* Responsividade do header */
+
+/* Tablets (até 1024px) */
+@media (max-width: 1024px) {
+    .headerDesktop {
+        display: none !important;
+    }
+
+    .headerMobile {
+        display: block !important;
+    }
+
+    .navbarMobile {
+        padding: 0 !important;
+        height: 100%;
+        width: 100%;
+        background-color: #f7f7f7 !important;
+    }
+
+    .navbar-brand {
+        font-size: 1.9rem;
+    }
+
+    .botoesNavegacao {
+        margin-bottom: 1.3rem;
+    }
+}
+
+/* Celulares (até 768px) */
 @media (max-width: 768px) {
-    header {
-        min-height: 9.47vh;
-        padding: 0.5% 3% 0.5% 3%;
-        justify-content: center;
+    .navbar-brand>img {
+        height: 3.5rem;
     }
 
-    header.menu-aberto {
-        flex-direction: column;
-        height: auto;
-    }
-
-    .botao-menu {
-        display: block;
-        margin-left: 4%;
-    }
-
-    .logo {
-        width: 100%;
-        justify-content: center;
-    }
-
-    .logo>img {
-        max-width: 15%;
-    }
-
-    header>nav {
-        display: none;
-        flex-direction: column;
-        width: 100%;
-        justify-content: center;
-    }
-
-    header>nav.menu-aberto {
-        padding: 3%;
+    .botoesNavegacao {
         display: flex;
+        flex-direction: column;
+    }
+
+    .navbar-brand {
+        font-size: 1.6rem;
+    }
+
+    .headerMobile .botao-branco,
+    .headerMobile .botao-azul {
+        font-size: 1.3rem !important;
     }
 }

@@ -1,44 +1,8 @@
-// Simula JSON
-const dados = {
-  "beneficios": [
-    {
-      "id": "BEN-001",
-      "nome": "Bolsa Família",
-      "categoria": "alimentacao",
-      "descricao": "O Bolsa Família é o principal programa de transferência de renda do Governo Federal brasileiro, destinado a famílias em situação de pobreza e extrema pobreza. O programa visa garantir segurança alimentar, nutricional e cidadania, unindo o apoio financeiro a ações complementares nas áreas de saúde e educação",
-      "requisitos": [
-        "A soma de todos os rendimentos da casa, dividida pelo número de moradores, não deve passar de R$ 218.",
-        "É obrigatório estar inscrito no Cadastro Único para Programas Sociais do Governo Federal.",
-        "O cadastro deve estar atualizado (no máximo a cada 2 anos) no CRAS (Centro de Referência de Assistência Social)."
-      ],
-      "condicoes": [
-        "Frequência escolar mínima para crianças e adolescentes (4 a 17 anos). ",
-        "Acompanhamento do pré-natal para gestantes; acompanhamento nutricional (peso e altura) das crianças menores de 7 anos; cumprimento do calendário nacional de vacinação."
-      ],
-      "documentos": [
-        "CPF", "Documento de Identificação com foto", "Titulo de eleitor", "Comprovante de residência", "Certidão de Casamento", "Certidão de nascimento (Menores de idade que não possuem RG)", "Carteira de Trabalho (Maiores de idade)"
-      ],
-      "valorBase": 142.00,
-      "dataInicio": "2025-01-01",
-      "dataFim": "2025-12-31",
-      "prazoInscricao": null,
-      "publicoAlvo": [
-        "BAIXA_RENDA"
-      ],
-      "orgaoResponsavel": "Governo Federal"
-    }
- ]
-};
+const API_BASE = 'http://localhost:3000'
 
 // Função que pega o ID da URL
-function obterIdUrl() {
-    const params = new URLSearchParams(window.location.search);
-    return params.get("id");
-}
-
-// Função que busca o benefício
-function buscarBeneficioPorId(id) {
-    return dados.beneficios.find(b => b.id === id);
+function getBeneficioFromURL() {
+    return new URLSearchParams(window.location.search).get('id');
 }
 
 function preencherLista(idElemento, lista) {
@@ -126,19 +90,18 @@ function atualizarProgresso(idLista, idBarra, idTexto, total) {
 }
 
 // Funcão que carrega os dados na tela
-function carregarDados() {
-  const id = "BEN-001";
-  const beneficio = buscarBeneficioPorId(id);
+function carregarDados(beneficio) {
+  
 
   if (beneficio) {
     document.getElementById("nome-beneficio-mobile").textContent = beneficio.nome;
     document.getElementById("nome-beneficio-desktop").textContent = beneficio.nome;
 
-    document.getElementById("descricao-beneficio-mobile").textContent = beneficio.descricao;
-    document.getElementById("descricao-beneficio-desktop").textContent = beneficio.descricao;
+    document.getElementById("descricao-beneficio-mobile").textContent = beneficio.descricaoCompleta;
+    document.getElementById("descricao-beneficio-desktop").textContent = beneficio.descricaoCompleta;
 
-    document.getElementById("valor-beneficio-mobile").textContent = "R$ " + beneficio.valorBase.toFixed(2);
-    document.getElementById("valor-beneficio-desktop").textContent = "R$ " + beneficio.valorBase.toFixed(2);
+    document.getElementById("valor-beneficio-mobile").textContent = "R$ " + beneficio.valorBase;
+    document.getElementById("valor-beneficio-desktop").textContent = "R$ " + beneficio.valorBase;
 
     preencherLista("requisitos-beneficio-mobile", beneficio.requisitos);
     preencherLista("requisitos-beneficio-desktop", beneficio.requisitos);
@@ -168,4 +131,28 @@ function carregarDados() {
 
 }
 
-window.onload = carregarDados;
+async function inicializar() {
+    const beneficioId = getBeneficioFromURL();
+ 
+    if (!beneficioId) {
+        document.getElementById('info-beneficios').innerHTML =
+            '<div class="alert alert-danger"> Benefício não encontrado. Verifique o parâmetro <code>?id=</code> na URL.</div>';
+        return;
+    }
+ 
+    try {
+        const response = await fetch(`${API_BASE}/beneficios?id=${beneficioId}`);
+        if (!response.ok) throw new Error('Benefício não encontrada.');
+        const [beneficio] = await response.json();
+        if (!beneficio) throw new Error('Benefício não encontrado.');
+ 
+        carregarDados(beneficio)
+ 
+    } catch (err) {
+        console.error(err);
+        document.getElementById('info-beneficios').innerHTML =
+            `<div class="alert alert-danger">Erro ao carregar os dados: ${err.message}</div>`;
+    }
+}
+ 
+document.addEventListener('DOMContentLoaded', inicializar);
