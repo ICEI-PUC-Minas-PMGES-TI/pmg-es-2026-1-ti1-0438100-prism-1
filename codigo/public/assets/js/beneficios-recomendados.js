@@ -4,6 +4,7 @@
 let beneficiosRecomendados = [];
 let favoritos = JSON.parse(localStorage.getItem('favoritos')) || [];
 let exibindoFavoritos = false;
+let infoUsuario;
 
 // ==========================================
 // 2. SELEÇÃO DE ELEMENTOS DO DOM
@@ -18,26 +19,74 @@ const mostrarFavoritosBtn = document.getElementById('mostrar-favoritos');
 // ==========================================
 // 3. FUNÇÕES DE DADOS E API
 // ==========================================
-/*Recebe uma lista com os filtros de categoria e publicoAlvo*/
-/*OBS: Novos Filtros serão adicionados após a escolha das informações coletadas do usuário.*/
-async function carregarBeneficios(filtro = {}) {
+function checarSessao() {
+    const usuarioSessao = localStorage.getItem("form-daniel-wizard-draft");
+    if (usuarioSessao) {
+        usuario = JSON.parse(usuarioSessao)
+        infoUsuario = usuario.data;
+        console.log(infoUsuario);
+        return true;
+    } else {
+        return false;
+    }
+}
+function extrairPerfisDoUsuario(usuario) {
+    const perfis = [];
+
+    const anoAtual = new Date().getFullYear();
+    const idade = anoAtual - parseInt(usuario.year);
+
+    const rendasBaixas = ["extrema", "pobreza", "meio"];
+    if (rendasBaixas.includes(usuario.renda)) {
+        perfis.push("BAIXA_RENDA");
+    }
+
+    if (idade >= 60) {
+        perfis.push("IDOSO");
+    } else if (idade >= 15 && idade <= 29) {
+        perfis.push("JOVENS");
+    } else if (idade >= 18 && idade < 60) {
+        perfis.push("ADULTOS");
+    } else if (idade <= 12) {
+        // Benefícios de primeira infância geralmente vão até 6 anos, mas abrange crianças no geral
+        perfis.push("CRIANCAS");
+    }
+
+    if (usuario.pcd === "sim") {
+        perfis.push("PCD");
+    }
+
+    const moradiasVulneraveis = ["alugada", "cedida", "ocupada", "risco", "rua"];
+    if (moradiasVulneraveis.includes(usuario.moradia)) {
+        perfis.push("SEM_IMOVEL");
+    }
+
+    return perfis;
+}
+async function carregarBeneficios(dadosUsuario) {
     try {
         const resposta = await fetch('http://localhost:3000/beneficios');
         const beneficios = await resposta.json();
 
-        let beneficiosFiltrados = beneficios;
+        const perfisDoUsuario = extrairPerfisDoUsuario(dadosUsuario);
 
-        if (filtro.categoria) {
-            beneficiosFiltrados = beneficiosFiltrados.filter(b => b.categoria === filtro.categoria);
-        }
+        const beneficiosFiltrados = beneficios.filter(beneficio => {
 
-        if (filtro.publicoAlvo) {
-            beneficiosFiltrados = beneficiosFiltrados.filter(b =>
-                filtro.publicoAlvo.some(perfil => b.publicoAlvo.includes(perfil))
+            const atendePublicoAlvo = beneficio.publicoAlvo.every(perfil =>
+                perfisDoUsuario.includes(perfil)
             );
-        }
+
+            const exigeCadUnico = beneficio.requisitos.some(req =>
+                req.toLowerCase().includes("cadúnico") || req.toLowerCase().includes("cadastro único")
+            );
+
+            const atendeCadUnico = exigeCadUnico ? dadosUsuario.cadunico === "sim" : true;
+
+            return atendePublicoAlvo && atendeCadUnico;
+        });
 
         return beneficiosFiltrados;
+
     } catch (erro) {
         console.error("Erro ao carregar os benefícios do servidor:", erro);
     }
@@ -146,7 +195,8 @@ function resetarFiltros() {
 // 6. INICIALIZAÇÃO E EVENT LISTENERS
 // ==========================================
 async function inicializar() {
-    beneficiosRecomendados = await carregarBeneficios();
+    checarSessao();
+    beneficiosRecomendados = await carregarBeneficios(infoUsuario);
     renderizarCards(beneficiosRecomendados);
     atualizarFavoritos();
 }
