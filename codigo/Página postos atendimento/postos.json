@@ -95,7 +95,7 @@
     "nome": "CRAS Taquaril",
     "endereco": "R. Ludgero Felipe Ferreira, 42, Taquaril, BH",
     "tipo": "CRAS",
-    "lat": 19.92024007,
+    "lat":-19.92024007,
     "lon": -43.87546778,
     "atendimentos": 490,
     "telefone": "(31) 3277-9010",
@@ -285,10 +285,10 @@
     "nome": "CRAS Cabana",
     "endereco": "R. Capim Branco, 231, Vista Alegre, BH",
     "tipo": "CRAS",
-    "lat": -19.95095171,
-    "lon": -44.00053382,
+    "lat": -19.9512212,
+    "lon": -44.0003767,
     "atendimentos": 570,
-    "telefone":"(31) 3246-2008",
+    "telefone":"(31) (31) 98021-1931 ",
     "horario":"Segunda a sexta, das 8h às 18h. Sábado, atendimento 24 horas."
   },
   {
