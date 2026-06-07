@@ -6,7 +6,10 @@
     "tipo": "CRAS",
     "lat": -20.01939346,
     "lon": -44.03171182,
-    "atendimentos": 520  
+    "atendimentos": 520,
+    "telefone": "(31) 98866-1026",
+    "horario":"Segunda a sexta, das 8h às 18h"
+
   },
   {
     "nome": "CRAS Petrópolis",
@@ -14,7 +17,9 @@
     "tipo": "CRAS",
     "lat": -20.01253853,
     "lon": -44.02702332,
-    "atendimentos": 240  
+    "atendimentos": 240,
+    "telefone": "(31) 3277-9578",
+    "horario":"Segunda a sexta, das 8h às 18h"
   },
   {
     "nome": "CRAS Vila Cemig",
@@ -22,7 +27,9 @@
     "tipo": "CRAS",
     "lat": -19.99796072,
     "lon": -43.99276614,
-    "atendimentos": 410    
+    "atendimentos": 410,
+    "telefone": "(31)3277-1355",
+    "horario":"Segunda a sexta, das 8h às 18h"
   },
   {
     "nome": "CRAS Vila Fátima",
@@ -30,7 +37,9 @@
     "tipo": "CRAS",
     "lat": -19.93422999,
     "lon": -43.90431762,
-    "atendimentos": 180   
+    "atendimentos": 180,  
+    "telefone": "(31) 3277-9913",
+    "horario":"Segunda a sexta, das 8h às 17h"
   },
   {
     "nome": "CRAS Vila Marçola",
@@ -38,7 +47,9 @@
     "tipo": "CRAS",
     "lat": -19.93857700,
     "lon": -43.91180634,
-    "atendimentos": 390  
+    "atendimentos": 390,
+    "telefone": "(31) 3246-5006",
+    "horario":"Segunda a sexta, das 8h às 18h"
   },
   {
     "nome": "CRAS Vila Santa Rita de Cássia",
@@ -46,7 +57,9 @@
     "tipo": "CRAS",
     "lat": -19.95335191,
     "lon": -43.94150376,
-    "atendimentos": 210   
+    "atendimentos": 210,
+    "telefone": "(31) 3277-9415",
+    "horario":"Segunda a sexta, das 8h às 18h"
   },
   {
     "nome": "CRAS Alto Vera Cruz",
@@ -54,7 +67,9 @@
     "tipo": "CRAS",
     "lat": -19.91479304,
     "lon": -43.88957620,
-    "atendimentos": 580   
+    "atendimentos": 580,
+    "telefone": "(31) 3277-5730",
+    "horario": "Segunda a sexta, das 8h30min às 17h"
   },
   {
     "nome": "CRAS Granja de Freitas",
@@ -62,7 +77,9 @@
     "tipo": "CRAS",
     "lat": -19.90667259,
     "lon": -43.88360023,
-    "atendimentos": 150   
+    "atendimentos": 150,
+    "telefone": "(31) 3277-5660",
+    "horario":"Segunda a sexta, das 8h às 18h"
   },
   {
     "nome": "CRAS Mariano de Abreu",
@@ -70,7 +87,9 @@
     "tipo": "CRAS",
     "lat": -19.89577743,
     "lon": -43.89015555,
-    "atendimentos": 320
+    "atendimentos": 320,
+    "telefone": "(31) 3277-5643",
+    "horario":"Segunda a sexta, das 8h às 18h"
   },
   {
     "nome": "CRAS Taquaril",
@@ -78,7 +97,9 @@
     "tipo": "CRAS",
     "lat": 19.92024007,
     "lon": -43.87546778,
-    "atendimentos": 490
+    "atendimentos": 490,
+    "telefone": "(31) 3277-9010",
+    "horario":"Segunda a sexta, das 8h às 18h"
   },
   {
     "nome": "CRAS União / Arthur de Sá",
@@ -86,7 +107,9 @@
     "tipo": "CRAS",
     "lat": -19.88070454,
     "lon": -43.92011046,
-    "atendimentos": 340
+    "atendimentos": 340,
+    "telefone": "(31) 3277-9155",
+    "horario":"Segunda a sexta, das 8h às 18h"
   },
   {
     "nome": "CRAS Conjunto Paulo VI",
@@ -94,7 +117,9 @@
     "tipo": "CRAS",
     "lat": -19.83237891,
     "lon": -43.88728023,
-    "atendimentos": 420   
+    "atendimentos": 420,
+    "telefone": "(31) 3277-6840",
+    "horario":"Segunda a sexta, das 8h às 18h"
   },
   {
     "nome": "CRAS Vila Maria",
@@ -102,7 +127,9 @@
     "tipo": "CRAS",
     "lat": -19.84880866,
     "lon": -43.88474822,
-    "atendimentos": 230  
+    "atendimentos": 230,
+    "telefone": "(31) 3246-8051",
+    "horario":"Segunda a sexta, das 8h às 17h" 
   },
   {
     "nome": "CRAS Vila Califórnia",
@@ -110,7 +137,9 @@
     "tipo": "CRAS",
     "lat": -19.91897920,
     "lon": -44.00787234,
-    "atendimentos": 190
+    "atendimentos": 190,
+    "telefone": "(31) 3246-3045",
+    "horario":"Segunda a sexta, das 8h às 18h"
   },
   {
     "nome": "CRAS Vila Coqueiral",
@@ -118,15 +147,19 @@
     "tipo": "CRAS",
     "lat": -19.91674996,
     "lon": -44.02460933,
-    "atendimentos": 280
-    },
+    "atendimentos": 280,
+    "telefone": "(31) 3277-7179",
+    "horario": "Segunda a sexta, das 8h às 18h"
+  },
   {
     "nome": "CRAS Pedreira Prado Lopes",
     "endereco": "Av. José Bonifácio, 189, São Cristóvão, BH",
     "tipo": "CRAS",
     "lat": -19.90328307,
     "lon": -43.94738317,
-    "atendimentos": 600
+    "atendimentos": 600,
+    "telefone":"(31) 3277-6032",
+    "horario":"Segunda a sexta, das 8h às 18h"
     },
   {
     "nome": "CRAS Vila Sumaré",
@@ -134,7 +167,9 @@
     "tipo": "CRAS",
     "lat": -19.89021858,
     "lon": -43.96452785,
-    "atendimentos": 310
+    "atendimentos": 310,
+    "telefone":"(31) 3246-7551",
+    "horario":"Segunda a sexta, das 8h às 17h"
   },
   {
     "nome": "CRAS Vila Senhor dos Passos",
@@ -142,7 +177,9 @@
     "tipo": "CRAS",
     "lat": -19.90563355,
     "lon": -43.94874573,
-    "atendimentos": 290
+    "atendimentos": 290,
+    "telefone": "(31) 3277-6119",
+    "horario":"Segunda a sexta, das 8h às 18h"
   },
   {
     "nome": "CRAS Novo Aarão Reis",
@@ -150,7 +187,9 @@
     "tipo": "CRAS",
     "lat": -19.84447936,
     "lon": -43.91391993,
-    "atendimentos": 340
+    "atendimentos": 340,
+    "telefone":"(31) 98874-0957",
+    "horario":"Segunda a sexta, das 8h às 17h"
   },
   {
     "nome": "CRAS Jardim Felicidade",
@@ -158,7 +197,9 @@
     "tipo": "CRAS",
     "lat": -19.82950253,
     "lon": -43.92773867,
-    "atendimentos": 480
+    "atendimentos": 480,
+    "telefone":"(31) 3246-9503",
+    "horario":"Segunda a sexta, das 8h às 17h"
   },
   {
     "nome": "CRAS Providência",
@@ -166,7 +207,9 @@
     "tipo": "CRAS",
     "lat": -19.85330938,
     "lon": -43.93139720,
-    "atendimentos": 220
+    "atendimentos": 220,
+    "telefone":"(31) 98874-0942",
+    "horario":"Segunda a sexta, das 8h às 18h"
   },
   {
     "nome": "CRAS Zilah Spósito",
@@ -174,7 +217,9 @@
     "tipo": "CRAS",
     "lat": -19.80127079,
     "lon": -43.92399430,
-    "atendimentos": 450
+    "atendimentos": 450,
+    "telefone":"(31) 3246-9000",
+    "horario":"Segunda a sexta, das 8h às 18h"
   },
   {
     "nome": "CRAS Vila Biquinhas",
@@ -182,7 +227,9 @@
     "tipo": "CRAS",
     "lat": -19.84236008,
     "lon": -43.94030213,
-    "atendimentos": 190
+    "atendimentos": 190,
+    "telefone":"(31) 3246-8004",
+    "horario":"Segunda e sexta, das 8h às 18h. Terça a quinta, das 8h às 19h"
   },
   {
     "nome": "CRAS Havaí, Ventosa",
@@ -190,7 +237,9 @@
     "tipo": "CRAS",
     "lat": -19.96285150,
     "lon": -43.96930218,
-    "atendimentos": 510
+    "atendimentos": 510,
+    "telefone":"(31) 3277-9976",
+    "horario":"Segunda a sexta, das 8h às 18h"
   },
   {
     "nome": "CRAS Graça Saboia / Morro das Pedras",
@@ -198,7 +247,9 @@
     "tipo": "CRAS",
     "lat": -19.93828451,
     "lon": -43.96858335,
-    "atendimentos": 530
+    "atendimentos": 530,
+    "telefone":"(31) 3277-7091",
+    "horario":"Segunda a sexta, das 8h às 18h"
   },
   {
     "nome": "CRAS Vila Antena",
@@ -206,7 +257,9 @@
     "tipo": "CRAS",
     "lat": -19.94877335,
     "lon": -43.96274686,
-    "atendimentos": 140
+    "atendimentos": 140,
+    "telefone":"(31) 98874-0972",
+    "horario":"Segunda a sexta, das 8h às 17h"
   },
   {
     "nome": "CRAS Vista Alegre I",
@@ -214,7 +267,9 @@
     "tipo": "CRAS",
     "lat": -19.95370488,
     "lon": -43.99631739,
-    "atendimentos": 330
+    "atendimentos": 330,
+    "telefone":"(31) 3246-2008",
+    "horario":"Segunda a sexta, das 8h às 18h. Sábado, atendimento 24 horas."
   },
   {
     "nome": "CRAS Vila Betânia",
@@ -222,7 +277,9 @@
     "tipo": "CRAS",
     "lat": -19.95530835,
     "lon": -43.99260521,
-    "atendimentos": 260
+    "atendimentos": 260,
+    "telefone":"(31) 3277-5989",
+    "horario":"Segunda a sexta, das 8h às 17h"
   },
   {
     "nome": "CRAS Cabana",
@@ -230,7 +287,9 @@
     "tipo": "CRAS",
     "lat": -19.95095171,
     "lon": -44.00053382,
-    "atendimentos": 570
+    "atendimentos": 570,
+    "telefone":"(31) 3246-2008",
+    "horario":"Segunda a sexta, das 8h às 18h. Sábado, atendimento 24 horas."
   },
   {
     "nome": "CRAS Confisco",
@@ -238,7 +297,9 @@
     "tipo": "CRAS",
     "lat": -19.86525688,
     "lon": -44.01899815,
-    "atendimentos": 380
+    "atendimentos": 380,
+    "telefone":"(31) 3277-7146",
+    "horario":"Segunda a sexta, das 8h às 18h"
   },
   {
     "nome": "CRAS Novo Ouro Preto",
@@ -246,7 +307,9 @@
     "tipo": "CRAS",
     "lat": -19.87631558,
     "lon": -43.98799181,
-    "atendimentos": 170
+    "atendimentos": 170,
+    "telefone":" (31) 98221-0512",
+    "horario":"Segunda a sexta, das 8h às 18h"
   },
   {
     "nome": "CRAS Santa Rosa",
@@ -254,7 +317,9 @@
     "tipo": "CRAS",
     "lat": -19.88100722,
     "lon": -43.95918489,
-    "atendimentos": 210
+    "atendimentos": 210,
+    "telefone":"(31) 98874-0981",
+    "horario":"Segunda a sexta, das 8h às 17h"
   },
   {
     "nome": "CRAS Vila São José",
@@ -262,7 +327,9 @@
     "tipo": "CRAS",
     "lat": -19.900013558,
     "lon": -43.99556637,
-    "atendimentos": 360
+    "atendimentos": 360,
+    "telefone":"(31) 3277-7149",
+    "horario":"Segunda a sexta, das 8h às 17h"
   },
   {
     "nome": "CRAS Dandara",
@@ -270,7 +337,9 @@
     "tipo": "CRAS",
     "lat": -19.83439740,
     "lon": -44.01427746,
-    "atendimentos": 490
+    "atendimentos": 490,
+    "telefone":"(31) 98906-6792",
+    "horario":"Segunda a sexta, das 8h às 18h"
   },
   {
     "nome": "CRAS Apolônia",
@@ -278,7 +347,9 @@
     "tipo": "CRAS",
     "lat": -19.82842261,
     "lon": -43.98729444,
-    "atendimentos": 280
+    "atendimentos": 280,
+    "telefone":"(31) 3277-1816",
+    "horario":"Segunda a sexta, das 8h às 17h"
   },
   {
     "nome": "CRAS Lagoa",
@@ -286,7 +357,10 @@
     "tipo": "CRAS",
     "lat": -19.80933607,
     "lon": -44.00087714,
-    "atendimentos": 390
+    "atendimentos": 390,
+    "telefone":"(31) 98874-1009",
+    "horario":"Segunda a sexta, das 8h às 18h"
+
   },
   {
     "nome": "CRAS Mantiqueira",
@@ -294,7 +368,10 @@
     "tipo": "CRAS",
     "lat": -19.80030171,
     "lon": -43.98111463,
-    "atendimentos": 410
+    "atendimentos": 410,
+    "telefone":"(31) 98913-6253",
+    "horario":"Segunda a sexta, das 8h às 18h"
+    
   }
 ]
 }
