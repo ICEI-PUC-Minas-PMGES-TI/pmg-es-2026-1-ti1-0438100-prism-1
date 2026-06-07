@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Submissions</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 20px
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%
+        }
+
+        th,
+        td {
+            border: 1px solid #ddd;
+            padding: 8px
+        }
+
+        th {
+            background: #f4f4f4
+        }
+
+        button {
+            margin-right: 6px
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Envios do Formulário</h1>
+    <p><a href="/form-daniel/form.html">Voltar ao formulário</a></p>
+    <div>
+        <label for="forwardUrl">Enviar cópia para URL (opcional):</label>
+        <input id="forwardUrl" placeholder="https://exemplo.com/endpoint" style="width:60%">
+        <button id="forwardAll">Enviar todos</button>
+    </div>
+    <div id="list"></div>
+    <script src="/submissions.js"></script>
+</body>
+
+</html>

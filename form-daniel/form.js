@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const nextButton = document.querySelector(".next-btn");
   const submitButton = document.querySelector(".submit-btn");
   const reviewContent = document.getElementById("reviewContent");
+  const formStatus = document.getElementById("formStatus");
   const lastStepIndex = stepIndicators.length - 1;
 
   const workLabels = {
@@ -102,6 +103,22 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   const draftStorageKey = "form-daniel-wizard-draft";
+  const cpfInput = document.getElementById("cpf");
+  const nameInput = document.getElementById("full-name");
+  const agesInput = document.getElementById("idadesDependentes");
+
+  if (agesInput) {
+    agesInput.addEventListener("paste", (e) => {
+      e.preventDefault();
+      const text = (e.clipboardData || window.clipboardData).getData("text");
+      const cleaned = text
+        .replace(/[^\d, ]+/g, "")
+        .replace(/\s*,\s*/g, ", ")
+        .replace(/,+/g, ",")
+        .replace(/^\s*,|,\s*$/g, "");
+      document.execCommand("insertText", false, cleaned);
+    });
+  }
 
   document.documentElement.style.setProperty("--steps", stepIndicators.length);
 
@@ -127,6 +144,149 @@ document.addEventListener("DOMContentLoaded", () => {
       .replaceAll(">", "&gt;")
       .replaceAll('"', "&quot;")
       .replaceAll("'", "&#39;");
+
+  const setFormStatus = (message, type = "info") => {
+    if (!formStatus) {
+      return;
+    }
+
+    formStatus.textContent = message;
+    formStatus.style.color =
+      type === "error" ? "#b00020" : type === "info" ? "#3056a3" : "#1a5f2b";
+    formStatus.style.fontWeight = "600";
+  };
+
+  const formatCpf = (value) => {
+    const digits = value.replace(/\D/g, "").slice(0, 11);
+
+    if (digits.length <= 3) {
+      return digits;
+    }
+
+    if (digits.length <= 6) {
+      return `${digits.slice(0, 3)}.${digits.slice(3)}`;
+    }
+
+    if (digits.length <= 9) {
+      return `${digits.slice(0, 3)}.${digits.slice(3, 6)}.${digits.slice(6)}`;
+    }
+
+    return `${digits.slice(0, 3)}.${digits.slice(3, 6)}.${digits.slice(
+      6,
+      9,
+    )}-${digits.slice(9)}`;
+  };
+
+  const sanitizeName = (value) =>
+    value.replace(/[^A-Za-zÀ-ÿ' -]/g, "").replace(/\s{2,}/g, " ");
+  const validateStep = (stepIndex) => {
+    const currentStepElement = steps[stepIndex];
+    const controls = Array.from(
+      currentStepElement.querySelectorAll("input, select, textarea"),
+    ).filter((control) => !control.disabled);
+
+    // Check individual controls (text, number, select, textarea)
+    for (const control of controls) {
+      const type = control.type;
+      const isVisible = control.offsetParent !== null;
+
+      if (!isVisible) continue;
+
+      if (type === "radio" || type === "checkbox") continue;
+
+      // If there's a pattern or it's a select, use built-in validity
+      if (control.tagName === "SELECT" || control.hasAttribute("pattern")) {
+        if (!control.checkValidity()) {
+          control.reportValidity();
+          control.focus();
+          return false;
+        }
+        continue;
+      }
+
+      const value = control.value;
+
+      if (typeof value === "string" && value.trim() === "") {
+        setFormStatus(
+          "Preencha os campos obrigatórios para continuar.",
+          "error",
+        );
+        if (typeof control.reportValidity === "function") {
+          control.reportValidity();
+        }
+        control.focus();
+        return false;
+      }
+    }
+
+    // Validate radio groups
+    const radioNames = new Set(
+      controls
+        .filter((c) => c.type === "radio" && c.offsetParent !== null)
+        .map((c) => c.name),
+    );
+
+    for (const name of radioNames) {
+      const checked = currentStepElement.querySelector(
+        `input[type="radio"][name="${name}"]:checked`,
+      );
+
+      if (!checked) {
+        const first = currentStepElement.querySelector(
+          `input[type="radio"][name="${name}"]`,
+        );
+        setFormStatus(
+          "Selecione uma opção obrigatória para continuar.",
+          "error",
+        );
+        if (first) first.focus();
+        return false;
+      }
+    }
+
+    // Validate checkbox groups (at least one checked)
+    const checkboxNames = new Set(
+      controls
+        .filter((c) => c.type === "checkbox" && c.offsetParent !== null)
+        .map((c) => c.name),
+    );
+
+    for (const name of checkboxNames) {
+      const checked = currentStepElement.querySelector(
+        `input[type="checkbox"][name="${name}"]:checked`,
+      );
+
+      if (!checked) {
+        const first = currentStepElement.querySelector(
+          `input[type="checkbox"][name="${name}"]`,
+        );
+        setFormStatus("Marque ao menos uma opção para continuar.", "error");
+        if (first) first.focus();
+        return false;
+      }
+    }
+
+    return true;
+  };
+
+  const validateCurrentStep = () => validateStep(currentStep);
+
+  const validateAllFormSteps = () => {
+    const originalStep = currentStep;
+
+    for (let stepIndex = 0; stepIndex < lastStepIndex; stepIndex++) {
+      currentStep = stepIndex;
+      updateProgress(false);
+
+      if (!validateStep(stepIndex)) {
+        return false;
+      }
+    }
+
+    currentStep = originalStep;
+    updateProgress(false);
+    return true;
+  };
 
   const createReviewItem = (label, value) => `
     <div class="review-item">
@@ -508,6 +668,10 @@ document.addEventListener("DOMContentLoaded", () => {
   nextButton.addEventListener("click", (e) => {
     e.preventDefault();
 
+    if (!validateCurrentStep()) {
+      return;
+    }
+
     if (currentStep < lastStepIndex) {
       currentStep++;
       updateProgress();
@@ -529,6 +693,32 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   form.addEventListener("input", () => {
+    if (formStatus?.textContent) {
+      setFormStatus("");
+    }
+
+    // sanitize name and format CPF as user types
+    if (nameInput) {
+      const sanitized = sanitizeName(nameInput.value);
+      if (sanitized !== nameInput.value) nameInput.value = sanitized;
+    }
+
+    if (cpfInput) {
+      const formatted = formatCpf(cpfInput.value);
+      if (formatted !== cpfInput.value) cpfInput.value = formatted;
+    }
+
+    if (agesInput) {
+      const v = agesInput.value;
+      let cleaned = v.replace(/[^\d, ]+/g, "");
+      cleaned = cleaned.replace(/,+/g, ",");
+      cleaned = cleaned.replace(/\s*,\s*/g, ", ");
+      cleaned = cleaned.replace(/^\s*,\s*/g, "");
+      cleaned = cleaned.replace(/\s*,$/g, "");
+
+      if (cleaned !== v) agesInput.value = cleaned;
+    }
+
     if (currentStep === lastStepIndex) {
       generateReview();
     }
@@ -572,18 +762,62 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   form.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    if (!validateAllFormSteps()) {
+      return;
+    }
+
     if (currentStep < lastStepIndex) {
-      event.preventDefault();
       currentStep = lastStepIndex;
       updateProgress();
+      setFormStatus("Revise os dados e clique em Enviar novamente.", "info");
       return;
     }
 
     generateReview();
     saveDraft();
+
+    const payload = collectFormData();
+
+    (async () => {
+      submitButton.disabled = true;
+
+      try {
+        const res = await fetch("http://localhost:3001/submissions", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(payload),
+        });
+
+        if (!res.ok) throw new Error("Server response not OK");
+
+        const created = await res.json();
+
+        try {
+          localStorage.removeItem(draftStorageKey);
+        } catch (err) {}
+
+        console.log("Envio registrado com sucesso:", created);
+        resetForm();
+      } catch (err) {
+        console.error("Erro ao enviar ao servidor:", err);
+        setFormStatus(
+          "Não foi possível enviar ao servidor. Verifique se o JSONServer está rodando.",
+          "error",
+        );
+        alert(
+          "Não foi possível enviar ao servidor. Os dados foram mantidos localmente.",
+        );
+      } finally {
+        submitButton.disabled = false;
+      }
+    })();
   });
 
   restoreDraft();
+  toggleDependentes(getCheckedValue("dependents") === "sim");
+  togglePCD(getCheckedValue("pcd") === "sim");
   updateProgress();
 });
 
@@ -647,14 +881,23 @@ document.getElementById("workStatus").addEventListener("change", function (e) {
 
 function toggleDependentes(show) {
   const box = document.getElementById("dependentesBox");
+  const qtdDependentes = document.getElementById("qtdDependentes");
+  const idadesDependentes = document.getElementById("idadesDependentes");
+
   if (show) {
     box.classList.add("visible");
-    document.getElementById("qtdDependentes").required = true;
+    qtdDependentes.required = true;
+    qtdDependentes.disabled = false;
+    idadesDependentes.required = true;
+    idadesDependentes.disabled = false;
   } else {
     box.classList.remove("visible");
-    document.getElementById("qtdDependentes").required = false;
-    document.getElementById("qtdDependentes").value = "";
-    document.getElementById("idadesDependentes").value = "";
+    qtdDependentes.required = false;
+    qtdDependentes.disabled = true;
+    qtdDependentes.value = "";
+    idadesDependentes.required = false;
+    idadesDependentes.disabled = true;
+    idadesDependentes.value = "";
   }
 
   refreshWizardHeight();
@@ -662,14 +905,27 @@ function toggleDependentes(show) {
 
 function togglePCD(show) {
   const box = document.getElementById("pcdBox");
+  const tipoDeficiencia = document.getElementById("tipoDeficiencia");
+  const laudoRadios = document.querySelectorAll('input[name="laudo"]');
 
   if (show) {
     box.classList.add("visible");
-    document.getElementById("tipoDeficiencia").required = true;
+    tipoDeficiencia.required = true;
+    tipoDeficiencia.disabled = false;
+    laudoRadios.forEach((radio) => {
+      radio.required = true;
+      radio.disabled = false;
+    });
   } else {
     box.classList.remove("visible");
-    document.getElementById("tipoDeficiencia").required = false;
-    document.getElementById("tipoDeficiencia").value = "";
+    tipoDeficiencia.required = false;
+    tipoDeficiencia.disabled = true;
+    tipoDeficiencia.value = "";
+    laudoRadios.forEach((radio) => {
+      radio.required = false;
+      radio.disabled = true;
+      radio.checked = false;
+    });
   }
 
   syncPcdLayout();
