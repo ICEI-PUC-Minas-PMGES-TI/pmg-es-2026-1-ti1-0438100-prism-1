@@ -3,9 +3,9 @@ let markers = [];
 let userMarker = null;
 const map = L.map('map', { zoomControl: true, attributionControl: true });
 map.setView([-19.92, -43.94], 12);
-L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
-  attribution: '© <a href="https://www.openstreetmap.org">OpenStreetMap</a> contributors © <a href="https://carto.com">CARTO</a>',
-  subdomains: 'abcd', maxZoom: 19
+L.tileLayer('https://tiles.stadiamaps.com/tiles/outdoors/{z}/{x}/{y}{r}.png', {
+  attribution: '© <a href="https://stadiamaps.com">Stadia Maps</a> © <a href="https://www.openstreetmap.org">OpenStreetMap</a>',
+  maxZoom: 20
 }).addTo(map);
 
 
@@ -20,8 +20,9 @@ fetch('http://localhost:3000/postos')
   })
   .catch(() => {
     document.getElementById('postoList').innerHTML =
-      '<div style="padding:16px;color:#d32f2f;font-size:.85rem;"> Se deu isso é porque o json não carregou.</div>';
+      '<div style="padding:16px;color:#d32f2f;font-size:.85rem;"> Se não tem nenhum posto no mapa é porque o JSONServer não carregou.</div>';
   });
+
 function inicializarDadosEMapa() {
   const maxAtt = Math.max(...postos.map(p => p.atendimentos));
   const minAtt = Math.min(...postos.map(p => p.atendimentos));
@@ -46,6 +47,7 @@ function inicializarDadosEMapa() {
       }).addTo(heatLayer);
    }
   });
+
   heatLayer.addTo(map);
   postos.forEach((p, i) => {
     let col = '#1a3fa4';
@@ -65,6 +67,11 @@ function inicializarDadosEMapa() {
         <div class="popup-row">
           <span class="popup-chip chip-blue">CRAS</span>
           <span class="popup-chip chip-yellow">${p.atendimentos} atend./mês</span>
+           <div class="popup-info">
+      <div>Horário de funcionamento: ${p.horario}</div>
+      <div><p>Telefone de contato: ${p.telefone}</p></div>
+    </div>
+  </div>
         </div>
       </div>
     `);

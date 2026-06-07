@@ -380,9 +380,17 @@ nav a.active {
 .leaflet-popup-content { margin: 0 !important; }
 .popup-inner { padding: 14px 16px; min-width: 200px; }
 .popup-nome { font-family: 'Nunito', sans-serif; font-weight: 800; font-size: .95rem; color: var(--gray-900); margin-bottom: 4px; }
-.popup-addr { font-size: .78rem; color: var(--gray-600); margin-bottom: 10px; line-height: 1.4; }
+.popup-addr { font-size: .78rem; color: var(--gray-900); margin-bottom: 10px; line-height: 1.4; }
 .popup-row { display: flex; gap: 6px; flex-wrap: wrap; }
 .popup-chip { font-size: .72rem; font-weight: 700; padding: 2px 8px; border-radius: 10px; }
+.popup-info {
+  margin-top: 8px;
+  font-size: 0.78rem;
+  color: #444444;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
 .chip-blue { background: var(--blue-light); color: var(--blue); }
 .chip-green { background: var(--green-light); color: var(--green); }
 .chip-yellow { background: #fff4e0; color: #b35a00; }
