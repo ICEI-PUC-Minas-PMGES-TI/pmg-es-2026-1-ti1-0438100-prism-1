@@ -1,4 +1,4 @@
-cff-version: 1.0.1
+cff-version: 1.2.0
 message: Please cite this software using these metadata.
 title: Prism
 authors:
@@ -11,21 +11,18 @@ authors:
   - family-names: Gomes Esteves da Silva
     given-names: Lucas
   - family-names: Oliveira Martins Rosa
-    given-names: Giovanni 
+    given-names: Giovanni
   - family-names: Alvim Fagundes de Andrade
-    given-names: Bernardo 
-  - name-suffix: Professor
-    affiliation: PUC Minas
-    family-names: de Faria Barros
+    given-names: Bernardo
+  - family-names: de Faria Barros
     given-names: Diego Augusto
-  - name-suffix: Professor
     affiliation: PUC Minas
-    family-names: Soares de Paiva Lacerdo
-    given-names: Lucca 
- - name-suffix: Professor
+  - family-names: Soares de Paiva Lacerdo
+    given-names: Lucca
     affiliation: PUC Minas
-    family-names: Almeida Louzada
+  - family-names: Almeida Louzada
     given-names: Henrique
+    affiliation: PUC Minas
 keywords:
   - Benefícios
   - Governo
