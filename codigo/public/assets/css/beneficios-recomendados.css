@@ -1,18 +1,5 @@
 /* ==========================================
-   1. IMPORTS E RESET
-   ========================================== */
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
-
-* {
-    padding: 0;
-    margin: 0;
-    border: 0;
-    box-sizing: border-box;
-    text-decoration: none;
-}
-
-/* ==========================================
-   2. ESTILOS GERAIS (BASE)
+   1. ESTILOS GERAIS (BASE)
    ========================================== */
 body {
     background-color: #f5f5f5;
@@ -26,42 +13,8 @@ main {
 }
 
 /* ==========================================
-   3. COMPONENTES REUTILIZÁVEIS
+   2. COMPONENTES REUTILIZÁVEIS
    ========================================== */
-/* Botões */
-.botao-azul,
-.botao-branco {
-    font-family: "DM Sans";
-    font-size: 1.3rem;
-    font-weight: 500;
-    padding: 0.6rem 1.4rem;
-    border-radius: 40px;
-    transition: transform 0.2s ease;
-    text-decoration: none;
-}
-
-.botao-azul {
-    color: #ffffff;
-    background-color: #003CA3;
-    text-align: center;
-    display: inline-block;
-}
-
-.botao-azul:hover {
-    background-color: #3360ad;
-    transform: scale(1.01);
-}
-
-.botao-branco {
-    color: #333;
-    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.25);
-}
-
-.botao-branco:hover {
-    background-color: rgba(255, 238, 204, 1);
-    transform: scale(1.01);
-}
-
 /* Filtros, Contadores e Barras de Info */
 .filtros {
     display: flex;
@@ -74,7 +27,7 @@ main {
 .filtros select {
     padding: 1rem;
     border-radius: 20px;
-    font-family: "DM Sans";
+    font-family: var(--font-principal);
     font-size: 1rem;
     flex: 1;
     min-width: 220px;
@@ -87,9 +40,9 @@ main {
     margin: 0;
     text-align: center;
     white-space: nowrap;
-    color: #333;
+    color: var(--cor-texto-escuro);
     padding: 0.5rem 1rem 0.5rem 1rem;
-    background-color: rgba(255, 238, 204, 1);
+    background-color: var(--cor-terciaria);
     border-radius: 40px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
@@ -107,63 +60,15 @@ main {
 }
 
 /* ==========================================
-   4. CABEÇALHO (HEADER)
-   ========================================== */
-header {
-    font-family: "DM Sans";
-    width: 100vw;
-    background-color: #f7f7f7;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-between;
-    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
-    padding: 0% 3% 0% 1%;
-    position: fixed;
-}
-
-.navbarDesktop,
-.container-fluid {
-    width: 100%;
-    display: flex !important;
-    justify-content: space-between !important;
-}
-
-.headerMobile {
-    display: none !important;
-}
-
-.navbar-brand {
-    height: 100% !important;
-    font-size: 2.5rem;
-    font-weight: bold;
-}
-
-.navbar-brand>img {
-    height: 4.7rem;
-}
-
-.botoesNavegacao {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem;
-}
-
-.navbar-toggler {
-    background-color: #003CA3;
-}
-
-/* ==========================================
-   5. SEÇÃO: INTRODUÇÃO
+   3. SEÇÃO: INTRODUÇÃO
    ========================================== */
 .intro {
     background-color: #f2f0ec;
     border-radius: 40px;
     padding: 1%;
     margin-top: 1%;
-    font-family: "DM Sans";
-    color: #333;
+    font-family: var(--font-principal);
+    color: var(--cor-texto-escuro);
 }
 
 .intro>h1 {
@@ -177,7 +82,7 @@ header {
 }
 
 /* ==========================================
-   6. SEÇÃO: CARDS DE BENEFÍCIOS
+   4. SEÇÃO: CARDS DE BENEFÍCIOS
    ========================================== */
 .beneficios {
     display: flex;
@@ -192,7 +97,7 @@ header {
     flex-direction: column;
     justify-content: space-between;
     background-color: #ffffff;
-    font-family: "DM Sans";
+    font-family: var(--font-principal);
     padding: 1%;
     margin: 1%;
     border-radius: 40px;
@@ -213,15 +118,15 @@ header {
 }
 
 .orgao {
-    background-color: #2B7F3A;
-    color: #ffffff;
+    background-color: var(--cor-secundaria);
+    color: var(--cor-texto-claro);
     white-space: nowrap;
     padding: 1% 2% 1% 2%;
     border-radius: 40px;
 }
 
 .descricao {
-    color: #333;
+    color: var(--cor-texto-escuro);
     text-align: start;
 }
 
@@ -235,8 +140,8 @@ header {
     text-align: center;
     white-space: nowrap;
     padding: 2% 4% 2% 4%;
-    color: #333;
-    background-color: rgba(255, 238, 204, 1);
+    color: var(--cor-texto-escuro);
+    background-color: var(--cor-terciaria-hover);
     border-radius: 40px;
 }
 
@@ -258,34 +163,11 @@ header {
 }
 
 /* ==========================================
-   7. RESPONSIVIDADE (MEDIA QUERIES)
+   5. RESPONSIVIDADE (MEDIA QUERIES)
    ========================================== */
 
 /* Tablets (até 1024px) */
 @media (max-width: 1024px) {
-    .headerDesktop {
-        display: none !important;
-    }
-
-    .headerMobile {
-        display: block !important;
-    }
-
-    .navbarMobile {
-        padding: 0 !important;
-        height: 100%;
-        width: 100%;
-        background-color: #f7f7f7 !important;
-    }
-
-    .navbar-brand {
-        font-size: 1.9rem;
-    }
-
-    .botoesNavegacao {
-        margin-bottom: 1.3rem;
-    }
-
     .card-beneficio {
         width: 45%;
         padding: 3%;
@@ -315,24 +197,6 @@ header {
 
 /* Celulares (até 768px) */
 @media (max-width: 768px) {
-    .navbar-brand>img {
-        height: 3.5rem;
-    }
-
-    .botoesNavegacao {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .navbar-brand {
-        font-size: 1.6rem;
-    }
-
-    .headerMobile .botao-branco,
-    .headerMobile .botao-azul {
-        font-size: 1.3rem !important;
-    }
-
     .intro>h1 {
         font-weight: 700;
         font-size: 2.5rem;
