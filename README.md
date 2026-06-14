@@ -8,7 +8,6 @@ Escreva um ou dois parágrafo resumindo o objetivo do seu projeto.
 * Daniel Heber de Souza Godinho
 * Paulo César Silva Monteiro
 * Lucas Gomes Esteves da Silva
-* Mateus Canuto Marques
 * Giovanni Oliveira Martins Rosa
 * Bernardo Alvim Fagundes de Andrade
 
