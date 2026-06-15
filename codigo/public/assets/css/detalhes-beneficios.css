@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+
+/* Estilos Padrões */
+body {
+    background-color: #f5f5f5;
+}
+
+main {
+    width: 100%;
+    
+}
+
+.botao-azul,
+.botao-branco {
+    font-family: "DM Sans";
+    font-size: 1.3rem;
+    font-weight: 500;
+    padding: 0.6rem 1.4rem;
+    border-radius: 40px;
+    transition: transform 0.2s ease;
+    text-decoration: none;
+}
+
+.botao-azul {
+    color: #ffffff;
+    background-color: #003CA3;
+    text-align: center;
+    display: inline-block;
+}
+
+.botao-azul:hover {
+    background-color: #3360ad;
+    transform: scale(1.01);
+}
+
+.botao-branco {
+    color: #333;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.25);
+}
+
+.botao-branco:hover {
+    background-color: rgba(255, 238, 204, 1);
+    transform: scale(1.01);
+}
+
+/* Estilização Do Header */
+header {
+    font-family: "DM Sans";
+    width: 100vw;
+    background-color: #f7f7f7;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+    padding: 0% 3% 0% 1%;
+}
+
+ .navbarDesktop,
+.container-fluid {
+    width: 100%;
+    display: flex !important;
+    justify-content: space-between !important;
+}
+
+.headerMobile {
+    display: none !important;
+}
+
+.navbar-brand {
+    height: 100% !important;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.navbar-brand>img {
+    height: 4.7rem;
+}
+
+.botoesNavegacao {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.navbar-toggler {
+    background-color: #003CA3;
+}
+
+#titulo {
+    background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('../images/img-detalhes-beneficio/imagem-fundo.jpeg');
+    background-size: cover;
+    background-position: center;
+    min-height: 70vh; 
+}
+
+#titulo-site {
+    font-family: montserrat;
+    letter-spacing: 0.5rem;
+    font-weight: 500;
+    padding-top: 5rem;
+    color: #ffffff;
+}
+
+#titulo-descricao-desktop {
+    margin-top: 1.2rem;
+}
+
+#descricao-beneficio-desktop {
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+#div-valor-beneficio {
+    border-top: 1px solid;
+}
+
+#valor-beneficio-desktop {
+    margin-top: 0.35rem;
+}
+
+#botao-postos-atendimentos:hover {
+    background-color: #0D43A1;
+    transform: scale(1.05);
+}
+
+#botao-postos-atendimentos {
+    color: white;
+    background-color: #003CA3;
+    font-family: "DM Sans";
+    font-size: 1.3rem;
+    font-weight: 500;
+    padding: 0.6rem 1.4rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    border-radius: 40px;
+    transition: transform 0.2s ease;
+}
+
+/* Responsividade do header */
+
+/* Tablets (até 1024px) */
+@media (max-width: 1024px) {
+    .headerDesktop {
+        display: none !important;
+    }
+
+    .headerMobile {
+        display: block !important;
+    }
+
+    .navbarMobile {
+        padding: 0 !important;
+        height: 100%;
+        width: 100%;
+        background-color: #f7f7f7 !important;
+    }
+
+    .navbar-brand {
+        font-size: 1.9rem;
+    }
+
+    .botoesNavegacao {
+        margin-bottom: 1.3rem;
+    }
+}
+
+/* Celulares (até 768px) */
+@media (max-width: 768px) {
+    .navbar-brand>img {
+        height: 3.5rem;
+    }
+
+    .botoesNavegacao {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .navbar-brand {
+        font-size: 1.6rem;
+    }
+
+    .headerMobile .botao-branco,
+    .headerMobile .botao-azul {
+        font-size: 1.3rem !important;
+    }
+}

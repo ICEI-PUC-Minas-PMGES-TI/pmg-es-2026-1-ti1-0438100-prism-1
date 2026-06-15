@@ -1,0 +1,231 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos Padrões */
+.botoes a {
+    text-decoration: none;
+}
+
+.botao-azul,
+.botao-branco {
+    font-family: "DM Sans";
+    font-size: 1.3rem;
+    font-weight: 500;
+    padding: 0.6rem 1.4rem;
+    border-radius: 40px;
+    transition: transform 0.2s ease;
+}
+
+body {
+    background-color: #f5f5f5;
+}
+
+main {
+    width: 100%;
+    padding-left: 2%;
+    padding-right: 2%;
+    padding-bottom: 4rem;
+}
+
+.botao-azul,
+.botao-branco {
+    font-family: "DM Sans";
+    font-size: 1.3rem;
+    font-weight: 500;
+    padding: 0.6rem 1.4rem;
+    border-radius: 40px;
+    transition: transform 0.2s ease;
+    text-decoration: none;
+}
+
+.botao-azul {
+    color: #ffffff;
+    background-color: #003CA3;
+    text-align: center;
+    display: inline-block;
+}
+
+.botao-azul:hover {
+    background-color: #3360ad;
+    transform: scale(1.01);
+}
+
+.botao-branco {
+    color: #333;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.25);
+}
+
+.botao-branco:hover {
+    background-color: rgba(255, 238, 204, 1);
+    transform: scale(1.01);
+}
+
+/* Estilização Do Header */
+header {
+    font-family: "DM Sans";
+    width: 100vw;
+    background-color: #f7f7f7;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+    padding: 0% 3% 0% 1%;
+}
+
+ .navbarDesktop,
+.container-fluid {
+    width: 100%;
+    display: flex !important;
+    justify-content: space-between !important;
+}
+
+.headerMobile {
+    display: none !important;
+}
+
+.navbar-brand {
+    height: 100% !important;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.navbar-brand>img {
+    height: 4.7rem;
+}
+
+.botoesNavegacao {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.navbar-toggler {
+    background-color: #003CA3;
+}
+
+.titulo-sessao {
+    text-align: center;
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    letter-spacing: .04em;
+    font-weight: 700;
+    font-family: montserrat;
+}
+
+.titulo-sessao h2 {
+    font-size: 3rem;
+}
+ 
+/* Label de detalhe (micro-texto acima do valor) */
+.label-detalhe {
+    font-size: 1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+    color: #6c757d;
+    display: block;
+}
+
+.assistente-info {
+    color: black;
+    font-family: jomhuria;
+    font-size: 1rem;
+    font-weight: 900;
+}
+ 
+/* Foto do membro — círculo fixo */
+.foto-membro {
+    width: 72px;
+    height: 72px;
+    object-fit: cover;
+    border: 3px solid #d9e4ff;
+}
+ 
+/* Badges de categoria */
+.badge-responsavel { background-color: #d9e4ff; }
+.badge-dependente  { background-color: #d4edda; }
+ 
+/* Hover nos cards */
+.card-hover { transition: box-shadow .2s, transform .2s; }
+.card-hover:hover {
+    box-shadow: 0 6px 20px rgba(0,60,163,.12);
+    transform: translateY(-2px);
+}
+ 
+/* Bloco da foto da assistente (altura fixa, cobre a coluna) */
+.foto-assistente-wrapper {
+    min-height: 220px;
+    background: linear-gradient(135deg, #d9e4ff, #d4edda);
+    overflow: hidden;
+}
+ 
+/* Ícone de benefício */
+.icone-beneficio {
+    width: 52px;
+    height: 52px;
+    border-radius: 12px;
+    background: #d9e4ff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.6rem;
+    flex-shrink: 0;
+}
+
+/* Responsividade para celulares do header */
+
+/* Tablets (até 1024px) */
+@media (max-width: 1024px) {
+    .headerDesktop {
+        display: none !important;
+    }
+
+    .headerMobile {
+        display: block !important;
+    }
+
+    .navbarMobile {
+        padding: 0 !important;
+        height: 100%;
+        width: 100%;
+        background-color: #f7f7f7 !important;
+    }
+
+    .navbar-brand {
+        font-size: 1.9rem;
+    }
+
+    .botoesNavegacao {
+        margin-bottom: 1.3rem;
+    }
+}
+
+/* Celulares (até 768px) */
+@media (max-width: 768px) {
+    .navbar-brand>img {
+        height: 3.5rem;
+    }
+
+    .botoesNavegacao {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .navbar-brand {
+        font-size: 1.6rem;
+    }
+
+    .headerMobile .botao-branco,
+    .headerMobile .botao-azul {
+        font-size: 1.3rem !important;
+    }
+}
