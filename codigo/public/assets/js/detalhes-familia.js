@@ -147,7 +147,7 @@ function criarCardBeneficioFamiliar(beneficio) {
     const icone = iconeBeneficio(beneficio.categoria ?? '');
  
     return `
-    <div class="col">
+    <div id="beneficios-familia" class="col">
         <div class="card h-100 shadow-sm card-hover">
             <div class="card-body d-flex gap-3">
                 <div class="icone-beneficio flex-shrink-0">${icone}</div>
