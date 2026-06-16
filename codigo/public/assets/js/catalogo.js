@@ -18,7 +18,9 @@ const limparFiltros = document.getElementById('limpar-filtros');
 const contadorFavoritos = document.getElementById('contador-favoritos');
 const mostrarFavoritosBtn = document.getElementById('mostrar-favoritos');
 
-let favoritos = JSON.parse(localStorage.getItem('favoritos')) || [];
+let favoritos = JSON.parse(
+    localStorage.getItem('favoritos') || '[]'
+);
 let exibindoFavoritos = false;
 
 async function carregarBeneficios() {
@@ -70,7 +72,7 @@ function criarCard(beneficio) {
     card.innerHTML = `
         <div class="card-header">
             <h2>${beneficio.nome}</h2>
-            <span class="orgao">${beneficio.orgao}</span>
+            <span class="orgao">${beneficio.orgaoResponsavel}</span>
         </div>
 
         <p class="descricao">

@@ -3,7 +3,7 @@
     {
       "id": "BEN-001",
       "nome": "Bolsa Família",
-      "categoria": "alimentacao",
+      "categoria": "Alimentação",
       "descricao": "Auxílio mensal para famílias de baixa renda cadastradas em programas sociais.",
       "descricaoCompleta": "O Bolsa Família é um programa federal de transferência de renda que busca garantir a subsistência básica de famílias em situação de pobreza e extrema pobreza. Além do repasse financeiro, exige contrapartidas como a manutenção da frequência escolar das crianças e a atualização do cartão de vacinação, promovendo acesso à saúde e educação.",
       "valorBase": 600,
@@ -33,7 +33,7 @@
     {
       "id": "BEN-002",
       "nome": "Auxílio Moradia",
-      "categoria": "moradia",
+      "categoria": "Moradia",
       "descricao": "Subsídio mensal temporário para famílias em extrema vulnerabilidade habitacional.",
       "descricaoCompleta": "Destinado a custear moradia temporária para famílias que perderam seus imóveis devido a desastres naturais, desabamentos, desapropriações ou que se encontram em situação de rua. O benefício é concedido mediante acompanhamento técnico contínuo do serviço social do município.",
       "valorBase": 600,
@@ -64,7 +64,7 @@
     {
       "id": "BEN-003",
       "nome": "Tarifa Social de Energia",
-      "categoria": "energia",
+      "categoria": "Energia",
       "descricao": "Desconto na conta de luz para famílias de baixa renda e inscritas no CadÚnico.",
       "descricaoCompleta": "Oferece descontos escalonados na conta de energia elétrica de até 65% para consumidores residenciais de baixa renda. Para famílias indígenas ou quilombolas, o desconto pode chegar a 100% dependendo da faixa de consumo mensal em kWh.",
       "valorBase": 80,
@@ -92,7 +92,7 @@
     {
       "id": "BEN-004",
       "nome": "Auxílio Gás",
-      "categoria": "gas",
+      "categoria": "Gás",
       "descricao": "Subsídio bimestral para auxiliar na compra do botijão de gás de cozinha de 13kg.",
       "descricaoCompleta": "Programa que visa diminuir o impacto do preço do gás de cozinha no orçamento de famílias vulneráveis. Pago a cada dois meses, o valor corresponde a 100% da média nacional do preço do botijão de GLP de 13kg, calculado pela ANP.",
       "valorBase": 110,
@@ -117,7 +117,7 @@
     {
       "id": "BEN-005",
       "nome": "Benefício Primeira Infância",
-      "categoria": "alimentacao",
+      "categoria": "Alimentação",
       "descricao": "Suplemento financeiro para famílias com crianças de zero a seis anos de idade.",
       "descricaoCompleta": "Integrado ao Bolsa Família, este benefício garante um valor adicional por cada criança na faixa etária da primeira infância. O foco é ampliar a segurança alimentar, nutricional e o desenvolvimento integral nos primeiros anos de vida.",
       "valorBase": 150,
@@ -145,7 +145,7 @@
     {
       "id": "BEN-006",
       "nome": "BPC Idoso",
-      "categoria": "assistencia",
+      "categoria": "Assistência",
       "descricao": "Salário mínimo mensal para idosos com 65 anos ou mais que não possuem renda.",
       "descricaoCompleta": "O Benefício de Prestação Continuada (BPC) é uma garantia constitucional que assegura um salário mínimo mensal ao idoso que comprove não possuir meios de prover a própria manutenção nem de tê-la provida por sua família (renda familiar per capita inferior a 1/4 do salário mínimo).",
       "valorBase": 1412,
@@ -174,7 +174,7 @@
     {
       "id": "BEN-007",
       "nome": "BPC Deficiência",
-      "categoria": "assistencia",
+      "categoria": "Assistência",
       "descricao": "Salário mínimo mensal para pessoas com deficiência e impedimentos de longo prazo.",
       "descricaoCompleta": "Garante um salário mínimo por mês à pessoa com deficiência de qualquer idade que apresente impedimentos físicos, mentais, intelectuais ou sensoriais de longo prazo, os quais barrem sua participação plena e efetiva na sociedade em igualdade de condições.",
       "valorBase": 1412,
@@ -203,7 +203,7 @@
     {
       "id": "BEN-008",
       "nome": "Tarifa Social de Água",
-      "categoria": "agua",
+      "categoria": "Água",
       "descricao": "Desconto na tarifa de água e esgoto para residências cadastradas no CadÚnico.",
       "descricaoCompleta": "Concede benefício tarifário diferenciado na conta de água para habitações unifamiliares de baixa renda. Reduz em até 50% o valor da conta para os primeiros blocos de consumo de água potável e coleta de esgoto.",
       "valorBase": 45,
@@ -230,7 +230,7 @@
     {
       "id": "BEN-009",
       "nome": "Carteira do Idoso",
-      "categoria": "transporte",
+      "categoria": "Transporte",
       "descricao": "Garante gratuidade ou desconto em passagens de ônibus interestaduais.",
       "descricaoCompleta": "Documento que viabiliza o acesso ao transporte interestadual gratuito (duas vagas por veículo) ou desconto de 50% no valor das passagens para idosos com renda individual igual ou inferior a dois salários mínimos, conforme o Estatuto do Idoso.",
       "valorBase": 0,
@@ -258,7 +258,7 @@
     {
       "id": "BEN-010",
       "nome": "ID Jovem",
-      "categoria": "cultura_transporte",
+      "categoria": "Cultura e transporte",
       "descricao": "Benefício que dá direito a meia-entrada e transporte interestadual gratuito para jovens.",
       "descricaoCompleta": "A Identidade Jovem é o documento que assegura aos jovens de 15 a 29 anos de baixa renda o acesso aos benefícios da meia-entrada em eventos artístico-culturais e esportivos, além de reserva de vagas gratuitas ou com desconto no transporte coletivo interestadual.",
       "valorBase": 0,
@@ -285,7 +285,7 @@
     {
       "id": "BEN-011",
       "nome": "Auxílio Natalidade",
-      "categoria": "maternidade",
+      "categoria": "Maternidade",
       "descricao": "Benefício em dinheiro ou bens de consumo pago devido ao nascimento de um filho.",
       "descricaoCompleta": "Trata-se de um benefício eventual da assistência social de caráter temporário, oferecido pelo município para reduzir a vulnerabilidade da família decorrente do nascimento de um novo membro. Pode vir em formato de enxoval físico ou pecúnia.",
       "valorBase": 300,
@@ -313,7 +313,7 @@
     {
       "id": "BEN-012",
       "nome": "Programa Leite de Todos",
-      "categoria": "alimentacao",
+      "categoria": "Alimentação",
       "descricao": "Distribuição gratuita de leite para combater as deficiências nutricionais infantis.",
       "descricaoCompleta": "Programa voltado à segurança alimentar de crianças de 6 meses a 3 anos e gestantes em vulnerabilidade. Consiste no fornecimento diário de leite pasteurizado enriquecido com vitaminas, com o intuito de reduzir indicadores de desnutrição infantil.",
       "valorBase": 60,
@@ -341,7 +341,7 @@
     {
       "id": "BEN-013",
       "nome": "Passe Livre Interestadual PCD",
-      "categoria": "transporte",
+      "categoria": "Transporte",
       "descricao": "Passe livre no transporte interestadual rodoviário, ferroviário e aquaviário para PCD.",
       "descricaoCompleta": "Programa do Governo Federal que assegura a gratuidade em viagens de ônibus entre estados diferentes para pessoas com deficiência física, mental, intelectual ou sensorial comprovadamente carentes (renda per capita menor ou igual a 1 salário mínimo).",
       "valorBase": 0,
@@ -370,7 +370,7 @@
     {
       "id": "BEN-014",
       "nome": "Isenção de Taxa de Concurso",
-      "categoria": "educacao",
+      "categoria": "Educação",
       "descricao": "Isenção total do pagamento de inscrição em concursos públicos federais e municipais.",
       "descricaoCompleta": "Garante ao cidadão inscrito no CadÚnico e membro de família de baixa renda o direito de se inscrever em seleções e concursos públicos de órgãos governamentais sem arcar com as custas da taxa de inscrição, promovendo igualdade de oportunidades de emprego.",
       "valorBase": 100,
@@ -395,7 +395,7 @@
     {
       "id": "BEN-015",
       "nome": "Bolsa Qualificação Profissional",
-      "categoria": "educacao",
+      "categoria": "Educação",
       "descricao": "Bolsa de incentivo financeiro para jovens e adultos matriculados em cursos técnicos.",
       "descricaoCompleta": "Auxílio concedido a beneficiários de programas sociais que realizam cursos de capacitação técnica promovidos por centros municipais. O valor ajuda nas despesas de transporte e alimentação durante todo o período letivo da formação.",
       "valorBase": 250,
@@ -424,7 +424,7 @@
     {
       "id": "BEN-016",
       "nome": "Cesta Cidadã emergencial",
-      "categoria": "alimentacao",
+      "categoria": "Alimentação",
       "descricao": "Fornecimento emergencial temporário de insumos e cestas de alimentos básicos.",
       "descricaoCompleta": "Benefício eventual voltado a famílias em situação de extrema vulnerabilidade conjuntural imediata (desemprego repentino, calamidades ou extrema necessidade). Fornece kits completos de alimentação por um período de até 3 meses renováveis.",
       "valorBase": 180,
