@@ -220,6 +220,11 @@ header>nav {
     margin: 0% 10% 0 10%;
 }
 
+#link-detalhes-beneficios {
+    text-decoration: none;
+    color: white;
+}
+
 @media (max-width: 1024px) {
 
     .card-beneficio {

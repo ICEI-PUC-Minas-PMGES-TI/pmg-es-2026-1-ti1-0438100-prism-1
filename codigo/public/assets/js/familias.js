@@ -2,7 +2,7 @@
 // 1. VARIÁVEIS GLOBAIS
 // ==========================================
 // Simulação da Assistente logada
-const idAssistenteLogada = "AS-002";
+const idAssistenteLogada = "AS-001";
 let familiasDaAssistente = [];
 let nomeAssistenteLogada = "";
 

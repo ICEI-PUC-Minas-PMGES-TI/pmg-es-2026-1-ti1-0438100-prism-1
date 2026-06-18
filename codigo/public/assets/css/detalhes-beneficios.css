@@ -41,15 +41,3 @@ main {
     transform: scale(1.05);
 }
 
-#botao-postos-atendimentos {
-    color: white;
-    background-color: #003CA3;
-    font-size: 2rem;
-    font-weight: 900;
-    padding: 0.6rem 1.4rem;
-    margin-top: 2rem;
-    margin-bottom: 2rem;
-    border-radius: 40px;
-    transition: transform 0.2s ease;
-}
-

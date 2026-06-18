@@ -94,7 +94,7 @@ function criarCardMembro(membro) {
 function renderizarMembros(membros) {
     const container = document.getElementById('cards-membros');
     if (!container) return;
-    container.className = 'row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4';
+    container.className = 'row row-cols-1 row-cols-md-2 row-cols-xl-3 g-4 justify-content-center';
     container.innerHTML = membros.map(criarCardMembro).join('');
 }
  
@@ -182,7 +182,7 @@ async function renderizarBeneficiosFamiliares(beneficiosFamiliares) {
         })
     );
  
-    container.className = 'row row-cols-1 row-cols-md-2 g-4';
+    container.className = 'row row-cols-1 row-cols-md-2 g-4 justify-content-center';
     container.innerHTML = detalhes.map(criarCardBeneficioFamiliar).join('');
 }
  

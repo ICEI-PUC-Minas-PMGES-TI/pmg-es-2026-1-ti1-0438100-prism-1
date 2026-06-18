@@ -128,7 +128,7 @@ function renderizarCards(beneficios) {
                 : '<img width="20" height="20" src="https://img.icons8.com/ios/50/like--v1.png" alt="like"/> Favoritar'}
         </button>
         </div>
-            <a href="${linkDestino}" class="botao-azul">Mais Detalhes</a>
+            <a href="detalhes-beneficio.html?id=${beneficio.id}" class="botao-azul">Mais Detalhes</a>
         `;
         container.appendChild(card);
         const botaoFavorito = card.querySelector('.favoritar');

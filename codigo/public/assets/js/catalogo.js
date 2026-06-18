@@ -85,11 +85,7 @@ function criarCard(beneficio) {
             </span>
 
             <span class="valor">
-                ${
-                    beneficio.valor > 0
-                    ? `R$ ${beneficio.valor},00`
-                    : 'Variável'
-                }
+                ${`R$ ${beneficio.valorBase},00`}
             </span>
         </div>
 
@@ -102,7 +98,7 @@ function criarCard(beneficio) {
         </button>
 
         <button class="botao-azul botao-detalhes">
-            Mais Detalhes
+            <a id="link-detalhes-beneficios" href="detalhes-beneficio.html?id=${beneficio.id}">Mais Detalhes</a>
         </button>
     `;
 
@@ -200,14 +196,14 @@ function filtrarBeneficios() {
     if (ordenacao.value === 'maior') {
 
         filtrados.sort(
-            (a, b) => b.valor - a.valor
+            (a, b) => b.valorBase - a.valorBase
         );
     }
 
     if (ordenacao.value === 'menor') {
 
         filtrados.sort(
-            (a, b) => a.valor - b.valor
+            (a, b) => a.valorBase - b.valorBase
         );
     }
 
