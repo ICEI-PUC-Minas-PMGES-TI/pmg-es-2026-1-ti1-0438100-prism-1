@@ -89,8 +89,8 @@ async function inicializar() {
         const assistenteAtual = assistentes.find(a => a.id === idAssistenteLogada);
 
         nomeAssistenteLogada = assistenteAtual.nome;
-        assistenteLogada.innerText = `Assistente: ${nomeAssistenteLogada} (${idAssistenteLogada})`;
-        assistenteLogadaMobile.innerHTML = `Assistente:<br>${nomeAssistenteLogada} (${idAssistenteLogada})`;
+        assistenteLogada.innerText = `${nomeAssistenteLogada} (${idAssistenteLogada})`;
+        assistenteLogadaMobile.innerHTML = `${nomeAssistenteLogada} (${idAssistenteLogada})`;
 
         const FamiliasBanco = await fetch('http://localhost:3000/familias');
         const Familias = await FamiliasBanco.json();
