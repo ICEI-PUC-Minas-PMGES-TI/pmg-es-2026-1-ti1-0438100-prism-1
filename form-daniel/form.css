@@ -57,6 +57,12 @@ select {
   font-weight: 400;
 }
 
+.form-status {
+  min-height: 20px;
+  margin-top: 12px;
+  text-align: center;
+}
+
 .form-control {
   display: grid;
   gap: 4px;

@@ -1,72 +1,35 @@
-## Configuração e execução do ambiente
+## Configuracao e execucao do formulario
 
-Este tutorial explica como rodar o projeto localmente e testar o fluxo do formulario.
+Este projeto funciona diretamente no navegador e usa apenas LocalStorage para
+guardar rascunhos e envios.
 
-### Abrir o terminal na raiz do projeto
+### Como abrir
 
-No terminal, entre na pasta principal do projeto:
-
-```powershell
-cd C:\Users\Danie\Desktop\FrontEnd\FormPrism\pmg-es-2026-1-ti1-0438100-prism-1
-```
-
-### Instalar as dependencias
-
-Execute este comando uma vez, caso as dependencias ainda nao estejam instaladas:
-
-```powershell
-npm install
-```
-
-### Iniciar o projeto
-
-Execute:
-
-```powershell
-npm run start
-```
-
-Esse comando inicia dois servidores ao mesmo tempo:
-
-- Frontend: `http://localhost:3000`
-- API JSON Server: `http://localhost:3001`
-
-
-
-
-### Passo a passo
-
-1. Rodar `npm run start`.
-2. Abrir `http://localhost:3000/form-daniel/form.html`.
-3. Preencher o formulario.
-4. Clicar em `Enviar` na ultima etapa.
-5. Conferir a mensagem de sucesso.
-6. Abrir `http://localhost:3000/submissions.html`.
-7. Verificar se o envio aparece na tabela.
-8. Abrir `http://localhost:3001/submissions`.
-9. Confirmar que o mesmo envio aparece na API.
-
-### Problemas comuns
-
-Se a pagina de envios nao carregar dados, confira se a API esta rodando:
+Abra o arquivo abaixo no navegador:
 
 ```text
-http://localhost:3001/submissions
+form-daniel/form.html
 ```
 
-Se essa URL nao abrir, pare o terminal com `Ctrl + C` e rode novamente:
+### Como testar o fluxo
 
-```powershell
-npm run start
-```
+1. Abrir `form-daniel/form.html`.
+2. Preencher o formulario.
+3. Clicar em `Enviar` na ultima etapa.
+4. Atualizar a pagina e confirmar que os dados continuam salvos no navegador.
 
-Se as portas `3000` ou `3001` estiverem ocupadas, o script `prestart` tenta libera-las automaticamente usando `kill-port`.
+### Armazenamento local
+
+Os dados sao salvos no LocalStorage do navegador:
+
+- `form-daniel-wizard-draft`: rascunho do formulario em andamento.
+- `form-daniel-submissions`: envios finalizados.
+
+Para apagar os dados do navegador, limpe o armazenamento local do site nas
+ferramentas do navegador.
 
 ### Arquivos principais
 
 - `form-daniel/form.html`: estrutura do formulario.
-- `form-daniel/form.js`: navegacao por etapas, validacao e envio para a API.
+- `form-daniel/form.js`: navegacao por etapas, validacao, rascunho e envio para LocalStorage.
 - `form-daniel/form.css`: estilos do formulario.
-- `submissions.html`: pagina que mostra os envios.
-- `submissions.js`: busca os envios em `http://localhost:3001/submissions`.
-- `db.json`: arquivo onde o JSON Server salva os dados.

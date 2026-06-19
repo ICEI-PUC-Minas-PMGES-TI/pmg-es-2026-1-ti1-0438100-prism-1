@@ -103,6 +103,7 @@ document.addEventListener("DOMContentLoaded", () => {
   };
 
   const draftStorageKey = "form-daniel-wizard-draft";
+  const submissionsStorageKey = "form-daniel-submissions";
   const cpfInput = document.getElementById("cpf");
   const nameInput = document.getElementById("full-name");
   const agesInput = document.getElementById("idadesDependentes");
@@ -154,6 +155,54 @@ document.addEventListener("DOMContentLoaded", () => {
     formStatus.style.color =
       type === "error" ? "#b00020" : type === "info" ? "#3056a3" : "#1a5f2b";
     formStatus.style.fontWeight = "600";
+  };
+
+  const readStoredSubmissions = () => {
+    const storedSubmissions = localStorage.getItem(submissionsStorageKey);
+
+    if (!storedSubmissions) {
+      return [];
+    }
+
+    const parsedSubmissions = JSON.parse(storedSubmissions);
+    return Array.isArray(parsedSubmissions) ? parsedSubmissions : [];
+  };
+
+  const saveStoredSubmissions = (submissions) => {
+    localStorage.setItem(submissionsStorageKey, JSON.stringify(submissions));
+  };
+
+  const saveSubmission = (data) => {
+    const submissions = readStoredSubmissions();
+    const now = new Date().toISOString();
+    const nextId =
+      submissions.reduce((highestId, item) => {
+        const numericId = Number(item.id);
+        return Number.isFinite(numericId) && numericId > highestId
+          ? numericId
+          : highestId;
+      }, 0) + 1;
+    const existingIndex = submissions.findIndex(
+      (item) => String(item.id) === String(data.id),
+    );
+    const previousSubmission =
+      existingIndex >= 0 ? submissions[existingIndex] : {};
+    const submission = {
+      ...previousSubmission,
+      ...data,
+      id: data.id || previousSubmission.id || nextId,
+      createdAt: previousSubmission.createdAt || now,
+      updatedAt: now,
+    };
+
+    if (existingIndex >= 0) {
+      submissions[existingIndex] = submission;
+    } else {
+      submissions.push(submission);
+    }
+
+    saveStoredSubmissions(submissions);
+    return submission;
   };
 
   const formatCpf = (value) => {
@@ -780,39 +829,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const payload = collectFormData();
 
-    (async () => {
-      submitButton.disabled = true;
+    submitButton.disabled = true;
 
-      try {
-        const res = await fetch("http://localhost:3001/submissions", {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify(payload),
-        });
-
-        if (!res.ok) throw new Error("Server response not OK");
-
-        const created = await res.json();
-
-        try {
-          localStorage.removeItem(draftStorageKey);
-        } catch (err) {}
-
-        console.log("Envio registrado com sucesso:", created);
-        resetForm();
-      } catch (err) {
-        console.error("Erro ao enviar ao servidor:", err);
-        setFormStatus(
-          "Não foi possível enviar ao servidor. Verifique se o JSONServer está rodando.",
-          "error",
-        );
-        alert(
-          "Não foi possível enviar ao servidor. Os dados foram mantidos localmente.",
-        );
-      } finally {
-        submitButton.disabled = false;
-      }
-    })();
+    try {
+      const created = saveSubmission(payload);
+      localStorage.removeItem(draftStorageKey);
+      console.log("Envio salvo no navegador:", created);
+      resetForm();
+    } catch (err) {
+      console.error("Erro ao salvar no navegador:", err);
+      setFormStatus(
+        "Não foi possível salvar os dados no navegador. Tente novamente.",
+        "error",
+      );
+      alert("Não foi possível salvar os dados no navegador.");
+    } finally {
+      submitButton.disabled = false;
+    }
   });
 
   restoreDraft();
