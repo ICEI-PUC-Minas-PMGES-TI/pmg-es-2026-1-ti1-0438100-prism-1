@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia-Benefício</title>
+    <link rel="stylesheet" href="../../assets/css/catalogo.css">
+    <link rel="icon" type="image/x-icon" href="../../assets/images/icon_site.png">
+</head>
+
+<body>
+
+    <header>
+
+        <div class="logo">
+
+            <img src="../../assets/images/logo_site.jpeg"Logo Guia-Benefício>
+
+            <h1>
+                <span style="color: #003CA3;">Guia-</span>
+                <span style="color: #2B7F3A;">Benefício</span>
+            </h1>
+
+            <button class="botao-menu">
+                ☰
+            </button>
+
+        </div>
+
+        <nav>
+            <a class="botao-azul" href="catalogo.html">Início</a>
+            <a class="botao-branco" href="">Recomendador</a>
+        </nav>
+
+    </header>
+
+    <main>
+
+        <div class="intro">
+
+            <h1>Catálogo de Benefícios</h1>
+
+            <p>
+                Veja o catálogo de benefícios disponíveis e clique para mais detalhes.
+            </p>
+
+        </div>
+
+        <div class="filtros">
+
+            <input
+                type="text"
+                id="pesquisa"
+                placeholder="Pesquisar benefício">
+
+            <select id="filtro-categoria">
+                <option value="">Todas as categorias</option>
+                <option value="Alimentação">Alimentação</option>
+                <option value="Energia">Energia</option>
+                <option value="Previdência">Previdência</option>
+                <option value="Habitação">Habitação</option>
+                <option value="Saúde">Saúde</option>
+                <option value="Educação">Educação</option>
+                <option value="Transporte">Transporte</option>
+            </select>
+
+            <select id="ordenacao">
+                <option value="">Ordenar</option>
+                <option value="maior">Maior valor</option>
+                <option value="menor">Menor valor</option>
+            </select>
+
+            <button
+                id="limpar-filtros"
+                class="botao-azul">
+                Limpar
+            </button>
+
+        </div>
+
+        <div class="info-beneficios">
+
+            <p id="contador-beneficios"></p>
+
+            <p id="contador-favoritos">
+                Favoritos: 0
+            </p>
+
+            <button
+                id="mostrar-favoritos"
+                class="botao-branco">
+                Mostrar Favoritos
+            </button>
+
+        </div>
+
+        <div
+            class="beneficios"
+            id="beneficios">
+        </div>
+
+    </main>
+
+    <script src="../../assets/js/catalogo.js"></script>
+
+</body>
+
+</html>
