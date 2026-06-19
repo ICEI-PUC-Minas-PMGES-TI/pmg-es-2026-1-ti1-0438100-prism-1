@@ -131,11 +131,27 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 1rem;
+    gap: 1.5rem;
 }
 
 .navbar-toggler {
     background-color: var(--cor-primaria);
+}
+
+.link-header{
+    font-size: 1.5rem;
+    font-weight: 600;
+    font-family: var(--font-principal);
+    color: var(--cor-primaria);
+    text-decoration: none;
+    border-bottom: solid 2px #2B7F3A;
+    transition: border-width 0.3s ease-in-out;
+    transition: transform 0.4s ease-in-out;
+}
+
+.link-header:hover{
+    transform: scale(1.1);
+    border-width: 4px;
 }
 
 /* ==========================================
@@ -165,6 +181,11 @@ header {
 
     .botoesNavegacao {
         margin-bottom: 1.3rem;
+    }
+    .link-header{
+        border-left: solid 2px #2B7F3A;
+        border-bottom: 0px;
+        padding-left: 0.5rem;
     }
 }
 

@@ -187,13 +187,36 @@ main {
 
 /* Celulares (até 768px) */
 @media (max-width: 768px) {
+    .introducao-site{
+        padding-left: 0.7rem;
+        padding-right: 0.7rem;
+    }
     .introducao-site>h1 {
-        font-size: 3rem;
+        font-size: 2.3rem;
         line-height: normal;
     }
 
     .introducao-site>p {
-        font-size: 1.5rem;
+        font-size: 1.3rem;
         width: 80%;
     }
+
+    .card-modulo{
+        width: 99%;
+    }
+
+    .valores-site{
+        padding-left: 0.7rem;
+        padding-right: 0.7rem;
+    }
+    .valores-site>h1{
+        font-size: 2.3rem;
+        line-height: normal;
+    }
+
+    .valores-site>p{
+        font-size: 1.3rem;
+        width: 80%;
+    }
+
 }
