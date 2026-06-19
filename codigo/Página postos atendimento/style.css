@@ -27,6 +27,91 @@ body {
   flex-direction: column;
 }
 
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+:root {
+    --font-principal: "DM Sans", sans-serif;
+    --cor-primaria: #003CA3;
+    --cor-primaria-hover: #3360ad;
+    --cor-secundaria: #2B7F3A;
+    --cor-secundaria-hover: #2b7f3aa1;
+    --cor-terciaria: rgb(255, 214, 132);
+    --cor-terciaria-hover: rgba(255, 238, 204, 1);
+    --cor-texto-escuro: #333;
+    --cor-texto-claro: #ffffff;
+    --cor-fundo-claro: #f7f7f7;
+    --cor-preto: #000;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+
+/* ==========================================
+   2. COMPONENTES REUTILIZÁVEIS
+   ========================================== */
+/* Botões */
+.botao-azul,
+.botao-branco,
+.botao-verde,
+.botao-amarelo {
+    font-family: var(--font-principal);
+    font-size: 1.3rem;
+    font-weight: 500;
+    padding: 0.6rem 1.4rem;
+    border-radius: 40px;
+    transition: transform 0.2s ease;
+    text-decoration: none;
+}
+
+.botao-azul {
+    color: var(--cor-texto-claro);
+    background-color: var(--cor-primaria);
+    text-align: center;
+    display: inline-block;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.25);
+}
+
+.botao-azul:hover {
+    background-color: var(--cor-primaria-hover);
+    transform: scale(1.01);
+}
+
+.botao-branco {
+    color: var(--cor-texto-escuro);
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.25);
+}
+
+.botao-branco:hover {
+    background-color: var(--cor-terciaria-hover);
+    transform: scale(1.01);
+}
+
+.botao-verde {
+    color: var(--cor-texto-claro);
+    background-color: var(--cor-secundaria);
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.25);
+}
+
+.botao-verde:hover {
+    background-color: var(--cor-secundaria-hover);
+    transform: scale(1.01);
+}
+
+.botao-amarelo{
+    background-color: var(--cor-terciaria);
+    color: var(--cor-preto);
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.25);
+}
+
+.botao-amarelo:hover{
+    background-color: var(--cor-terciaria-hover);
+    transform: scale(1.01);
+}
 header {
     font-family: var(--font-principal);
     width: 100vw;
