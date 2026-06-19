@@ -28,69 +28,66 @@ body {
 }
 
 header {
-  background: #fff;
-  border-bottom: 1.5px solid var(--gray-200);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  box-shadow: var(--shadow-sm);
+    font-family: var(--font-principal);
+    width: 100vw;
+    background-color: var(--cor-fundo-claro);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+    padding: 0% 3% 0% 1%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
 }
-.header-interno {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 0 24px;
-  height: 64px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-.logo-wrap {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  text-decoration: none !important;
-}
-.logo-wrap a {
-  display: flex;
-  text-decoration: none !important;
-}
-.logo-wrap img {
-  width: 60px;
-  height: 60px;
-  object-fit: contain;
-}
-.logo-text {
-  font-family: 'Nunito', sans-serif;
-  font-size: 1.3rem;
-  font-weight: 800;
-  color: var(--blue);
-  letter-spacing: -.3px;
-  text-decoration: none !important;
-  display: inline-block;
-}
-.logo-text .verde {
-  color: var(--green) !important;
+.navbarDesktop,
+.container-fluid {
+    width: 100%;
+    display: flex !important;
+    justify-content: space-between !important;
 }
 
-nav { display: flex; gap: 8px; }
-nav a {
-font-family: 'Inter', sans-serif;
-font-size: .875rem;
-font-weight: 500;
-color: var(--gray-600);
-text-decoration: none;
-padding: 8px 20px;
-border-radius: 20px;
-      border: 1.5px solid var(--gray-200); 
-      background: #fff;
-      transition: all .18s;
+.headerMobile {
+    display: none !important;
 }
-nav a:hover { background: var(--gray-100); }
-nav a.active {
-  background: var(--blue);
-      color: #fff;
-      font-weight: 600;
-      border-color: var(--blue)
+
+.navbar-brand {
+    height: 100% !important;
+    font-size: 2.5rem;
+    font-weight: bold;
+}
+
+.navbar-brand>img {
+    height: 4.7rem;
+}
+
+.botoesNavegacao {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+}
+
+.navbar-toggler {
+    background-color: var(--cor-primaria);
+}
+
+.link-header{
+    font-size: 1.5rem;
+    font-weight: 600;
+    font-family: var(--font-principal);
+    color: var(--cor-primaria);
+    text-decoration: none;
+    border-bottom: solid 2px #2B7F3A;
+    transition: border-width 0.3s ease-in-out;
+    transition: transform 0.4s ease-in-out;
+}
+
+.link-header:hover{
+    transform: scale(1.1);
+    border-width: 4px;
 }
 
 .hamburger {

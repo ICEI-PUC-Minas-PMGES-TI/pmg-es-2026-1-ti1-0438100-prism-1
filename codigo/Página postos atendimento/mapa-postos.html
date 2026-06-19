@@ -11,32 +11,45 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-<header>
-  <div class="header-interno">
-    <div class="logo-wrap">
-      <a href="#">
-        <img src="logo.png" alt="Guia-Benefício logo" onerror="this.style.display='none'" />
-      </a>
-      <span class="logo-text">Guia-<span class="verde">Benefício</span></span>
-    </div>
-    <nav>
-      <a href="#">Início</a>
-      <a href="#">Benefícios</a>
-      <a href="#" class="active">Postos CRAS</a>
-      <a href="#">Recomendador</a>
-    </nav>
-    <button class="hamburger" onclick="toggleMenu()" aria-label="Menu">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-  <div class="mobile-nav" id="mobileNav">
-    <a href="#">Início</a>
-    <a href="#">Benefícios</a>
-    <a href="#" class="active">Postos CRAS</a>
-    <a href="#">Recomendador</a>
-  </div>
-</header>
-
+<header class="headerMobile">
+        <nav class="navbar navbar-dark bg-dark navbarMobile">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="logo.png" alt="Logo Guia_Benefício" class="d-inline-block align-text-center">
+                    <span style="color: #003CA3;">Guia-</span><span style="color: #2B7F3A">Benefício</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+        </nav>
+        <div class="collapse" id="navbarToggleExternalContent" data-bs-theme="dark">
+            <nav class="botoesNavegacao">
+                <a class="link-header" href="index.html">Início</a>
+                <a class="link-header" href="modulos/beneficios/catalogo.html">Benefícios</a>
+                <a class="link-header" href="">Recomendador</a><!-- Tem que linkar com o formulário! -->
+                <a class="link-header" href="">Login</a><!-- Tem que linkar com a página de Login -->
+            </nav>
+        </div>
+    </header>
+    <header class="headerDesktop">
+        <nav class="navbar navbar-dark navbarDesktop">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">
+                    <img src="logo.png" alt="Logo Guia-Benefício" class="d-inline-block align-text-center">
+                    <span style="color: #003CA3;">Guia-</span><span style="color: #2B7F3A">Benefício</span>
+                </a>
+                <nav class="botoesNavegacao">
+                    <a class="link-header" href="index.html">Início</a>
+                    <a class="link-header" href="modulos/beneficios/catalogo.html">Benefícios</a>
+                    <a class="link-header" href="">Recomendador</a><!-- Tem que linkar com o formulário! -->
+                    <a class="botao-amarelo" href="">Login</a><!-- Tem que linkar com a página de Login -->
+                </nav>
+            </div>
+        </nav>
+    </header>
 <div class="hero">
   <h1>Mapa de Postos de Atendimento CRAS</h1>
   <p>Encontre o posto mais próximo de você e veja qual posto é mais visitado em Belo Horizonte.</p>
