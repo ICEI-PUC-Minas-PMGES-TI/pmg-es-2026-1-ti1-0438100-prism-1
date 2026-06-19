@@ -1,12 +1,3 @@
-const botao_menu = document.querySelector('.botao-menu');
-const nav = document.querySelector('nav');
-const header = document.querySelector('header');
-
-botao_menu.addEventListener('click', () => {
-    nav.classList.toggle('menu-aberto');
-    header.classList.toggle('menu-aberto');
-});
-
 let beneficios = [];
 
 const container = document.getElementById('beneficios');
