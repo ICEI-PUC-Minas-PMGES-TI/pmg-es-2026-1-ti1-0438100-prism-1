@@ -1,16 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
 
 * {
-  font-family: "Outfit", sans-serif;
+  font-family: "DM Sans", sans-serif;
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
 
 :root {
-  --main-color: #043ca4;
+  --main-color: #003CA3;
   --dark-color: #07368d;
   --step-color: #ced7e8;
+  --cor-primaria-hover: #3360ad;
   --step-size: 32px;
   --steps: 4;
   --progress-width: calc((var(--steps) - 1) / var(--steps) * 100%);
@@ -94,7 +96,7 @@ select {
 }
 
 .radio-option:hover {
-  border-color: #7494cc;
+  border-color:  var(--cor-primaria-hover);
   background: #fff;
   /* box-shadow: 0 6px 18px rgba(167, 21, 84, 0.08); */
 }
@@ -145,7 +147,7 @@ select {
 }
 
 .checkbox-option:hover {
-  border-color: #7494cc;
+  border-color: var(--cor-primaria-hover);
   background: #fff;
 }
 
