@@ -1,7 +1,8 @@
 const API_URL = 'http://localhost:3000';
 let listaBeneficiosDisponiveis = [];
 
-const assistenteLogada = JSON.parse(localStorage.getItem('usuarioLogado')) || { idAssistente: "AS-001" };
+const usuarioLogado = protegerPagina();
+const idAssistenteLogada = usuarioLogado?.id;
 
 // Carrega os benefícios cadastrados no banco na inicialização
 async function carregarBeneficios() {
@@ -22,13 +23,23 @@ function gerarOpcoesBeneficios() {
         .join('');
 }
 
-function converterParaBase64(arquivo) {
-    return new Promise((resolve, reject) => {
-        const reader = new FileReader();
-        reader.readAsDataURL(arquivo);
-        reader.onload = () => resolve(reader.result);
-        reader.onerror = error => reject(error);
-    });
+async function fazerUploadImagem(arquivo) {
+    const formData = new FormData();
+    formData.append("image", arquivo);
+
+    // Você consegue uma chave API gratuita em: https://api.imgbb.com/
+    const API_KEY = "8932c05214fe51a1bd87a060fd6b690b"; 
+    
+    try {
+        const response = await fetch(`https://api.imgbb.com/1/upload?key=${API_KEY}`, {
+            method: "POST",
+            body: formData
+        });
+        const data = await response.json();
+        return data.data.url; // Isso retorna uma URL real da internet (ex: https://ibb.co/xyz.jpg)
+    } catch (error) {
+        console.error("Erro ao subir imagem:", error);
+    }
 }
 
 // --- GERENCIAMENTO DE BENEFÍCIOS DA FAMÍLIA ---
@@ -146,48 +157,101 @@ document.getElementById('btn-add-membro').addEventListener('click', () => {
 document.getElementById('form-cadastro').addEventListener('submit', async (e) => {
     e.preventDefault();
 
+    // 1. Captura e desativa o botão de envio para evitar cliques múltiplos
+    const btnSubmeter = e.target.querySelector('button[type="submit"]') || document.activeElement;
+    if (btnSubmeter) {
+        btnSubmeter.disabled = true;
+        btnSubmeter.innerText = "Processando...";
+    }
+
     if (containerMembros.children.length === 0) {
         alert('Por favor, adicione pelo menos um membro à família.');
+        if (btnSubmeter) {
+            btnSubmeter.disabled = false;
+            btnSubmeter.innerText = "Salvar Cadastro";
+        }
         return;
     }
 
-    // --- NOVA CAPTURA: Conversão da Foto da Família ---
-    const inputFotoFamilia = document.getElementById('fotoFamiliaFile');
-    let fotoFamiliaBase64 = "";
+    try {
+        if (btnSubmeter) btnSubmeter.innerText = "Enviando...";
 
-    if (inputFotoFamilia.files && inputFotoFamilia.files[0]) {
-        try {
-            fotoFamiliaBase64 = await converterParaBase64(inputFotoFamilia.files[0]);
-        } catch (erro) {
-            console.error("Erro ao processar imagem da família:", erro);
+        // --- LISTA DE TAREFAS ASSÍNCRONAS (UPLOAD PARALELO) ---
+        const tarefasUpload = [];
+
+        // 2. Prepara o upload da foto da família (se houver)
+        const inputFotoFamilia = document.getElementById('fotoFamiliaFile');
+        let indiceFotoFamilia = -1;
+
+        if (inputFotoFamilia && inputFotoFamilia.files && inputFotoFamilia.files[0]) {
+            tarefasUpload.push(fazerUploadImagem(inputFotoFamilia.files[0]));
+            indiceFotoFamilia = tarefasUpload.length - 1; // Guarda a posição desta promessa
         }
-    }
 
-    // Coleta dos Benefícios da Família
-    const beneficiosFamiliares = [];
-    document.querySelectorAll('.select-beneficio-familia').forEach(select => {
-        const idBen = select.value;
-        const beneficioOriginal = listaBeneficiosDisponiveis.find(b => b.id === idBen);
-        if (beneficioOriginal) {
-            beneficiosFamiliares.push({
-                idBeneficio: beneficioOriginal.id,
-                nome: beneficioOriginal.nome,
-                valor: beneficioOriginal.valorBase
+        // Mapeamento inicial dos cards dos membros para coletar dados textuais e preparar os uploads das fotos
+        const cardsMembros = document.querySelectorAll('.card-dinamico');
+        const dadosMembrosPreVios = [];
+
+        for (const [index, card] of cardsMembros.entries()) {
+            const beneficiosIndividuais = [];
+            card.querySelectorAll('.select-beneficio-individual').forEach(select => {
+                const idBen = select.value;
+                const beneficioOriginal = listaBeneficiosDisponiveis.find(b => b.id === idBen);
+                if (beneficioOriginal) {
+                    beneficiosIndividuais.push({
+                        idBeneficio: beneficioOriginal.id,
+                        nome: beneficioOriginal.nome,
+                        valor: beneficioOriginal.valorBase
+                    });
+                }
+            });
+
+            const inputArquivo = card.querySelector('.membro-imagem-file');
+            let indiceFotoMembro = -1;
+
+            // Se o membro tiver foto, adiciona a promessa na fila de upload paralelo
+            if (inputArquivo && inputArquivo.files && inputArquivo.files[0]) {
+                tarefasUpload.push(fazerUploadImagem(inputArquivo.files[0]));
+                indiceFotoMembro = tarefasUpload.length - 1; // Guarda a posição desta promessa
+            }
+
+            dadosMembrosPreVios.push({
+                card,
+                index,
+                beneficiosIndividuais,
+                indiceFotoMembro
             });
         }
-    });
 
-    // Coleta dos Membros e seus Benefícios Individuais (Mantendo o laço for...of que já tínhamos)
-    const membros = [];
-    const cardsMembros = document.querySelectorAll('.card-dinamico');
-    
-    for (const [index, card] of cardsMembros.entries()) {
-        const beneficiosIndividuais = [];
-        card.querySelectorAll('.select-beneficio-individual').forEach(select => {
+        // 3. EXECUÇÃO PARALELA: Dispara todos os uploads para o ImgBB ao mesmo tempo!
+        const resultadosUrls = await Promise.all(tarefasUpload);
+
+        // 4. Recupera as URLs geradas nos uploads correspondentes
+        let fotoFamilia = indiceFotoFamilia !== -1 ? resultadosUrls[indiceFotoFamilia] : "";
+
+        const membros = dadosMembrosPreVios.map(m => {
+            const fotoMembro = m.indiceFotoMembro !== -1 ? resultadosUrls[m.indiceFotoMembro] : "";
+            return {
+                idPessoa: `PES-${Date.now()}-${m.index}`,
+                nome: m.card.querySelector('.membro-nome').value,
+                cpf: m.card.querySelector('.membro-cpf').value,
+                categoria: m.card.querySelector('.membro-categoria').value,
+                dataNascimento: m.card.querySelector('.membro-dataNascimento').value,
+                "imagem-membro": fotoMembro,
+                parentesco: m.card.querySelector('.membro-parentesco').value,
+                escolaridade: m.card.querySelector('.membro-escolaridade').value,
+                ocupacao: m.card.querySelector('.membro-ocupacao').value,
+                beneficiosIndividuais: m.beneficiosIndividuais
+            };
+        });
+
+        // Coleta dos Benefícios da Família
+        const beneficiosFamiliares = [];
+        document.querySelectorAll('.select-beneficio-familia').forEach(select => {
             const idBen = select.value;
             const beneficioOriginal = listaBeneficiosDisponiveis.find(b => b.id === idBen);
             if (beneficioOriginal) {
-                beneficiosIndividuais.push({
+                beneficiosFamiliares.push({
                     idBeneficio: beneficioOriginal.id,
                     nome: beneficioOriginal.nome,
                     valor: beneficioOriginal.valorBase
@@ -195,55 +259,31 @@ document.getElementById('form-cadastro').addEventListener('submit', async (e) =>
             }
         });
 
-        const inputArquivo = card.querySelector('.membro-imagem-file');
-        let fotoMembroBase64 = "";
+        if (btnSubmeter) btnSubmeter.innerText = "Salvando no banco...";
 
-        if (inputArquivo.files && inputArquivo.files[0]) {
-            try {
-                fotoMembroBase64 = await converterParaBase64(inputArquivo.files[0]);
-            } catch (erro) {
-                console.error("Erro ao processar imagem do membro:", erro);
-            }
-        }
+        // Montagem do Payload Final
+        const novaFamilia = {
+            idFamilia: `FAM-${Date.now()}`,
+            nomeFamilia: document.getElementById('nomeFamilia').value,
+            fotoFamilia: fotoFamilia,
+            endereco: {
+                rua: document.getElementById('rua').value,
+                numero: document.getElementById('numero').value,
+                bairro: document.getElementById('bairro').value,
+                cidade: document.getElementById('cidade').value,
+                estado: document.getElementById('estado').value.toUpperCase(),
+                cep: document.getElementById('cep').value
+            },
+            telefone: document.getElementById('telefone').value,
+            rendaFamiliar: parseFloat(document.getElementById('rendaFamiliar').value) || 0,
+            assistenteSocial: {
+                idAssistente: idAssistenteLogada || null
+            },
+            beneficiosFamiliares: beneficiosFamiliares,
+            membros: membros
+        };
 
-        membros.push({
-            idPessoa: `PES-${Date.now()}-${index}`,
-            nome: card.querySelector('.membro-nome').value,
-            cpf: card.querySelector('.membro-cpf').value,
-            categoria: card.querySelector('.membro-categoria').value,
-            dataNascimento: card.querySelector('.membro-dataNascimento').value,
-            "imagem-membro": fotoMembroBase64,
-            parentesco: card.querySelector('.membro-parentesco').value,
-            escolaridade: card.querySelector('.membro-escolaridade').value,
-            ocupacao: card.querySelector('.membro-ocupacao').value,
-            beneficiosIndividuais: beneficiosIndividuais
-        });
-    }
-
-    // Montagem do Payload Final estruturado
-    const novaFamilia = {
-        idFamilia: `FAM-${Date.now()}`,
-        nomeFamilia: document.getElementById('nomeFamilia').value,
-        fotoFamilia: fotoFamiliaBase64, // <--- ATUALIZADO: Agora salva o texto Base64 da família aqui
-        endereco: {
-            rua: document.getElementById('rua').value,
-            numero: document.getElementById('numero').value,
-            bairro: document.getElementById('bairro').value,
-            cidade: document.getElementById('cidade').value,
-            estado: document.getElementById('estado').value.toUpperCase(),
-            cep: document.getElementById('cep').value
-        },
-        telefone: document.getElementById('telefone').value,
-        rendaFamiliar: parseFloat(document.getElementById('rendaFamiliar').value),
-        assistenteSocial: {
-            idAssistente: assistenteLogada.idAssistente
-        },
-        beneficiosFamiliares: beneficiosFamiliares,
-        membros: membros
-    };
-
-    // Envio dos dados para o json-server
-    try {
+        // Envio final dos dados unificados para o json-server
         const response = await fetch(`${API_URL}/familias`, {
             method: 'POST',
             headers: {
@@ -260,9 +300,16 @@ document.getElementById('form-cadastro').addEventListener('submit', async (e) =>
         } else {
             throw new Error('Falha ao registrar dados no servidor.');
         }
+
     } catch (error) {
         console.error('Erro na submissão:', error);
-        alert('Erro ao salvar os dados da família. Verifique a conexão com o json-server.');
+        alert('Erro ao salvar os dados da família. Verifique a conexão.');
+    } finally {
+        // Reativa o botão original
+        if (btnSubmeter) {
+            btnSubmeter.disabled = false;
+            btnSubmeter.innerText = "Salvar Cadastro";
+        }
     }
 });
 

@@ -36,8 +36,3 @@ main {
     margin-top: 0.35rem;
 }
 
-#botao-postos-atendimentos:hover {
-    background-color: #0D43A1;
-    transform: scale(1.05);
-}
-

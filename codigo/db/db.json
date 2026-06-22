@@ -864,6 +864,7 @@
       "nome": "Fernanda Oliveira",
       "telefone": "(31) 98888-7777",
       "email": "fernanda.oliveira@assistencia.gov.br",
+      "senha": "Fe223344",
       "imagem-assistente": "../../assets/images/assistentes/fernanda-oliveira.avif",
       "cras": "CRAS Centro Sul",
       "familias-assistidas": [
@@ -873,14 +874,14 @@
         {
           "id": "FAM-002"
         }
-      ],
-      "id_usuario": "USU-001"
+      ]
     },
     {
       "id": "AS-002",
       "nome": "Rodrigo Souza",
       "telefone": "(31) 97777-6666",
       "email": "rodrigo.souza@assistencia.gov.br",
+      "senha": "Rs345678",
       "imagem-assistente": "img/assistente2",
       "cras": "CRAS Barreiro",
       "familias-assistidas": [
@@ -890,14 +891,14 @@
         {
           "id": "FAM-004"
         }
-      ],
-      "id_usuario": "USU-002"
+      ]
     },
     {
       "id": "AS-003",
       "nome": "Amanda Costa",
       "telefone": "(31) 96666-5555",
       "email": "amanda.costa@assistencia.gov.br",
+      "senha": "Ac213243",
       "imagem-assistente": "img/assistente3",
       "cras": "CRAS Venda Nova",
       "familias-assistidas": [
@@ -907,44 +908,32 @@
         {
           "id": "FAM-006"
         }
-      ],
-      "id_usuario": "USU-003"
+      ]
     },
     {
       "id": "AS-004",
       "nome": "Juliana Lima",
       "telefone": "(31) 95555-4444",
       "email": "juliana.lima@assistencia.gov.br",
+      "senha": "Jl090807",
       "imagem-assistente": "img/assistente4",
       "cras": "CRAS Eldorado",
       "familias-assistidas": [
         {
           "id": "FAM-007"
         }
-      ],
-      "id_usuario": "USU-004"
-    }
-  ],
-  "usuários": [
-    {
-      "id": "USU-001",
-      "email": "fernanda.oliveira@assistencia.gov.br",
-      "senha": "Fer883322"
+      ]
     },
     {
-      "id": "USU-002",
-      "email": "rodrigo.souza@assistencia.gov.br",
-      "senha": "Rod112233"
-    },
-    {
-      "id": "USU-003",
-      "email": "amanda.costa@assistencia.gov.br",
-      "senha": "Ama445566"
-    },
-    {
-      "id": "USU-004",
-      "email": "juliana.lima@assistencia.gov.br",
-      "senha": "Jul778899"
+      "id": "GAI0Y35MC1w",
+      "nome": "Paulo César",
+      "telefone": "(31) 99704-6525",
+      "email": "paulocsm2006@gmail.com",
+      "senha": "Pc070906",
+      "imagem-assistente": "https://i.ibb.co/chXWYKZK/2ugqfpaqc7d5vfo38gr246r1e1l8pau0ri8q8llr9eda7bkbp1d48kc173s37ute056s15cua5mhjlep5r4vghgmg3kkejc0gqc7.jpg",
+      "cras": "CRAS Vila Cemig",
+      "familias-assistidas": [],
+      "dataCadastro": "2026-06-22T16:07:30.294Z"
     }
   ],
   "familias": [
@@ -1437,6 +1426,89 @@
         }
       ],
       "id": "h4CMG3T18Kg"
+    },
+    {
+      "idFamilia": "FAM-1782151744616",
+      "nomeFamilia": "Família Augusto Lima",
+      "endereco": {
+        "rua": "Rua Álvaro Ferreira Cardoso",
+        "numero": "291",
+        "bairro": "Cardoso (Barreiro)",
+        "cidade": "Belo Horizonte",
+        "estado": "MG",
+        "cep": "30626-280"
+      },
+      "telefone": "(31) 99704 6525",
+      "rendaFamiliar": 1200,
+      "assistenteSocial": {
+        "idAssistente": "GAI0Y35MC1w"
+      },
+      "beneficiosFamiliares": [
+        {
+          "idBeneficio": "BEN-002",
+          "nome": "Auxílio Moradia",
+          "valor": 600
+        }
+      ],
+      "membros": [
+        {
+          "idPessoa": "PES-1782151744615-0",
+          "nome": "Lucas Augusto Lima",
+          "cpf": "234.768.999-01",
+          "categoria": "Responsável",
+          "dataNascimento": "2006-09-07",
+          "imagem-membro": "https://i.ibb.co/jvhkpV5d/img-teste.jpg",
+          "parentesco": "Responsável",
+          "escolaridade": "Ensino Médio",
+          "ocupacao": "Trabalhador CLT",
+          "beneficiosIndividuais": [
+            {
+              "idBeneficio": "BEN-010",
+              "nome": "ID Jovem",
+              "valor": 0
+            }
+          ]
+        }
+      ],
+      "id": "OfEGEOuHrsk"
+    },
+    {
+      "idFamilia": "FAM-1782152242599",
+      "nomeFamilia": "Família Limeira",
+      "endereco": {
+        "rua": "Rua das Flores",
+        "numero": "287",
+        "bairro": "Centro",
+        "cidade": "Belo Horizonte",
+        "estado": "MG",
+        "cep": "30987-567"
+      },
+      "telefone": "(31) 99704 6525",
+      "rendaFamiliar": 1500,
+      "assistenteSocial": {
+        "idAssistente": "GAI0Y35MC1w"
+      },
+      "beneficiosFamiliares": [],
+      "membros": [
+        {
+          "idPessoa": "PES-1782152242598-0",
+          "nome": "Alvim Limeira",
+          "cpf": "236.870.218-65",
+          "categoria": "Responsável",
+          "dataNascimento": "1962-12-09",
+          "parentesco": "Responsável",
+          "escolaridade": "Ensino Fundamental",
+          "ocupacao": "Aposentado",
+          "beneficiosIndividuais": [
+            {
+              "idBeneficio": "BEN-006",
+              "nome": "BPC Idoso",
+              "valor": 1412
+            }
+          ]
+        }
+      ],
+      "id": "cWTw6sKqzEU"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

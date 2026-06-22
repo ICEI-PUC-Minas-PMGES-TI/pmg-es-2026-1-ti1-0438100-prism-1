@@ -2,7 +2,8 @@
 // 1. VARIÁVEIS GLOBAIS
 // ==========================================
 // Simulação da Assistente logada
-const idAssistenteLogada = "AS-001";
+const usuarioLogado = protegerPagina();
+const idAssistenteLogada = usuarioLogado?.id;
 let familiasDaAssistente = [];
 let nomeAssistenteLogada = "";
 
@@ -12,8 +13,6 @@ let nomeAssistenteLogada = "";
 const inputPesquisa = document.getElementById('pesquisa-familia');
 const containerFamilias = document.getElementById('container-familias');
 const introTexto = document.querySelector('.intro p');
-const assistenteLogada = document.getElementById("usuarioLogado");
-const assistenteLogadaMobile = document.getElementById("usuarioLogadoMobile");
 
 // ==========================================
 // 3. RENDERIZAÇÃO
@@ -81,17 +80,14 @@ function filtrarPorNome() {
 // 5. CONSUMO DA API E INICIALIZAÇÃO
 // ==========================================
 async function inicializar() {
+    const usuarioLogado = protegerPagina();
+
+    if (!usuarioLogado) return;
+
+    const idAssistenteLogada = usuarioLogado?.id;
+
     try {
         // 1. Busca os dados da Assistente Social Logada
-        const AssistentesBanco = await fetch('http://localhost:3000/assistentes-sociais');
-        const assistentes = await AssistentesBanco.json();
-
-        const assistenteAtual = assistentes.find(a => a.id === idAssistenteLogada);
-
-        nomeAssistenteLogada = assistenteAtual.nome;
-        assistenteLogada.innerText = `${nomeAssistenteLogada} (${idAssistenteLogada})`;
-        assistenteLogadaMobile.innerHTML = `${nomeAssistenteLogada} (${idAssistenteLogada})`;
-
         const FamiliasBanco = await fetch('http://localhost:3000/familias');
         const Familias = await FamiliasBanco.json();
 
