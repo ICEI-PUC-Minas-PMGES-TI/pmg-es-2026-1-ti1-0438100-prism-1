@@ -12,14 +12,14 @@ function obterUsuarioLogado() {
 function sairDaConta() {
   localStorage.removeItem('usuarioLogado');
   sessionStorage.removeItem('usuarioLogado');
-  window.location.href = '../../index.html';
+  window.location.href = '../../modulos/inicio/index.html';
 }
  
 /* Redireciona para o login se não houver sessão ativa e devolve os dados do usuário logado caso exista. */
 function protegerPagina() {
   const usuario = obterUsuarioLogado();
   if (!usuario) {
-    window.location.href = '../../login/login.html';
+    window.location.href = '../../modulos/login/login.html';
     return null;
   }
   return usuario;
