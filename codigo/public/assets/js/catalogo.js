@@ -14,6 +14,10 @@ let favoritos = JSON.parse(
 );
 let exibindoFavoritos = false;
 
+function irParaDetalhes(id) {
+    window.location.href = `detalhes-beneficio.html?id=${id}`;
+}
+
 async function carregarBeneficios() {
     try {
         const resposta = await fetch(
@@ -124,7 +128,7 @@ function criarCard(beneficio) {
     botaoDetalhes.addEventListener('click', () => {
 
         window.location.href =
-            `detalhes.html?id=${beneficio.id}`;
+            `detalhes-beneficio.html?id=${beneficio.id}`;
 
     });
 
