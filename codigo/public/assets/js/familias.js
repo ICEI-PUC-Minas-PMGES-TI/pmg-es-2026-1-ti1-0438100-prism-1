@@ -2,6 +2,7 @@
 // 1. VARIÁVEIS GLOBAIS
 // ==========================================
 // Simulação da Assistente logada
+const API_URL = 'http://localhost:3000'
 const usuarioLogado = protegerPagina();
 const idAssistenteLogada = usuarioLogado?.id;
 let familiasDaAssistente = [];
@@ -54,8 +55,17 @@ function renderizarFamilias(lista) {
                 <span class="categoria">${familia.endereco.bairro}, ${familia.endereco.cidade} - ${familia.endereco.estado}</span>
             </div>
             
-            <a href="detalhes-familia.html?id=${familia.idFamilia}" class="botao-azul" style="margin-top: 15px; width: 100%;">Acessar Família</a>
+            <div style="display: flex; gap: 10px; margin-top: 15px; flex-wrap: wrap;">
+                <a href="detalhes-familia.html?id=${familia.idFamilia}" class="botao-azul" style="flex: 1; min-width: 100px; text-align: center;">Acessar</a>
+                <a href="editar-familia.html?id=${familia.id}" class="botao-amarelo btn-editar-familia" style="flex: 1; min-width: 100px; text-align: center; color: white;">Editar</a>
+                <a class="btn-excluir-familia botao-azul" style="flex: 1; min-width: 100px; text-align: center; background-color: red; cursor: pointer;">Excluir</a>
+            </div>
         `;
+
+        const btnExcluir = card.querySelector('.btn-excluir-familia');
+        btnExcluir.addEventListener('click', () => {
+            excluirFamilia(familia.id, familia.nomeFamilia);
+        });
 
         containerFamilias.appendChild(card);
     });
@@ -77,7 +87,34 @@ function filtrarPorNome() {
 }
 
 // ==========================================
-// 5. CONSUMO DA API E INICIALIZAÇÃO
+// 5. EXCLUSÃO DE FAMÍLIA
+// ==========================================
+async function excluirFamilia(id, nome) {
+    const confirmar = confirm(`Tem certeza que deseja excluir a família "${nome}"?\n\nEsta ação não pode ser desfeita.`);
+ 
+    if (!confirmar) return;
+ 
+    try {
+        const resposta = await fetch(`${API_URL}/familias/${id}`, {
+            method: 'DELETE'
+        });
+ 
+        if (!resposta.ok) throw new Error('Falha ao excluir a família.');
+ 
+        familiasDaAssistente = familiasDaAssistente.filter(familia => familia.id !== id);
+        filtrarPorNome();
+ 
+        alert('Família excluída com sucesso.');
+ 
+    } catch (erro) {
+        console.error('Erro ao excluir família:', erro);
+        alert('Erro ao excluir a família. Verifique a conexão com o servidor e tente novamente.');
+    }
+}
+ 
+
+// ==========================================
+// 6. CONSUMO DA API E INICIALIZAÇÃO
 // ==========================================
 async function inicializar() {
     const usuarioLogado = protegerPagina();

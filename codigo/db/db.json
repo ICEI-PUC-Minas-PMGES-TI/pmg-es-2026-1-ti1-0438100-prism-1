@@ -1382,68 +1382,28 @@
       "id": "Z5P_p2JQ61A"
     },
     {
-      "idFamilia": "FAM-1781534527920",
-      "nomeFamilia": "Família Monteiro",
-      "fotoFamilia": "",
+      "idFamilia": "FAM-1782332595989",
+      "nomeFamilia": "Família Abravanel",
+      "fotoFamilia": "https://i.ibb.co/TqHzGRn3/Captura-de-Tela-2026-06-24-s-11-09-15.png",
       "endereco": {
-        "rua": "Rua Álvaro Ferreira Cardoso",
-        "numero": "291",
-        "bairro": "Cardoso",
+        "rua": "Rua São Paulo",
+        "numero": "1234",
+        "bairro": "Savassi",
         "cidade": "Belo Horizonte",
         "estado": "MG",
-        "cep": "30626280"
+        "cep": "30876-987"
       },
-      "telefone": "31997046525",
+      "telefone": "(31) 98765 6765",
       "rendaFamiliar": 2000,
       "assistenteSocial": {
-        "idAssistente": "AS-001"
+        "idAssistente": "GAI0Y35MC1w"
       },
       "beneficiosFamiliares": [
         {
           "idBeneficio": "BEN-001",
           "nome": "Bolsa Família",
           "valor": 600
-        }
-      ],
-      "membros": [
-        {
-          "idPessoa": "PES-1781534527920-0",
-          "nome": "Yuri Monteiro",
-          "cpf": "13372983602",
-          "categoria": "Responsável",
-          "dataNascimento": "2000-09-07",
-          "imagem-membro": "",
-          "parentesco": "Responsável",
-          "escolaridade": "Ensino Médio",
-          "ocupacao": "Autonomo",
-          "beneficiosIndividuais": [
-            {
-              "idBeneficio": "BEN-010",
-              "nome": "ID Jovem",
-              "valor": 0
-            }
-          ]
-        }
-      ],
-      "id": "h4CMG3T18Kg"
-    },
-    {
-      "idFamilia": "FAM-1782151744616",
-      "nomeFamilia": "Família Augusto Lima",
-      "endereco": {
-        "rua": "Rua Álvaro Ferreira Cardoso",
-        "numero": "291",
-        "bairro": "Cardoso (Barreiro)",
-        "cidade": "Belo Horizonte",
-        "estado": "MG",
-        "cep": "30626-280"
-      },
-      "telefone": "(31) 99704 6525",
-      "rendaFamiliar": 1200,
-      "assistenteSocial": {
-        "idAssistente": "GAI0Y35MC1w"
-      },
-      "beneficiosFamiliares": [
+        },
         {
           "idBeneficio": "BEN-002",
           "nome": "Auxílio Moradia",
@@ -1452,52 +1412,14 @@
       ],
       "membros": [
         {
-          "idPessoa": "PES-1782151744615-0",
-          "nome": "Lucas Augusto Lima",
-          "cpf": "234.768.999-01",
+          "idPessoa": "PES-1782332595989-0",
+          "nome": "Silvio Santos Abravanel",
+          "cpf": "123.987.009-01",
           "categoria": "Responsável",
-          "dataNascimento": "2006-09-07",
-          "imagem-membro": "https://i.ibb.co/jvhkpV5d/img-teste.jpg",
+          "dataNascimento": "1945-02-01",
+          "imagem-membro": "",
           "parentesco": "Responsável",
           "escolaridade": "Ensino Médio",
-          "ocupacao": "Trabalhador CLT",
-          "beneficiosIndividuais": [
-            {
-              "idBeneficio": "BEN-010",
-              "nome": "ID Jovem",
-              "valor": 0
-            }
-          ]
-        }
-      ],
-      "id": "OfEGEOuHrsk"
-    },
-    {
-      "idFamilia": "FAM-1782152242599",
-      "nomeFamilia": "Família Limeira",
-      "endereco": {
-        "rua": "Rua das Flores",
-        "numero": "287",
-        "bairro": "Centro",
-        "cidade": "Belo Horizonte",
-        "estado": "MG",
-        "cep": "30987-567"
-      },
-      "telefone": "(31) 99704 6525",
-      "rendaFamiliar": 1500,
-      "assistenteSocial": {
-        "idAssistente": "GAI0Y35MC1w"
-      },
-      "beneficiosFamiliares": [],
-      "membros": [
-        {
-          "idPessoa": "PES-1782152242598-0",
-          "nome": "Alvim Limeira",
-          "cpf": "236.870.218-65",
-          "categoria": "Responsável",
-          "dataNascimento": "1962-12-09",
-          "parentesco": "Responsável",
-          "escolaridade": "Ensino Fundamental",
           "ocupacao": "Aposentado",
           "beneficiosIndividuais": [
             {
@@ -1506,9 +1428,27 @@
               "valor": 1412
             }
           ]
+        },
+        {
+          "idPessoa": "PES-1782332595989-1",
+          "nome": "Patricia Abravanel",
+          "cpf": "123.654.888-03",
+          "categoria": "Dependente",
+          "dataNascimento": "1988-11-10",
+          "imagem-membro": "https://i.ibb.co/0jdrXXKM/img-show-teste.jpg",
+          "parentesco": "Filha",
+          "escolaridade": "Ensino Superior",
+          "ocupacao": "Trabalhador CLT",
+          "beneficiosIndividuais": [
+            {
+              "idBeneficio": "BEN-004",
+              "nome": "Auxílio Gás",
+              "valor": 110
+            }
+          ]
         }
       ],
-      "id": "cWTw6sKqzEU"
+      "id": "N59ADs0PmdI"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"

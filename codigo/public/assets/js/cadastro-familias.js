@@ -84,18 +84,14 @@ document.getElementById('btn-add-membro').addEventListener('click', () => {
                 <input type="text" class="membro-nome" required>
             </div>
             <div class="form-group">
-                <label>CPF *</label>
-                <input type="text" class="membro-cpf" placeholder="000.000.000-00" required>
-            </div>
-        </div>
-        <div class="grid-3">
-            <div class="form-group">
                 <label>Categoria *</label>
                 <select class="membro-categoria" required>
                     <option value="Dependente">Dependente</option>
                     <option value="Responsável">Responsável</option>
                 </select>
             </div>
+        </div>
+        <div class="grid-2">
             <div class="form-group">
                 <label>Data de Nascimento *</label>
                 <input type="date" class="membro-dataNascimento" required>
@@ -209,10 +205,9 @@ document.getElementById('form-cadastro').addEventListener('submit', async (e) =>
             const inputArquivo = card.querySelector('.membro-imagem-file');
             let indiceFotoMembro = -1;
 
-            // Se o membro tiver foto, adiciona a promessa na fila de upload paralelo
             if (inputArquivo && inputArquivo.files && inputArquivo.files[0]) {
                 tarefasUpload.push(fazerUploadImagem(inputArquivo.files[0]));
-                indiceFotoMembro = tarefasUpload.length - 1; // Guarda a posição desta promessa
+                indiceFotoMembro = tarefasUpload.length - 1; 
             }
 
             dadosMembrosPreVios.push({
@@ -234,7 +229,6 @@ document.getElementById('form-cadastro').addEventListener('submit', async (e) =>
             return {
                 idPessoa: `PES-${Date.now()}-${m.index}`,
                 nome: m.card.querySelector('.membro-nome').value,
-                cpf: m.card.querySelector('.membro-cpf').value,
                 categoria: m.card.querySelector('.membro-categoria').value,
                 dataNascimento: m.card.querySelector('.membro-dataNascimento').value,
                 "imagem-membro": fotoMembro,

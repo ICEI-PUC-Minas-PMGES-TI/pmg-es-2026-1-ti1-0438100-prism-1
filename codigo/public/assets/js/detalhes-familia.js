@@ -6,7 +6,19 @@ function getFamiliaIdFromURL() {
  
 function formatarData(dataISO) {
     if (!dataISO) return '—';
-    const [ano, mes, dia] = dataISO.split('-');
+
+    if (typeof dataISO !== 'string') {
+        return '—';
+    }
+
+    const partes = dataISO.split('-');
+
+    if (partes.length !== 3) {
+        return dataISO;
+    }
+
+    const [ano, mes, dia] = partes;
+
     return `${dia}/${mes}/${ano}`;
 }
  
@@ -35,8 +47,11 @@ function criarCardMembro(membro) {
     const imagemSrc = membro["imagem-membro"] || avatarUrl(membro.nome);
     const fallback  = avatarUrl(membro.nome);
  
-    const badgeClass = membro.categoria === 'Responsável' ? 'badge-responsavel' : 'badge-dependente';
-    const badgeLabel = membro.categoria === 'Responsável' ? 'Responsável' : 'Dependente';
+    const ehResponsavel =
+    membro.categoria === 'Responsável';
+
+    const badgeClass = ehResponsavel ? 'badge-responsavel' : 'badge-dependente';
+    const badgeLabel = ehResponsavel ? 'Responsável' : 'Dependente';
  
     const listaBeneficios = membro.beneficiosIndividuais?.length
         ? membro.beneficiosIndividuais.map(b => `
