@@ -550,18 +550,39 @@ footer {
   border: 1px solid #b7dfc4;
   line-height: 1.4;
 }
+/* Tablets e telas menores (até 1024px) */
+@media (max-width: 1024px) {
+  .headerDesktop { display: none !important; }
+  .headerMobile  { display: flex !important; }
+
+  body { padding-top: 48px; } /* reserva espaço pro header fixo */
+
+  .main-layout {
+    flex-direction: column;
+    padding: 16px 20px;
+    gap: 16px;
+  }
+  .sidebar { width: 100%; }
+  .services-panel { width: 100%; }
+  .summary-row { grid-template-columns: repeat(3, 1fr); }
+  #map { min-height: 420px; }
+}
+
+/* Celulares (até 768px) */
 @media (max-width: 768px) {
-  nav { display: none; }
-  .hamburger { display: flex; }
+  .mobile-header-bar { height: 56px; }
+  .navbar-brand > img { height: 3.2rem; }
+  .navbar-brand { font-size: 1.6rem; }
+
   .hero { padding: 28px 16px 24px; }
   .hero-stats { gap: 20px; }
   .controls-bar { padding: 12px 16px; }
   .controls-inner { gap: 8px; }
   .btn { padding: 8px 14px; font-size: .8rem; }
-  .main-layout { flex-direction: column; padding: 12px 16px; gap: 14px; }
-  .sidebar { width: 100%; }
+  .main-layout { padding: 12px 16px; gap: 14px; }
   .posto-list { max-height: 220px; }
   #map { min-height: 360px; }
-  .summary-row { grid-template-columns: 1fr; gap: 8px; }
-  .services-painel { width: 100%; }
+  .summary-row { grid-template-columns: 1fr; gap: 8px; 
+
+  }
 }
