@@ -54,27 +54,27 @@ function injetarEstiloMenuUsuario() {
     .auth-user-toggle {
       display: flex; align-items: center; gap: 8px;
       background: rgba(255,255,255,0.12);
-      border: 2px solid rgb(255, 214, 132);
+      border: 3px solid rgb(255, 214, 132);
       border-radius: 20px;
       padding: 6px 14px 6px 6px;
       color: black;
       font-family: 'Nunito', sans-serif;
-      font-weight: 700;
-      font-size: 0.85rem;
+      font-weight: 900;
+      font-size: 1.1rem;
       cursor: pointer;
       transition: background 0.18s;
     }
     .auth-user-toggle:hover { background: rgba(255,255,255,0.22); }
     .auth-user-avatar {
-      width: 26px; height: 26px;
+      width: 32px; height: 32px;
       border-radius: 50%;
       background: rgb(255, 214, 132);
       color: black;
       display: flex; align-items: center; justify-content: center;
-      font-size: 0.78rem; font-weight: 800;
+      font-size: 1rem; font-weight: 900;
       flex-shrink: 0;
     }
-    .auth-user-seta { font-size: 0.7rem; opacity: 0.85; }
+    .auth-user-seta { font-size: 1.2rem; opacity: 0.85; }
     .auth-user-dropdown {
       display: none;
       position: absolute;
@@ -95,8 +95,8 @@ function injetarEstiloMenuUsuario() {
       border: none;
       padding: 11px 16px;
       font-family: 'Inter', sans-serif;
-      font-size: 0.85rem;
-      font-weight: 600;
+      font-size: 1.2rem;
+      font-weight: 900;
       color: #1e293b;
       text-decoration: none;
       cursor: pointer;

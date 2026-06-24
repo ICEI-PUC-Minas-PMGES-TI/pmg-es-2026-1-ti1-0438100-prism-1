@@ -20,7 +20,7 @@ Escreva um ou dois parágrafo resumindo o objetivo do seu projeto.
 
 
 
-## Instruções de utilização 
+## Informações sobre o Projeto
 
 > **IMPORTANTE: APAGUE ESSA SEÇÃO DE INSTRUÇÕES ANTES DE ENTREGAR SEU TRABALHO**
 
