@@ -12,6 +12,7 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap"
     rel="stylesheet" />
+  <link rel="icon" type="image/x-icon" href="../../assets/images/icon_site.png">
 </head>
 
 <body>
@@ -64,7 +65,8 @@
       <div class="hero-content">
         <div class="hero-badge">Acesso à sua conta</div>
         <h1>Bem-vindo de volta ao <span class="text-blue">Guia-Benefício</span></h1>
-        <p>Entre para cadastrar e visualizar suas famílias, acompanhar cada membro de perto e tornar o atendimento mais personalizado.</p>
+        <p>Entre para cadastrar e visualizar suas famílias, acompanhar cada membro de perto e tornar o atendimento mais
+          personalizado.</p>
       </div>
     </section>
 
@@ -88,13 +90,13 @@
               <p>Informe seus dados para acessar sua conta</p>
             </div>
           </div>
- 
+
           <div class="form-group">
             <label for="loginEmail">E-mail *</label>
             <input type="email" id="loginEmail" placeholder="seuemail@exemplo.com" required />
             <span class="field-error" id="erroLoginEmail"></span>
           </div>
- 
+
           <div class="form-group">
             <label for="loginSenha">Senha *</label>
             <div class="input-with-btn">
@@ -103,7 +105,7 @@
             </div>
             <span class="field-error" id="erroLoginSenha"></span>
           </div>
- 
+
           <div class="auth-options">
             <label class="checkbox-label">
               <input type="checkbox" id="manterConectado" />
@@ -111,19 +113,19 @@
             </label>
             <a href="#" class="link-discreto" id="linkEsqueciSenha">Esqueci minha senha</a>
           </div>
- 
+
           <div class="form-actions form-actions-column">
             <button type="submit" class="btn-primary" id="btnEntrar">
               <span class="btn-icon"></span> Entrar
             </button>
           </div>
- 
+
           <p class="auth-switch">
             Não tem uma conta?
             <button type="button" class="link-botao" onclick="alternarAba('cadastro')">Criar conta</button>
           </p>
         </form>
- 
+
         <!-- ===== FORMULÁRIO DE CADASTRO ===== -->
         <form id="formCadastro" class="auth-form" novalidate style="display:none">
           <div class="section-header section-header-compact">
@@ -133,25 +135,25 @@
               <p>Cadastre-se gratuitamente em poucos segundos</p>
             </div>
           </div>
- 
+
           <div class="form-group">
             <label for="cadastroNome">Nome completo *</label>
             <input type="text" id="cadastroNome" placeholder="Ex: Maria Silva" required />
             <span class="field-error" id="erroCadastroNome"></span>
           </div>
- 
+
           <div class="form-group">
             <label for="cadastroTelefone">Telefone *</label>
             <input type="tel" id="cadastroTelefone" placeholder="(31) 98888-7777" maxlength="15" required />
             <span class="field-error" id="erroCadastroTelefone"></span>
           </div>
- 
+
           <div class="form-group">
             <label for="cadastroEmail">E-mail *</label>
             <input type="email" id="cadastroEmail" placeholder="seuemail@exemplo.com" required />
             <span class="field-error" id="erroCadastroEmail"></span>
           </div>
- 
+
           <div class="form-group">
             <label for="cadastroCras">CRAS de atuação *</label>
             <select id="cadastroCras" required>
@@ -159,13 +161,13 @@
             </select>
             <span class="field-error" id="erroCadastroCras"></span>
           </div>
- 
+
           <div class="form-group">
             <label for="cadastroFoto">Foto de perfil (opcional)</label>
             <input type="file" id="cadastroFoto" accept="image/*" />
             <span class="field-error" id="erroCadastroFoto"></span>
           </div>
- 
+
           <div class="form-group">
             <label for="cadastroSenha">Senha *</label>
             <div class="input-with-btn">
@@ -174,27 +176,27 @@
             </div>
             <span class="field-error" id="erroCadastroSenha"></span>
           </div>
- 
+
           <div class="form-group">
             <label for="cadastroConfirmarSenha">Confirmar senha *</label>
             <input type="password" id="cadastroConfirmarSenha" placeholder="Repita a senha" required />
             <span class="field-error" id="erroCadastroConfirmarSenha"></span>
           </div>
- 
+
           <div class="form-actions form-actions-column">
             <button type="submit" class="btn-primary" id="btnCriarConta">
               <span class="btn-icon"></span> Criar Conta
             </button>
           </div>
- 
+
           <p class="auth-switch">
             Já tem uma conta?
             <button type="button" class="link-botao" onclick="alternarAba('login')">Entrar</button>
           </p>
         </form>
- 
+
       </section>
- 
+
     </div>
 
     <!-- ===== FOOTER ===== -->
