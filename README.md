@@ -1,6 +1,8 @@
 # Nome do projeto
 
-Escreva um ou dois parágrafo resumindo o objetivo do seu projeto.
+O PRISM / Guia-Benefício é uma plataforma web voltada a cidadãos em situação de vulnerabilidade que precisam acessar benefícios governamentais. O sistema permite localizar postos de CRAS, CREAS, Bolsa Família e Previdência Social próximos ao endereço do usuário, além de reunir informações detalhadas sobre cada benefício: requisitos de elegibilidade, condições de manutenção e documentação necessária para solicitação, tudo em um único lugar, de forma clara e acessível.
+
+O projeto conta ainda com um portal dedicado a assistentes sociais, permitindo que profissionais registrem e acompanhem os casos de seus atendidos de forma personalizada, otimizando o processo de triagem e encaminhamento. Desenvolvido como projeto acadêmico na PUC Minas com HTML, CSS e JavaScript puro, o sistema utiliza JSON Server como API REST local e Leaflet para o mapa interativo de unidades de atendimento em Belo Horizonte.
 
 ## Alunos integrantes da equipe
 
