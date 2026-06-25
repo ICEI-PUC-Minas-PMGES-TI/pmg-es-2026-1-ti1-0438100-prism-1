@@ -1394,7 +1394,7 @@
         "cep": "30876-987"
       },
       "telefone": "(31) 98765 6765",
-      "rendaFamiliar": 2000,
+      "rendaFamiliar": 2001,
       "assistenteSocial": {
         "idAssistente": "GAI0Y35MC1w"
       },
@@ -1439,13 +1439,7 @@
           "parentesco": "Filha",
           "escolaridade": "Ensino Superior",
           "ocupacao": "Trabalhador CLT",
-          "beneficiosIndividuais": [
-            {
-              "idBeneficio": "BEN-004",
-              "nome": "Auxílio Gás",
-              "valor": 110
-            }
-          ]
+          "beneficiosIndividuais": []
         }
       ],
       "id": "N59ADs0PmdI"

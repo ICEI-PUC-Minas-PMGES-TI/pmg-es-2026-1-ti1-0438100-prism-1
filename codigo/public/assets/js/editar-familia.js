@@ -245,7 +245,7 @@ if (formEditar) {
             let fotoFamiliaUrl = familiaOriginal.fotoFamilia;
             const campoFotoFamilia = document.getElementById('fotoFamiliaFile');
             if (campoFotoFamilia && campoFotoFamilia.files && campoFotoFamilia.files[0]) {
-                fotoFamiliaUrl = await converterArquivoParaBase64(campoFotoFamilia.files[0]);
+                fotoFamiliaUrl = await fazerUploadImagem(campoFotoFamilia.files[0]);
             } else if (campoFotoFamilia && campoFotoFamilia.value && !campoFotoFamilia.matches('[type="file"]')) {
                 fotoFamiliaUrl = campoFotoFamilia.value;
             }
@@ -329,9 +329,11 @@ if (formEditar) {
             });
 
             if (!respostaPut.ok) throw new Error('Falha ao atualizar dados no servidor.');
-
+            
+            window.location.href = "familias.html";
             alert('Alterações salvas com sucesso!');
-            window.location.href = '../../modulos/familias/familias.html';
+
+            window.location.href = "familias.html";
 
         } catch (erro) {
             console.error('Erro ao guardar alterações:', erro);
