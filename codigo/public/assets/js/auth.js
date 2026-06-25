@@ -37,7 +37,7 @@ function montarMenuUsuario(usuario) {
         <span class="auth-user-seta">▾</span>
       </button>
       <div class="auth-user-dropdown">
-        <a href="perfil.html" class="auth-user-item">👤 Meu perfil</a>
+        <a href="../assistentes-sociais/dados_assistente.html" class="auth-user-item">👤 Meu perfil</a>
         <button type="button" class="auth-user-item auth-user-sair">🚪 Sair</button>
       </div>
     </div>

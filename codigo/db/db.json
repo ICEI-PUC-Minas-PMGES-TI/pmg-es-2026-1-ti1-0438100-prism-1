@@ -929,7 +929,7 @@
       "nome": "Paulo César",
       "telefone": "(31) 99704-6525",
       "email": "paulocsm2006@gmail.com",
-      "senha": "Pc070906",
+      "senha": "Pc0709",
       "imagem-assistente": "https://i.ibb.co/chXWYKZK/2ugqfpaqc7d5vfo38gr246r1e1l8pau0ri8q8llr9eda7bkbp1d48kc173s37ute056s15cua5mhjlep5r4vghgmg3kkejc0gqc7.jpg",
       "cras": "CRAS Vila Cemig",
       "familias-assistidas": [],
@@ -1087,7 +1087,7 @@
         "cep": "30620-270"
       },
       "telefone": "(31) 97777-2222",
-      "rendaFamiliar": 1200,
+      "rendaFamiliar": 1500,
       "assistenteSocial": {
         "idAssistente": "AS-002"
       },
