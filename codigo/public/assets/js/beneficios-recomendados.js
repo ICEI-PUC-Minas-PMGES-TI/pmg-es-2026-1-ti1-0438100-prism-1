@@ -48,7 +48,7 @@ function extrairPerfisDoUsuario(usuario) {
     } else if (idade >= 18 && idade < 60) {
         perfis.push("ADULTOS");
     } else if (idade <= 12) {
-        // Benefícios de primeira infância geralmente vão até 6 anos, mas abrange crianças no geral
+
         perfis.push("CRIANCAS");
     }
 

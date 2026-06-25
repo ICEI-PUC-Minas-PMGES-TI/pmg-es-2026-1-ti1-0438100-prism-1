@@ -833,9 +833,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     try {
       const created = saveSubmission(payload);
-      localStorage.removeItem(draftStorageKey);
       console.log("Envio salvo no navegador:", created);
       resetForm();
+      localStorage.setItem(draftStorageKey, JSON.stringify({
+        currentStep: 0,
+        data: payload
+      }));
+      window.location.href = "../beneficios/beneficios-recomendados.html";
     } catch (err) {
       console.error("Erro ao salvar no navegador:", err);
       setFormStatus(
