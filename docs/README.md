@@ -647,7 +647,7 @@ Permite inserir sua informações referentes a sua situação familiar e social
 
 ![Tela de Formulário de Recomendação de Benefícios](images/recomendador-beneficios.png)
 
-### Funcionalidade 5 - visualização de Benefícios Recomendados
+### Funcionalidade 5 - Visualização de Benefícios Recomendados
 
 Permite visualizar os benefícios cadastrados que recomendamos para você, com base nas informações passadas no formulário
 
@@ -663,7 +663,7 @@ Permite visualizar os benefícios cadastrados que recomendamos para você, com b
 
 ### Funcionalidade 6 - Cadastro de Assistente Social
 
-Permite que os assistentes sociais interessados se cadastram no sistema
+Permite que os assistentes sociais interessados se cadastrem no sistema
 
 * **Estrutura de dados:** [Assistentes Sociais](##ti_ed_assistentes-sociais)
 * **Instruções de acesso:**
@@ -757,7 +757,7 @@ Permite que os assistentes sociais cadastrados, visualizem as informações e os
 
 ### Funcionalidade 12 - Exclusão da Família
 
-Permite que os assistentes sociais cadastrados, visualizem as informações e os detalhes das famílias cadastradas por eles no sistema
+Permite que os assistentes sociais cadastrados, excluam as famílias cadastradas por eles no sistema
 
 * **Estrutura de dados:** [Familias](##ti_ed_familias)
 * **Instruções de acesso:**
