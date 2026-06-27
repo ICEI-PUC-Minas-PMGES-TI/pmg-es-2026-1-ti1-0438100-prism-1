@@ -970,7 +970,6 @@
         {
           "idPessoa": "PES-001",
           "nome": "Maria Aparecida Souza",
-          "cpf": "123.456.789-00",
           "categoria": "Responsável",
           "dataNascimento": "1985-03-12",
           "imagem-membro": "",
@@ -988,7 +987,6 @@
         {
           "idPessoa": "PES-002",
           "nome": "João Pedro Souza",
-          "cpf": "987.654.321-00",
           "categoria": "Dependente",
           "dataNascimento": "2012-08-20",
           "imagem-membro": "",
@@ -1000,7 +998,6 @@
         {
           "idPessoa": "PES-003",
           "nome": "Ana Clara Souza",
-          "cpf": "456.789.123-55",
           "categoria": "Dependente",
           "dataNascimento": "2018-11-02",
           "imagem-membro": "",
@@ -1051,7 +1048,6 @@
         {
           "idPessoa": "PES-004",
           "nome": "Francisca Silva",
-          "cpf": "234.567.890-11",
           "categoria": "Responsável",
           "dataNascimento": "1958-05-19",
           "imagem-membro": "img/membro4",
@@ -1107,7 +1103,6 @@
         {
           "idPessoa": "PES-005",
           "nome": "Clarice Santos",
-          "cpf": "345.678.901-22",
           "categoria": "Responsável",
           "dataNascimento": "1990-01-25",
           "imagem-membro": "img/membro5",
@@ -1125,7 +1120,6 @@
         {
           "idPessoa": "PES-006",
           "nome": "Marcos Rodrigues",
-          "cpf": "543.210.987-11",
           "categoria": "Dependente",
           "dataNascimento": "2005-06-14",
           "imagem-membro": "img/membro6",
@@ -1176,7 +1170,6 @@
         {
           "idPessoa": "PES-007",
           "nome": "Sandra Oliveira",
-          "cpf": "456.789.012-33",
           "categoria": "Responsável",
           "dataNascimento": "1995-09-05",
           "imagem-membro": "img/membro7",
@@ -1188,7 +1181,6 @@
         {
           "idPessoa": "PES-008",
           "nome": "Thiago Oliveira",
-          "cpf": "654.321.098-22",
           "categoria": "Dependente",
           "dataNascimento": "2022-04-10",
           "imagem-membro": "img/membro8",
@@ -1239,7 +1231,6 @@
         {
           "idPessoa": "PES-009",
           "nome": "Raimunda Pereira",
-          "cpf": "567.890.123-44",
           "categoria": "Responsável",
           "dataNascimento": "1978-11-30",
           "imagem-membro": "img/membro9",
@@ -1251,7 +1242,6 @@
         {
           "idPessoa": "PES-010",
           "nome": "Carlos Pereira",
-          "cpf": "765.432.109-33",
           "categoria": "Dependente",
           "dataNascimento": "1998-02-12",
           "imagem-membro": "img/membro10",
@@ -1307,7 +1297,6 @@
         {
           "idPessoa": "PES-011",
           "nome": "Elaine Alves",
-          "cpf": "678.890.123-55",
           "categoria": "Responsável",
           "dataNascimento": "2000-07-22",
           "imagem-membro": "img/membro11",
@@ -1358,7 +1347,6 @@
         {
           "idPessoa": "PES-012",
           "nome": "Jorge Lima",
-          "cpf": "789.012.345-66",
           "categoria": "Responsável",
           "dataNascimento": "1980-04-18",
           "imagem-membro": "img/membro12",
@@ -1414,7 +1402,6 @@
         {
           "idPessoa": "PES-1782332595989-0",
           "nome": "Silvio Santos Abravanel",
-          "cpf": "123.987.009-01",
           "categoria": "Responsável",
           "dataNascimento": "1945-02-01",
           "imagem-membro": "",
@@ -1432,7 +1419,6 @@
         {
           "idPessoa": "PES-1782332595989-1",
           "nome": "Patricia Abravanel",
-          "cpf": "123.654.888-03",
           "categoria": "Dependente",
           "dataNascimento": "1988-11-10",
           "imagem-membro": "https://i.ibb.co/0jdrXXKM/img-show-teste.jpg",

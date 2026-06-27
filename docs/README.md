@@ -621,48 +621,168 @@ Permite a inclusão, leitura, alteração e exclusão de contatos para o sistema
 
 Descrição das estruturas de dados utilizadas na solução com exemplos no formato JSON.Info
 
-##### Estrutura de Dados - Contatos   ⚠️ EXEMPLO ⚠️
+### Estrutura de Dados - Benefícios
 
-Contatos da aplicação
-
-```json
-  {
-    "id": 1,
-    "nome": "Leanne Graham",
-    "cidade": "Belo Horizonte",
-    "categoria": "amigos",
-    "email": "Sincere@april.biz",
-    "telefone": "1-770-736-8031",
-    "website": "hildegard.org"
-  }
-  
-```
-
-##### Estrutura de Dados - Usuários  ⚠️ EXEMPLO ⚠️
-
-Registro dos usuários do sistema utilizados para login e para o perfil do sistema
+Benefícios informados e suas informações essenciais
 
 ```json
   {
-    id: "eed55b91-45be-4f2c-81bc-7686135503f9",
-    email: "admin@abc.com",
-    id: "eed55b91-45be-4f2c-81bc-7686135503f9",
-    login: "admin",
-    nome: "Administrador do Sistema",
-    senha: "123"
+      "id": "BEN-001",
+      "nome": "Bolsa Família",
+      "categoria": "Alimentação",
+      "descricao": "Auxílio mensal para famílias de baixa renda cadastradas em programas sociais.",
+      "descricaoCompleta": "O Bolsa Família é um programa federal de transferência de renda que busca garantir a subsistência básica de famílias em situação de pobreza e extrema pobreza. Além do repasse financeiro, exige contrapartidas como a manutenção da frequência escolar das crianças e a atualização do cartão de vacinação, promovendo acesso à saúde e educação.",
+      "valorBase": 600,
+      "publicoAlvo": [
+        "BAIXA_RENDA"
+      ],
+      "orgaoResponsavel": "Governo Federal",
+      "requisitos": [
+        "Inscrição ativa e atualizada no Cadastro Único (CadÚnico)",
+        "Renda familiar per capita mensal de até R$ 218,00"
+      ],
+      "condicoes": [
+        "Frequência escolar mínima de 60% para crianças de 4 a 5 anos",
+        "Frequência escolar mínima de 75% para jovens de 6 a 18 anos",
+        "Acompanhamento pré-natal para gestantes da família",
+        "Acompanhamento do estado nutricional (peso e altura) de crianças menores de 7 anos",
+        "Manter a carteira de vacinação de todos os membros menores de 18 anos atualizada"
+      ],
+      "documentos": [
+        "CPF ou Título de Eleitor do Responsável Familiar",
+        "Documento de identificação com foto de todos os membros da família",
+        "Certidão de nascimento ou casamento dos dependentes",
+        "Comprovante de residência atualizado",
+        "Declaração de matrícula escolar recente das crianças e adolescentes"
+      ]
+    }
+```
+### Estrutura de Dados - Pontos de Atendimento
+
+Pontos de atendimento localizados na regional de Belo Horizonte e suas informações
+
+```json
+  {
+      "nome": "CRAS Novo Ouro Preto",
+      "endereco": "R. Geraldina Cândida de Jesus, 92, Novo Ouro Preto, BH",
+      "tipo": "CRAS",
+      "lat": -19.87631558,
+      "lon": -43.98799181,
+      "atendimentos": 170,
+      "telefone": " (31) 98221-0512",
+      "horario": "Segunda a sexta, das 8h às 18h",
+      "id": "JrZ396Dak5s"
+    }
+```
+
+### Estrutura de Dados - Assistentes Sociais / Usuários
+
+Registro das assistentes sociais, suas informacões, famílias que acompanha e os dados utilizados para login e para o perfil do sistema
+
+```json
+  {
+    "id": "AS-001",
+      "nome": "Fernanda Oliveira",
+      "telefone": "(31) 98888-7777",
+      "email": "fernanda.oliveira@assistencia.gov.br",
+      "senha": "Fe223344",
+      "imagem-assistente": "../../assets/images/assistentes/fernanda-oliveira.avif",
+      "cras": "CRAS Centro Sul",
+      "familias-assistidas": [
+        {
+          "id": "FAM-001"
+        },
+        {
+          "id": "FAM-002"
+        }
+      ]
+  }
+```
+### Estrutura de Dados - Famílias
+
+Registro das famílias acompanhadas por uma assistente sociais, bem como suas informações gerais e de seus membros
+
+```json
+  {
+    "idFamilia": "FAM-001",
+      "nomeFamilia": "Família Dos Souzas",
+      "fotoFamilia": "",
+      "endereco": {
+        "rua": "Rua das Flores",
+        "numero": "120",
+        "bairro": "Centro",
+        "cidade": "Belo Horizonte",
+        "estado": "MG",
+        "cep": "30110-000"
+      },
+      "telefone": "(31) 99999-9999",
+      "rendaFamiliar": 1850.5,
+      "assistenteSocial": {
+        "idAssistente": "AS-001"
+      },
+      "beneficiosFamiliares": [
+        {
+          "idBeneficio": "BEN-001",
+          "nome": "Bolsa Família",
+          "valor": 600
+        },
+        {
+          "idBeneficio": "BEN-004",
+          "nome": "Auxílio Gás",
+          "valor": 110
+        }
+      ],
+      "membros": [
+        {
+          "idPessoa": "PES-001",
+          "nome": "Maria Aparecida Souza",
+          "categoria": "Responsável",
+          "dataNascimento": "1985-03-12",
+          "imagem-membro": "",
+          "parentesco": "Responsável Familiar",
+          "escolaridade": "Ensino Médio Completo",
+          "ocupacao": "Diarista",
+          "beneficiosIndividuais": [
+            {
+              "idBeneficio": "BEN-003",
+              "nome": "Tarifa Social de Energia",
+              "valor": 80
+            }
+          ]
+        },
+        {
+          "idPessoa": "PES-002",
+          "nome": "João Pedro Souza",
+          "categoria": "Dependente",
+          "dataNascimento": "2012-08-20",
+          "imagem-membro": "",
+          "parentesco": "Filho",
+          "escolaridade": "Ensino Fundamental",
+          "ocupacao": "Estudante",
+          "beneficiosIndividuais": []
+        },
+        {
+          "idPessoa": "PES-003",
+          "nome": "Ana Clara Souza",
+          "categoria": "Dependente",
+          "dataNascimento": "2018-11-02",
+          "imagem-membro": "",
+          "parentesco": "Filha",
+          "escolaridade": "Educação Infantil",
+          "ocupacao": "Estudante",
+          "beneficiosIndividuais": [
+            {
+              "idBeneficio": "BEN-005",
+              "nome": "Benefício Primeira Infância",
+              "valor": 150
+            }
+          ]
+        }
+      ],
+      "id": "j7KP2yAMNlI"
   }
 ```
 
-> ⚠️ **APAGUE ESSA PARTE ANTES DE ENTREGAR SEU TRABALHO**
->
-> Apresente as estruturas de dados utilizadas na solução tanto para dados utilizados na essência da aplicação quanto outras estruturas que foram criadas para algum tipo de configuração
->
-> Nomeie a estrutura, coloque uma descrição sucinta e apresente um exemplo em formato JSON.
->
-> **Orientações:**
->
-> * [JSON Introduction](https://www.w3schools.com/js/js_json_intro.asp)
-> * [Trabalhando com JSON - Aprendendo desenvolvimento web | MDN](https://developer.mozilla.org/pt-BR/docs/Learn/JavaScript/Objects/JSON)
 
 ## Módulos e APIs
 
