@@ -276,11 +276,6 @@ window.addEventListener('DOMContentLoaded', () => {
     alternarVisibilidadeSenha('cadastroSenha', this);
   });
  
-  document.getElementById('linkEsqueciSenha').addEventListener('click', e => {
-    e.preventDefault();
-    showToast('Funcionalidade de recuperação de senha em desenvolvimento.', 'info');
-  });
- 
   // Se já houver sessão ativa, redireciona direto
   const logado = localStorage.getItem('usuarioLogado') || sessionStorage.getItem('usuarioLogado');
   if (logado) {

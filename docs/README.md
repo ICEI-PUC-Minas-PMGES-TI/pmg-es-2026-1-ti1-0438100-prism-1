@@ -623,17 +623,154 @@ Permite a visualização dos detalhes de algum benefício específico, como requ
 
 ![Tela de Detalhes dos Benefícios](images/tela-detalhes-beneficio.png)
 
-### Funcionalidade 2 - Visualização e Filtragem dos Pontos de Atendimento
+### Funcionalidade 3 - Visualização e Filtragem dos Pontos de Atendimento
 
 Permite a visualização dos pontos de atendimento (CRAS) na regional de Belo Horizonte, além das informações de cada posto e os serviços oferecidos por eles
 
-* **Estrutura de dados:** [Benefícios](##ti_ed_pontos-de-atendimento)
+* **Estrutura de dados:** [Postos](##ti_ed_pontos-de-atendimento)
 * **Instruções de acesso:**
   * Abra o site
   * Clique pelo Menu ou pelo botão de navegação "Postos"
 * **Tela da funcionalidade**:
 
 ![Tela de Visualizacão e Filtragem dos Postos](images/tela-visualizacao-postos.png)
+
+### Funcionalidade 4 - Formulário de Recomendação de Benefícios
+
+Permite inserir sua informações referentes a sua situação familiar e social
+
+* **Estrutura de dados:** [Benefícios](##ti_ed_beneficios)
+* **Instruções de acesso:**
+  * Abra o site
+  * Clique pelo Menu ou pelo botão de navegação "Recomendador"
+* **Tela da funcionalidade**:
+
+![Tela de Formulário de Recomendação de Benefícios](images/recomendador-beneficios.png)
+
+### Funcionalidade 5 - visualização de Benefícios Recomendados
+
+Permite visualizar os benefícios cadastrados que recomendamos para você, com base nas informações passadas no formulário
+
+* **Estrutura de dados:** [Beneficios](##ti_ed_beneficios)
+* **Instruções de acesso:**
+  * Abra o site
+  * Clique pelo Menu ou pelo botão de navegação "Recomendador"
+  * Preencha as informações necessárias
+  * Clique em "enviar" para enviar o formulário
+* **Tela da funcionalidade**:
+
+![Tela de Benefícios Recomendados](images/tela-beneficios-recomendados.png)
+
+### Funcionalidade 6 - Cadastro de Assistente Social
+
+Permite que os assistentes sociais interessados se cadastram no sistema
+
+* **Estrutura de dados:** [Assistentes Sociais](##ti_ed_assistentes-sociais)
+* **Instruções de acesso:**
+  * Abra o site
+  * Clique pelo Menu ou pelo botão de navegação "Login"
+  * Na aba de cadastro preencha as informações necessárias
+  * Vá para a aba de login e entre no sistema com os dados cadastrados
+* **Tela da funcionalidade**:
+
+![Tela de Cadastro de Assistente Social](images/tela-cadastrar-assistente.png)
+
+### Funcionalidade 7 - Visualização e Edição de Assistente Social
+
+Permite que os assistentes sociais cadastrados visualizem e editem suas informações
+
+* **Estrutura de dados:** [Assistentes Sociais](##ti_ed_assistentes-sociais)
+* **Instruções de acesso:**
+  * Abra o site
+  * Clique pelo Menu ou pelo botão de navegação "Login"
+  * Na aba de cadastro preencha as informações necessárias
+  * Vá para a aba de login e entre no sistema com os dados cadastrados
+  * Pelo menu, clique no botão em que aparece o nome do seu usuário
+  * Clique em "Ver Perfil"
+* **Tela da funcionalidade**:
+
+![Tela de Visualização e Edição do Assistente Social](images/tela-perfil-assistente.png)
+
+### Funcionalidade 8 - Visualização e Filtragem de Famílias
+
+Permite que os assistentes sociais cadastrados, visualizem e filtrem as famílias cadastradas por eles no sistema
+
+* **Estrutura de dados:** [Familias](##ti_ed_familias)
+* **Instruções de acesso:**
+  * Abra o site
+  * Clique pelo Menu ou pelo botão de navegação "Login"
+  * Na aba de cadastro preencha as informações necessárias
+  * Vá para a aba de login e entre no sistema com os dados cadastrados
+  * Pelo menu vá para "Famílias"
+* **Tela da funcionalidade**:
+
+![Tela de Visualização e Filtragem da Família](images/tela-visualizacao-familias.png)
+
+### Funcionalidade 9 - Edição de Famílias
+
+Permite que os assistentes sociais cadastrados, editem as informações das famílias já cadastradas por eles no sistema
+
+* **Estrutura de dados:** [Familias](##ti_ed_familias)
+* **Instruções de acesso:**
+  * Abra o site
+  * Clique pelo Menu ou pelo botão de navegação "Login"
+  * Na aba de cadastro preencha as informações necessárias
+  * Vá para a aba de login e entre no sistema com os dados cadastrados
+  * Pelo menu vá para "Famílias"
+  * Clique em "Editar"
+* **Tela da funcionalidade**:
+
+![Tela de Edição da Família](images/tela-editar-familia.png)
+
+### Funcionalidade 10 - Cadastro de Famílias
+
+Permite que os assistentes sociais cadastrados, cadastrem novas famílias no sistema
+
+* **Estrutura de dados:** [Familias](##ti_ed_familias)
+* **Instruções de acesso:**
+  * Abra o site
+  * Clique pelo Menu ou pelo botão de navegação "Login"
+  * Na aba de cadastro preencha as informações necessárias
+  * Vá para a aba de login e entre no sistema com os dados cadastrados
+  * Pelo menu vá para "Cadastrar Família"
+  * Preencha as informacões
+  * Clique em "salvar"
+* **Tela da funcionalidade**:
+
+![Tela de Cadastro da Família](images/tela-cadastrar-familia.png)
+
+### Funcionalidade 11 - Ver Detalhes da Família
+
+Permite que os assistentes sociais cadastrados, visualizem as informações e os detalhes das famílias cadastradas por eles no sistema
+
+* **Estrutura de dados:** [Familias](##ti_ed_familias)
+* **Instruções de acesso:**
+  * Abra o site
+  * Clique pelo Menu ou pelo botão de navegação "Login"
+  * Na aba de cadastro preencha as informações necessárias
+  * Vá para a aba de login e entre no sistema com os dados cadastrados
+  * Pelo menu vá para "Famílias"
+  * Clique em "acessar"
+* **Tela da funcionalidade**:
+
+![Tela de Detalhes da Família](images/tela-detalhes-familia.png)
+
+### Funcionalidade 12 - Exclusão da Família
+
+Permite que os assistentes sociais cadastrados, visualizem as informações e os detalhes das famílias cadastradas por eles no sistema
+
+* **Estrutura de dados:** [Familias](##ti_ed_familias)
+* **Instruções de acesso:**
+  * Abra o site
+  * Clique pelo Menu ou pelo botão de navegação "Login"
+  * Na aba de cadastro preencha as informações necessárias
+  * Vá para a aba de login e entre no sistema com os dados cadastrados
+  * Pelo menu vá para "Famílias"
+  * Clique em "excluir"
+  * Confirme a exclusão
+* **Tela da funcionalidade**:
+
+![Tela de Exclusão da Família](images/tela-exclusao-familia.png)
 
 ## Estruturas de Dados
 
