@@ -314,10 +314,6 @@ button[type="submit"]:active {
   gap: 4px;
 }
 
-.form-wizard.pcd-compact {
-  zoom: 0.95;
-}
-
 .form-wizard.pcd-compact .controls {
   margin-top: 0;
 }

@@ -56,6 +56,10 @@ function extrairPerfisDoUsuario(usuario) {
         perfis.push("PCD");
     }
 
+    if (["gestante", "amamentando"].includes(usuario.maternidade)) {
+        perfis.push("GESTANTES");
+    }
+
     const moradiasVulneraveis = ["alugada", "cedida", "ocupada", "risco", "rua"];
     if (moradiasVulneraveis.includes(usuario.moradia)) {
         perfis.push("SEM_IMOVEL");

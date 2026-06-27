@@ -39,6 +39,12 @@ document.addEventListener("DOMContentLoaded", () => {
     masculino: "Masculino",
   };
 
+  const maternidadeLabels = {
+    gestante: "Gestante",
+    amamentando: "Amamentando",
+    nenhuma: "Nenhuma das opções",
+  };
+
   const maritalLabels = {
     solteiro: "Solteiro(a)",
     casado: "Casado(a)",
@@ -360,6 +366,10 @@ document.addEventListener("DOMContentLoaded", () => {
     year: getFieldValue("year"),
     cpf: getFieldValue("cpf"),
     gender: getFieldValue("gender"),
+    maternidade:
+      getFieldValue("gender") === "feminino"
+        ? getCheckedValue("maternidade")
+        : "",
     maritalStatus: getFieldValue("maritalStatus"),
     workStatus: getFieldValue("workStatus"),
     contribuicaoTempo: getFieldValue("contribuicaoTempo"),
@@ -421,6 +431,10 @@ document.addEventListener("DOMContentLoaded", () => {
       radio.checked = radio.value === data.cadunico;
     });
 
+    document.querySelectorAll('input[name="maternidade"]').forEach((radio) => {
+      radio.checked = radio.value === data.maternidade;
+    });
+
     document.querySelectorAll('input[name="dependents"]').forEach((radio) => {
       radio.checked = radio.value === data.dependents;
     });
@@ -445,6 +459,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     toggleDependentes(data.dependents === "sim");
     togglePCD(data.pcd === "sim");
+    toggleMaternidade(data.gender === "feminino");
 
     const workStatusEvent = new Event("change", { bubbles: true });
     document.getElementById("workStatus").dispatchEvent(workStatusEvent);
@@ -457,6 +472,12 @@ document.addEventListener("DOMContentLoaded", () => {
     if (data.pcd !== "sim") {
       document.getElementById("tipoDeficiencia").value = "";
       document.querySelectorAll('input[name="laudo"]').forEach((radio) => {
+        radio.checked = false;
+      });
+    }
+
+    if (data.gender !== "feminino") {
+      document.querySelectorAll('input[name="maternidade"]').forEach((radio) => {
         radio.checked = false;
       });
     }
@@ -517,6 +538,14 @@ document.addEventListener("DOMContentLoaded", () => {
         ),
         createReviewItem("CPF", data.cpf || "Não informado"),
         createReviewItem("Sexo", resolveValue(data.gender, genderLabels)),
+        ...(data.gender === "feminino"
+          ? [
+              createReviewItem(
+                "Gestação ou amamentação",
+                resolveValue(data.maternidade, maternidadeLabels),
+              ),
+            ]
+          : []),
         createReviewItem(
           "Estado civil",
           resolveValue(data.maritalStatus, maritalLabels),
@@ -691,6 +720,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     toggleDependentes(false);
     togglePCD(false);
+    toggleMaternidade(false);
     document.getElementById("contribuicaoBox").classList.remove("visible");
     document.getElementById("desempregoBox").classList.remove("visible");
     document.getElementById("reviewContent").innerHTML = "";
@@ -781,6 +811,10 @@ document.addEventListener("DOMContentLoaded", () => {
       togglePCD(isYes);
     }
 
+    if (event.target?.name === "gender") {
+      toggleMaternidade(event.target.value === "feminino");
+    }
+
     if (currentStep === lastStepIndex) {
       generateReview();
     }
@@ -855,6 +889,7 @@ document.addEventListener("DOMContentLoaded", () => {
   restoreDraft();
   toggleDependentes(getCheckedValue("dependents") === "sim");
   togglePCD(getCheckedValue("pcd") === "sim");
+  toggleMaternidade(getFieldValue("gender") === "feminino");
   updateProgress();
 });
 
@@ -915,6 +950,34 @@ document.getElementById("workStatus").addEventListener("change", function (e) {
 
   refreshWizardHeight();
 });
+
+function toggleMaternidade(show) {
+  const box = document.getElementById("maternidadeBox");
+  const maternidadeRadios = document.querySelectorAll(
+    'input[name="maternidade"]',
+  );
+
+  if (!box) {
+    return;
+  }
+
+  if (show) {
+    box.classList.add("visible");
+    maternidadeRadios.forEach((radio) => {
+      radio.required = true;
+      radio.disabled = false;
+    });
+  } else {
+    box.classList.remove("visible");
+    maternidadeRadios.forEach((radio) => {
+      radio.required = false;
+      radio.disabled = true;
+      radio.checked = false;
+    });
+  }
+
+  refreshWizardHeight();
+}
 
 function toggleDependentes(show) {
   const box = document.getElementById("dependentesBox");

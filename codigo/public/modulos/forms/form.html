@@ -68,12 +68,32 @@
                 </div>
 
                 <div class="form-control">
-                    <label for="gender">Sexo biológico</label>
+                    <label for="gender">Sexo</label>
                     <select id="gender" name="gender" required>
                         <option value="" disabled selected hidden>Selecione</option>
                         <option value="feminino">Feminino</option>
                         <option value="masculino">Masculino</option>
                     </select>
+
+                    <div class="conditional" id="maternidadeBox">
+                        <div class="form-group" style="margin-bottom: 0;">
+                            <label>Você está gestante ou amamentando?</label>
+                            <div class="radio-group">
+                                <label class="radio-option">
+                                    <input type="radio" name="maternidade" value="gestante">
+                                    <span>Gestante</span>
+                                </label>
+                                <label class="radio-option">
+                                    <input type="radio" name="maternidade" value="amamentando">
+                                    <span>Amamentando</span>
+                                </label>
+                                <label class="radio-option">
+                                    <input type="radio" name="maternidade" value="nenhuma">
+                                    <span>Nenhuma das opções</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <div class="form-control">
