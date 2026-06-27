@@ -602,7 +602,7 @@ Esta seção apresenta as funcionalidades da solução
 
 Permite a visualização de todos os benefícios cadastrados, bem como uma filtragem dinâmica e a opção de favoritar algum benefício
 
-* **Estrutura de dados:** [Benefícios](#-estrutura-de-dados---beneficios)
+* **Estrutura de dados:** [Benefícios](#ti_ed_beneficios)
 * **Instruções de acesso:**
   * Abra o site
   * Clique pelo Menu ou pelo botão de navegação "Benefícios"
@@ -614,14 +614,26 @@ Permite a visualização de todos os benefícios cadastrados, bem como uma filtr
 
 Permite a visualização dos detalhes de algum benefício específico, como requisitos, condições e documentação necessária, permitindo ainda marcar os documentos já possuídos para visualizar o progresso
 
-* **Estrutura de dados:** [Benefícios](#-estrutura-de-dados---beneficios)
+* **Estrutura de dados:** [Benefícios](##ti_ed_beneficios)
 * **Instruções de acesso:**
   * Abra o site
   * Clique pelo Menu ou pelo botão de navegação "Benefícios"
   * Clique no botão "mais detalhes"
 * **Tela da funcionalidade**:
 
-![Tela de Visualizacão e Filtragem dos Benefícios](images/tela-detalhes-beneficio.png)
+![Tela de Detalhes dos Benefícios](images/tela-detalhes-beneficio.png)
+
+### Funcionalidade 2 - Visualização e Filtragem dos Pontos de Atendimento
+
+Permite a visualização dos pontos de atendimento (CRAS) na regional de Belo Horizonte, além das informações de cada posto e os serviços oferecidos por eles
+
+* **Estrutura de dados:** [Benefícios](##ti_ed_pontos-de-atendimento)
+* **Instruções de acesso:**
+  * Abra o site
+  * Clique pelo Menu ou pelo botão de navegação "Postos"
+* **Tela da funcionalidade**:
+
+![Tela de Visualizacão e Filtragem dos Postos](images/tela-visualizacao-postos.png)
 
 ## Estruturas de Dados
 
