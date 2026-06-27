@@ -1,6 +1,6 @@
 # Nome do projeto
 
-#Guia-Benefício 
+Guia-Benefício 
 
 ## Alunos integrantes da equipe
 
