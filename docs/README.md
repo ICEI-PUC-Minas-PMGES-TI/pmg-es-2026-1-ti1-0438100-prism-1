@@ -602,7 +602,7 @@ Esta seção apresenta as funcionalidades da solução
 
 Permite a inclusão, leitura, alteração e exclusão de contatos para o sistema
 
-* **Estrutura de dados:** [Contatos](#2-estrutura-de-dados-beneficios)
+* **Estrutura de dados:** [Benefícios](#estrutura-de-dados---beneficios)
 * **Instruções de acesso:**
   * Abra o site
   * Clique pelo Menu ou pelo botão de navegação "Benefícios"
