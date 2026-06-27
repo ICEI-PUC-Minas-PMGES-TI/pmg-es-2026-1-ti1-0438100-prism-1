@@ -58,9 +58,9 @@ A realização deste estudo justifica-se pela necessidade de democratizar o aces
 
 ## Público-Alvo
 
-# Mercado e Público-Alvo
+### Mercado e Público-Alvo
 
-## 1. Mercado: GovTech e Tecnologia Social
+#### 1. Mercado: GovTech e Tecnologia Social
 
 A solução está inserida no ecossistema de **GovTechs** e inovação para o setor público. O foco primordial não é o lucro comercial direto, mas a eficiência na entrega de serviços públicos e o fortalecimento da cidadania
 
@@ -69,15 +69,15 @@ A solução está inserida no ecossistema de **GovTechs** e inovação para o se
 
 ---
 
-## 2. Perfil Detalhado dos Usuários
+### 2. Perfil Detalhado dos Usuários
 
-### A. Conhecimentos Prévios e Alfabetização Informacional
+#### A. Conhecimentos Prévios e Alfabetização Informacional
 
 * **Domínio de Termos:** O usuário típico desconhece o vocabulário administrativo (ex: *"cadastramento"*, *"deferimento"*, *"per capita"*). O seu conhecimento sobre direitos é fragmentado, baseado em fontes informais como rádio, TV ou boatos de redes sociais.
   
 * **Barreira Linguística:** Existe dificuldade em interpretar textos longos ou instruções com múltiplos passos. A busca por informação é feita de forma direta e urgente (ex: *"como receber o auxílio gás"*)
 
-### B. Relação com a Tecnologia (Inclusão Digital)
+#### B. Relação com a Tecnologia (Inclusão Digital)
 
 * **Uso de Dispositivos:** O acesso é feito quase exclusivamente via dispositivos móveis. Trata-se de aparelhos, na sua maioria, de entrada ou gerações antigas, com limitações de memória e processamento
   
@@ -85,7 +85,7 @@ A solução está inserida no ecossistema de **GovTechs** e inovação para o se
   
 * **Custo de Conectividade:** A experiência é ditada pela disponibilidade de dados móveis. A solução deve ser leve para não consumir o plano de dados limitado do usuário
 
-### C. Relações Hierárquicas e Psicossociais
+#### C. Relações Hierárquicas e Psicossociais
 
 * **Posição de Vulnerabilidade:** O cidadão sente-se frequentemente numa posição de inferioridade perante o Estado. A burocracia é vista como um obstáculo intransponível, gerando frustração e desistência
   
@@ -139,41 +139,43 @@ O mapeamento abaixo descreve a rede de influência ao redor da solução:
 
 ## Etapa de Entendimento
 
+Nesta etapa, buscamos entender mais acerca do nosso tema, levantando certezas, dúvidas e suposicões sobre a temática.
 
+![Matriz de alinhamento CSD](images/matriz-de-alinhamento.png)
 
 ## Etapa de Definição
 
-# Personas e Mapas de Empatia
+### Personas e Mapas de Empatia
 
 Este documento apresenta as personas identificadas no projeto, juntamente com seus respectivos mapas de empatia, representando os principais usuários da solução
 
 ---
 
-# Persona 1: Rafaela Silva Soares
+#### Persona 1: Rafaela Silva Soares
 
 ![Rafaela](images/PERSONA-1.png)
 
 **Idade:** 40 anos  
 **Ocupação:** Trabalhadora Informal (Manicure)
 
-## Bio
+##### Bio
 
 Rafaela é uma trabalhadora informal que atua como manicure e busca estabilidade financeira para sustentar sua família. Utiliza o celular como principal ferramenta no dia a dia.
 
-## Objetivos
+##### Objetivos
 
 - Estabilidade financeira  
 - Melhorar a vida dos filhos  
 - Entender seus direitos  
 - Organizar sua renda  
 
-## Dores
+##### Dores
 
 - Dificuldade com burocracia  
 - Informações confusas  
 - Falta de clareza sobre direitos  
 
-## Objetos e Lugares
+##### Objetos e Lugares
 
 - Smartphone Android  
 - WhatsApp, Instagram, Google, YouTube  
@@ -181,36 +183,36 @@ Rafaela é uma trabalhadora informal que atua como manicure e busca estabilidade
 
 ---
 
-## Mapa de Empatia — Rafaela
+##### Mapa de Empatia — Rafaela
 
-### Vê
+###### Vê
 - Pessoas em situação financeira semelhante  
 - Conteúdos em redes sociais  
 - Filas e burocracia  
 
-### Ouve
+###### Ouve
 
 - Conselhos de vizinhos e familiares  
 - Informações sobre benefícios  
 
-### Pensa e sente
+###### Pensa e sente
 
 - Preocupação financeira  
 - Insegurança  
 - Desejo de estabilidade  
 
-### Fala e faz
+###### Fala e faz
 
 - Busca ajuda de conhecidos  
 - Usa celular para aprender  
 - Trabalha diariamente  
 
-### Dores
+###### Dores
 
 - Processos complicados  
 - Falta de clareza  
 
-### Ganhos
+###### Ganhos
 
 - Segurança financeira  
 - Autonomia  
@@ -218,29 +220,29 @@ Rafaela é uma trabalhadora informal que atua como manicure e busca estabilidade
 
 ---
 
-# Persona 2: Sônia da Silva
+#### Persona 2: Sônia da Silva
 
 ![Sônia](images/PERSONA-2.png)
 
 **Idade:** 78 anos  
 **Ocupação:** Aposentada  
 
-## Bio
+##### Bio
 Sônia é aposentada e depende de sua renda para sobreviver. Possui dificuldade com tecnologia, mas deseja ser mais independente.
 
-## Objetivos
+##### Objetivos
 
 - Acessar aposentadoria com facilidade  
 - Ter autonomia  
 - Entender processos  
 
-## Dores
+##### Dores
 
 - Dificuldade com tecnologia  
 - Dependência de terceiros  
 - Sistemas complexos  
 
-## Objetos e Lugares
+##### Objetos e Lugares
 
 - Smartphone antigo  
 - WhatsApp, Facebook  
@@ -248,37 +250,37 @@ Sônia é aposentada e depende de sua renda para sobreviver. Possui dificuldade 
 
 ---
 
-## Mapa de Empatia — Sônia
+##### Mapa de Empatia — Sônia
 
-### Vê
+###### Vê
 
 - Pessoas usando tecnologia com facilidade  
 - Informações difíceis de entender  
 
-### Ouve
+###### Ouve
 
 - Ajuda de filhos e netos  
 - Informações sobre benefícios  
 
-### Pensa e sente
+###### Pensa e sente
 
 - Insegurança  
 - Medo de errar  
 - Desejo de independência  
 
-### Fala e faz
+###### Fala e faz
 
 - Pede ajuda  
 - Evita tecnologia  
 - Resolve presencialmente  
 
-### Dores
+###### Dores
 
 - Processos difíceis  
 - Falta de clareza  
 - Dependência  
 
-### Ganhos
+###### Ganhos
 
 - Autonomia  
 - Tranquilidade  
@@ -286,29 +288,29 @@ Sônia é aposentada e depende de sua renda para sobreviver. Possui dificuldade 
 
 ---
 
-# Persona 3: Jailson Pereira
+#### Persona 3: Jailson Pereira
 
 ![Jailson](images/PERSONA-3.png)
 
 **Idade:** 62 anos  
 **Ocupação:** Agricultor  
 
-## Bio
+##### Bio
 
 Jailson é agricultor e prefere soluções práticas. Não tem familiaridade com tecnologia, mas precisa dela para acessar benefícios.
 
-## Objetivos
+##### Objetivos
 - Conseguir aposentadoria  
 - Resolver problemas rapidamente  
 - Comprar um lote  
 
-## Dores
+##### Dores
 
 - Dificuldade com tecnologia  
 - Sistemas lentos  
 - Processos longos  
 
-## Objetos e Lugares
+##### Objetos e Lugares
 
 - Smartphone antigo  
 - Uso ocasional  
@@ -317,37 +319,37 @@ Jailson é agricultor e prefere soluções práticas. Não tem familiaridade com
 
 ---
 
-## Mapa de Empatia — Jailson
+##### Mapa de Empatia — Jailson
 
-### Vê
+###### Vê
 
 - Falta de acesso fácil a serviços  
 - Pessoas com mais facilidade digital  
 
-### Ouve
+###### Ouve
 
 - Orientações de familiares  
 - Informações sobre benefícios  
 
-### Pensa e sente
+###### Pensa e sente
 
 - Frustração com tecnologia  
 - Desejo de praticidade  
 - Cansaço do trabalho  
 
-### Fala e faz
+###### Fala e faz
 
 - Prefere soluções diretas  
 - Evita tecnologia  
 - Busca ajuda quando necessário  
 
-### Dores
+###### Dores
 
 - Sistemas complexos  
 - Demora  
 - Falta de clareza  
 
-### Ganhos
+###### Ganhos
 
 - Rapidez  
 - Simplicidade  
@@ -356,7 +358,7 @@ Jailson é agricultor e prefere soluções práticas. Não tem familiaridade com
 
 ---
 
-# Conclusão
+#### Conclusão
 
 As personas representam diferentes perfis de usuários que enfrentam dificuldades com tecnologia e acesso a serviços.  
 Os mapas de empatia ajudam a compreender melhor suas necessidades, dores e expectativas, orientando o desenvolvimento de soluções mais acessíveis, simples e eficientes
@@ -373,7 +375,7 @@ Com base na análise das personas foram identificadas as seguintes histórias de
 
 ---
 
-## Acesso à Informação
+### Acesso à Informação
 
 | EU COMO... | QUERO/PRECISO... | PARA... |
 |-----------|----------------|--------|
@@ -383,7 +385,7 @@ Com base na análise das personas foram identificadas as seguintes histórias de
 
 ---
 
-## Usabilidade e Facilidade
+### Usabilidade e Facilidade
 
 | EU COMO... | QUERO/PRECISO... | PARA... |
 |-----------|----------------|--------|
@@ -393,7 +395,7 @@ Com base na análise das personas foram identificadas as seguintes histórias de
 
 ---
 
-## Processos e Solicitações
+### Processos e Solicitações
 
 | EU COMO... | QUERO/PRECISO... | PARA... |
 |-----------|----------------|--------|
@@ -403,7 +405,7 @@ Com base na análise das personas foram identificadas as seguintes histórias de
 
 ---
 
-## Segurança e Confiança
+### Segurança e Confiança
 
 | EU COMO... | QUERO/PRECISO... | PARA... |
 |-----------|----------------|--------|
@@ -413,7 +415,7 @@ Com base na análise das personas foram identificadas as seguintes histórias de
 
 ---
 
-## Atualizações e Acompanhamento
+### Atualizações e Acompanhamento
 
 | EU COMO... | QUERO/PRECISO... | PARA... |
 |-----------|----------------|--------|
@@ -423,20 +425,18 @@ Com base na análise das personas foram identificadas as seguintes histórias de
 
 ---
 
-# Conclusão
+## Conclusão
 
 As histórias de usuário refletem diretamente as necessidades reais das personas, garantindo que a solução desenvolvida seja acessível, eficiente e centrada no usuário 
 O foco principal é reduzir a complexidade, aumentar a confiança e promover autonomia no uso da tecnologia
 
-## Proposta de Valor
-
-# Requisitos e Proposta de Valor
+## Requisitos e Proposta de Valor
 
 A seguir estão os requisitos funcionais e não funcionais definidos para a solução, seguidos pela proposta de valor que conecta estas funcionalidades às necessidades da nossa persona
 
 ---
 
-## Requisitos Funcionais
+### Requisitos Funcionais
 
 | ID | Descrição do Requisito | Prioridade |
 |----|----------------------|-----------|
@@ -453,7 +453,7 @@ A seguir estão os requisitos funcionais e não funcionais definidos para a solu
 
 ---
 
-## Requisitos Não Funcionais
+### Requisitos Não Funcionais
 
 | ID | Descrição do Requisito | Prioridade |
 |----|----------------------|-----------|
@@ -470,11 +470,11 @@ A seguir estão os requisitos funcionais e não funcionais definidos para a solu
 
 ---
 
-## Proposta de Valor 
+### Proposta de Valor 
 
 Com base na análise da nossa persona **Rafaela Silva Soares**, estruturamos a nossa proposta de valor para garantir que a solução técnica resolva as dificuldades reais de acesso à informação
 
-### Visualização do Canvas
+#### Visualização do Canvas
 
 | Proposta de Valor 1 | Proposta de Valor 2 | Proposta de Valor 3 |
 | :---: | :---: | :---: |
@@ -502,37 +502,37 @@ Com base na análise da nossa persona **Rafaela Silva Soares**, estruturamos a n
 
 Os requisitos e a proposta de valor foram definidos com foco na simplicidade, acessibilidade e eficiência. O objetivo central é garantir que utilizadores com baixa familiaridade tecnológica, como a **Rafaela Silva Soares**, consigam utilizar a plataforma com total autonomia, segurança e dignidade, eliminando as barreiras entre o cidadão e os seus direitos
 
-## Projeto de Interface
+# Projeto de Interface
 
 Artefatos relacionados com a interface e a interacão do usuário na proposta de solução
 
-### Wireframes
+## Wireframes
 
-#### 1. Tela de Formulário (Perfil do Usuário)
+### 1. Tela de Formulário (Perfil do Usuário)
 
 Interface para captação de dados básicos e filtragem de benefícios
 
 ![Wireframe 1](images/wireframe-1.jpg)
 
-#### 2. Tela Inicial (Dashboard)
+### 2. Tela Inicial (Dashboard)
 
 Exibição dos benefícios disponíveis com foco em leitura e acessibilidade
 
 ![Wireframe 2](images/wireframe-2.jpg)
 
-#### 3. Detalhes do Benefício
+### 3. Detalhes do Benefício
 
 Página com informações sobre documentos, valores e exigências
 
 ![Wireframe 3](images/wireframe-3.jpg)
 
-#### 4. Listagem de Benefícios Futuros
+### 4. Listagem de Benefícios Futuros
 
 Calendário e informações sobre auxílios que ainda serão liberados
 
 ![Wireframe 4](images/wireframe-4.jpg)
 
-### User Flow
+## User Flow
 
 O diagrama abaixo ilustra o caminho que a Rafaela percorre desde a entrada no sistema até a descoberta dos locais de atendimento
 
@@ -545,7 +545,7 @@ O diagrama abaixo ilustra o caminho que a Rafaela percorre desde a entrada no si
 3. Seleção de um Benefício Específico
 4. Consulta de Documentos e Locais de Atendimento
 
-### Protótipo Interativo
+## Protótipo Interativo
 
 O protótipo permite navegar pelas telas e validar a usabilidade da solução proposta no Figma
 
@@ -596,7 +596,7 @@ O vídeo a seguir traz uma apresentação do problema que a equipe está tratand
 
 ## Funcionalidades
 
-Esta seção apresenta as funcionalidades da solução.Info
+Esta seção apresenta as funcionalidades da solução
 
 ##### Funcionalidade 1 - Cadastro de Contatos ⚠️ EXEMPLO ⚠️
 
