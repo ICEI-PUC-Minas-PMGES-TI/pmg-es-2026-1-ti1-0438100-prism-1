@@ -598,18 +598,17 @@ O vídeo a seguir traz uma apresentação do problema que a equipe está tratand
 
 Esta seção apresenta as funcionalidades da solução
 
-##### Funcionalidade 1 - Cadastro de Contatos ⚠️ EXEMPLO ⚠️
+##### Funcionalidade 1 - Visualização e visualização dos benefícios
 
 Permite a inclusão, leitura, alteração e exclusão de contatos para o sistema
 
-* **Estrutura de dados:** [Contatos](#ti_ed_contatos)
+* **Estrutura de dados:** [Contatos](#2-estrutura-de-dados-beneficios)
 * **Instruções de acesso:**
-  * Abra o site e efetue o login
-  * Acesse o menu principal e escolha a opção Cadastros
-  * Em seguida, escolha a opção Contatos
+  * Abra o site
+  * Clique pelo Menu ou pelo botão de navegação "Benefícios"
 * **Tela da funcionalidade**:
 
-![Tela de Funcionalidade](images/exemplo-funcionalidade.png)
+![Tela de Visualizacão e Filtragem dos Benefícios](images/tela-visualizacao-beneficios.png)
 
 > ⚠️ **APAGUE ESSA PARTE ANTES DE ENTREGAR SEU TRABALHO**
 >
@@ -700,7 +699,7 @@ Registro das assistentes sociais, suas informacões, famílias que acompanha e o
 ```
 ### Estrutura de Dados - Famílias
 
-Registro das famílias acompanhadas por uma assistente sociais, bem como suas informações gerais e de seus membros
+Registro das famílias acompanhadas por um(a) assistente social, bem como suas informações gerais e de seus membros
 
 ```json
   {
@@ -790,32 +789,21 @@ Esta seção apresenta os módulos e APIs utilizados na solução
 
 **Images**:
 
-* Unsplash - [https://unsplash.com/](https://unsplash.com/) ⚠️ EXEMPLO ⚠️
 
 **Fonts:**
 
-* Icons Font Face - [https://fontawesome.com/](https://fontawesome.com/) ⚠️ EXEMPLO ⚠️
+* Fontes - [https://fonts.google.com](https://fonts.google.com)
 
 **Scripts:**
 
-* jQuery - [http://www.jquery.com/](http://www.jquery.com/) ⚠️ EXEMPLO ⚠️
-* Bootstrap 4 - [http://getbootstrap.com/](http://getbootstrap.com/) ⚠️ EXEMPLO ⚠️
+* jQuery - [http://www.jquery.com/](http://www.jquery.com/)
+* Bootstrap 4 - [http://getbootstrap.com/](http://getbootstrap.com/)
 
-> ⚠️ **APAGUE ESSA PARTE ANTES DE ENTREGAR SEU TRABALHO**
->
-> Apresente os módulos e APIs utilizados no desenvolvimento da solução. Inclua itens como: (1) Frameworks, bibliotecas, módulos, etc. utilizados no desenvolvimento da solução; (2) APIs utilizadas para acesso a dados, serviços, etc.
 
 # Referências
 
 As referências utilizadas no trabalho foram:
 
-* SOBRENOME, Nome do autor. Título da obra. 8. ed. Cidade: Editora, 2000. 287 p ⚠️ EXEMPLO ⚠️
+* BRASIL. Governo Federal. GOV.BR. Disponível em: https://www.gov.br/pt-br. Acesso em: 30 mar. 2026.
+* BELO HORIZONTE. Prefeitura Municipal. Centros de Referência de Assistência Social (CRAS). Belo Horizonte: PBH, (2026). Disponível em: https://prefeitura.pbh.gov.br/assistencia-social/equipamentos/cras. Acesso em 04 abr.2026
 
-> ⚠️ **APAGUE ESSA PARTE ANTES DE ENTREGAR SEU TRABALHO**
->
-> Inclua todas as referências (livros, artigos, sites, etc) utilizados no desenvolvimento do trabalho.
->
-> **Orientações**:
->
-> - [Formato ABNT](https://www.normastecnicas.com/abnt/trabalhos-academicos/referencias/)
-> - [Referências Bibliográficas da ABNT](https://comunidade.rockcontent.com/referencia-bibliografica-abnt/)
