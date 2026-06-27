@@ -6,25 +6,43 @@ function getFamiliaIdFromURL() {
  
 function formatarData(dataISO) {
     if (!dataISO) return '—';
-
+ 
     if (typeof dataISO !== 'string') {
         return '—';
     }
-
+ 
     const partes = dataISO.split('-');
-
+ 
     if (partes.length !== 3) {
         return dataISO;
     }
-
+ 
     const [ano, mes, dia] = partes;
-
+ 
     return `${dia}/${mes}/${ano}`;
 }
  
 function formatarMoeda(valor) {
     if (valor === 0) return 'Gratuito';
     return valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+}
+ 
+// Formatação monetária "neutra" (sem o rótulo "Gratuito"), usada para
+// renda familiar e totais, onde R$ 0,00 tem outro significado.
+function formatarValor(valor) {
+    if (valor === null || valor === undefined || Number.isNaN(valor)) return '—';
+    return valor.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' });
+}
+ 
+function formatarEndereco(endereco) {
+    if (!endereco) return '—';
+    const { rua, numero, bairro, cidade, estado, cep } = endereco;
+    const partes = [
+        [rua, numero].filter(Boolean).join(', '),
+        bairro,
+        [cidade, estado].filter(Boolean).join(' - '),
+    ].filter(Boolean);
+    return partes.join(' — ') + (cep ? ` · CEP ${cep}` : '');
 }
  
 function iconeBeneficio(categoria) {
@@ -41,6 +59,65 @@ function avatarUrl(nome) {
     return `https://ui-avatars.com/api/?name=${encodeURIComponent(nome)}&background=003CA3&color=fff&size=200&rounded=true`;
 }
  
+// Informações Gerais da Família
+ 
+function renderizarInfoFamilia(familia) {
+    const container = document.getElementById('card-familia');
+    if (!container) return;
+ 
+    const imagemSrc = familia.fotoFamilia || avatarUrl(familia.nomeFamilia);
+    const fallback  = avatarUrl(familia.nomeFamilia);
+ 
+    const totalMembros    = familia.membros?.length ?? 0;
+    const totalBeneficios = familia.beneficiosFamiliares?.length ?? 0;
+ 
+    container.className = 'card-familia-header card shadow-sm overflow-hidden';
+    container.innerHTML = `
+        <div class="row g-0">
+            <div class="col-md-4 foto-familia-wrapper">
+                <img src="${imagemSrc}"
+                     alt="Foto da ${familia.nomeFamilia}"
+                     class="w-100 h-100 object-fit-cover"
+                     onerror="this.onerror=null;this.src='${fallback}'">
+            </div>
+            <div class="col-md-8 d-flex align-items-center">
+                <div class="p-4 p-lg-5 w-100">
+                    <h2 class="fw-bold text-azul mb-4">${familia.nomeFamilia}</h2>
+ 
+                    <div class="row g-3 small mb-4">
+                        <div class="col-sm-6">
+                            <div class="label-detalhe">📍 Endereço</div>
+                            <div>${formatarEndereco(familia.endereco)}</div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="label-detalhe">📞 Telefone</div>
+                            <div>
+                                <a href="tel:${(familia.telefone ?? '').replace(/\D/g, '')}" class="assistente-info text-decoration-none">
+                                    ${familia.telefone ?? '—'}
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-sm-3">
+                            <div class="label-detalhe">💰 Renda Familiar</div>
+                            <div>${formatarValor(familia.rendaFamiliar)}</div>
+                        </div>
+                    </div>
+ 
+                    <div class="d-flex flex-wrap gap-4 pt-3 border-top stats-familia">
+                        <div class="stat-item">
+                            <span class="stat-numero">${totalMembros}</span>
+                            <span class="stat-label">Membro${totalMembros === 1 ? '' : 's'}</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-numero">${totalBeneficios}</span>
+                            <span class="stat-label">Benefício${totalBeneficios === 1 ? '' : 's'} familiar${totalBeneficios === 1 ? '' : 'es'}</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>`;
+}
+ 
 // Cards dos Membros 
  
 function criarCardMembro(membro) {
@@ -49,7 +126,7 @@ function criarCardMembro(membro) {
  
     const ehResponsavel =
     membro.categoria === 'Responsável';
-
+ 
     const badgeClass = ehResponsavel ? 'badge-responsavel' : 'badge-dependente';
     const badgeLabel = ehResponsavel ? 'Responsável' : 'Dependente';
  
@@ -122,7 +199,7 @@ function renderizarAssistente(assistente) {
     const imagemSrc = assistente["imagem-assistente"] || avatarUrl(assistente.nome);
     const fallback  = avatarUrl(assistente.nome);
  
-    container.className = 'info-assistente-social card shadow-sm overflow-hidden';
+    container.className = 'info-assistente-social card shadow-sm overflow-hidden rounded-4';
     container.innerHTML = `
         <div class="row g-0">
             <div class="col-md-8 d-flex align-items-center">
@@ -156,7 +233,7 @@ function renderizarAssistente(assistente) {
         </div>`;
 }
  
-// ─── SEÇÃO 3 — Benefícios da Família ────────────────────────
+// Benefícios da Família 
  
 function criarCardBeneficioFamiliar(beneficio) {
     const icone = iconeBeneficio(beneficio.categoria ?? '');
@@ -201,7 +278,7 @@ async function renderizarBeneficiosFamiliares(beneficiosFamiliares) {
     container.innerHTML = detalhes.map(criarCardBeneficioFamiliar).join('');
 }
  
-// ─── Inicialização ───────────────────────────────────────────
+// Inicialização 
  
 async function inicializar() {
     const familiaId = getFamiliaIdFromURL();
@@ -219,6 +296,8 @@ async function inicializar() {
         if (!familia) throw new Error('Família não encontrada.');
  
         document.title = `${familia.nomeFamilia} — Guia-Benefício`;
+ 
+        renderizarInfoFamilia(familia);
  
         const idAssistente = familia.assistenteSocial?.idAssistente;
         let assistente = null;
@@ -249,5 +328,3 @@ async function inicializar() {
 }
  
 document.addEventListener('DOMContentLoaded', inicializar);
-
-

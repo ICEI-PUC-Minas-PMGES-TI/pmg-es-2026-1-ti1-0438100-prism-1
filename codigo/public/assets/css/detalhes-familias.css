@@ -1,18 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
 main {
     font-family: var(--font-principal);
     padding: 3rem;
-    background-color: #f5f5f5;;
+    background-color: #f5f5f5;
+    margin-top: 5rem;
 }
-
+ 
 .titulo-sessao {
     text-align: center;
-    margin-top: 6rem;
+    margin-top: 4rem;
     margin-bottom: 2rem;
     letter-spacing: 0.12rem;
     font-weight: 900;
     font-family: montserrat;
 }
-
+ 
+#info-familia-geral .titulo-sessao,
+#info-familia-geral + section .titulo-sessao {
+    margin-top: 0;
+}
+ 
 .titulo-sessao h2 {
     font-size: 3rem;
 }
@@ -26,15 +34,58 @@ main {
     color: #6c757d;
     display: block;
 }
-
+ 
 .assistente-info {
     color: black;
     font-family: jomhuria;
     font-size: 1rem;
     font-weight: 900;
 }
+
+#card-familia {
+   font-family: "DM Sans", sans-serif;;
+}
+
+.card-familia-header {
+    border: none;
+    border-radius: 18px;
+}
  
-/* Foto do membro — círculo fixo */
+.foto-familia-wrapper {
+    min-height: 260px;
+    background: linear-gradient(135deg, #003CA3, #2B7F3A);
+    overflow: hidden;
+}
+ 
+.text-azul { color: #003CA3; }
+.text-verde { color: #2B7F3A; }
+ 
+.stats-familia {
+    gap: 2rem;
+}
+ 
+.stat-item {
+    display: flex;
+    flex-direction: column;
+}
+ 
+.stat-numero {
+    font-size: 1.9rem;
+    font-weight: 900;
+    color: #003CA3;
+    line-height: 1;
+    font-family: montserrat;
+}
+ 
+.stat-label {
+    font-size: .72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+    color: #6c757d;
+    margin-top: .3rem;
+}
+ 
 .foto-membro {
     width: 72px;
     height: 72px;
@@ -42,29 +93,29 @@ main {
     border: 3px solid #d9e4ff;
 }
  
-/* Badges de categoria */
 .badge-responsavel { background-color: #d9e4ff; }
 .badge-dependente  { background-color: #d4edda; }
  
-/* Hover nos cards */
-.card-hover { transition: box-shadow .2s, transform .2s; }
+.card-hover { 
+    transition: box-shadow .2s, 
+    transform .2s; 
+}
+
 .card-hover:hover {
     box-shadow: 0 6px 20px rgba(0,60,163,.12);
     transform: translateY(-2px);
 }
  
-/* Bloco da foto da assistente (altura fixa, cobre a coluna) */
 .foto-assistente-wrapper {
     min-height: 220px;
     background: linear-gradient(135deg, #d9e4ff, #d4edda);
     overflow: hidden;
 }
-
+ 
 #beneficios-familia {
     margin-bottom: 2rem;
 }
  
-/* Ícone de benefício */
 .icone-beneficio {
     width: 52px;
     height: 52px;
@@ -76,4 +127,3 @@ main {
     font-size: 1.6rem;
     flex-shrink: 0;
 }
-
