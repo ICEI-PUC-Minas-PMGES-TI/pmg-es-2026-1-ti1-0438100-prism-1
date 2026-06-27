@@ -93,29 +93,29 @@ A solução está inserida no ecossistema de **GovTechs** e inovação para o se
 
 ---
 
-## 3. Mapa de Stakeholders (Partes Interessadas)
+### 3. Mapa de Stakeholders (Partes Interessadas)
 
 O mapeamento abaixo descreve a rede de influência ao redor da solução:
 
-### **Stakeholders Primários (Usuários Diretos)**
+#### **Stakeholders Primários (Usuários Diretos)**
 
 * Cidadãos em situação de insegurança financeira
 * Trabalhadores informais e rurais que buscam regularização
 * Pessoas com Deficiência (PcD) e idosos que buscam auxílios específicos
 
-### **Stakeholders Secundários (Facilitadores)**
+#### **Stakeholders Secundários (Facilitadores)**
 
 * **Assistentes Sociais (CRAS/CREAS):** Podem utilizar a aplicação como guia rápido nos seus atendimentos
 * **Líderes Comunitários:** Replicam a informação em bairros periféricos e zonas rurais
 * **Familiares:** Jovens que realizam a pesquisa para os mais velhos
 * 
-### **Stakeholders Terciários (Provedores de Dados)**
+#### **Stakeholders Terciários (Provedores de Dados)**
 
 * **Órgãos Governamentais (MDS, INSS, Caixa Econômica):** Instituições que detêm as regras, os dados e os fundos dos benefícios
 
 ---
 
-## 4. Síntese do Público-Alvo
+### 4. Síntese do Público-Alvo
 
 | Atributo | Descrição para o Projeto |
 | :--- | :--- |
@@ -358,7 +358,7 @@ Jailson é agricultor e prefere soluções práticas. Não tem familiaridade com
 
 ---
 
-#### Conclusão
+### Conclusão
 
 As personas representam diferentes perfis de usuários que enfrentam dificuldades com tecnologia e acesso a serviços.  
 Os mapas de empatia ajudam a compreender melhor suas necessidades, dores e expectativas, orientando o desenvolvimento de soluções mais acessíveis, simples e eficientes
@@ -425,7 +425,7 @@ Com base na análise das personas foram identificadas as seguintes histórias de
 
 ---
 
-## Conclusão
+### Conclusão
 
 As histórias de usuário refletem diretamente as necessidades reais das personas, garantindo que a solução desenvolvida seja acessível, eficiente e centrada no usuário 
 O foco principal é reduzir a complexidade, aumentar a confiança e promover autonomia no uso da tecnologia
@@ -498,7 +498,7 @@ Com base na análise da nossa persona **Rafaela Silva Soares**, estruturamos a n
 
 ---
 
-## Conclusão
+### Conclusão
 
 Os requisitos e a proposta de valor foram definidos com foco na simplicidade, acessibilidade e eficiência. O objetivo central é garantir que utilizadores com baixa familiaridade tecnológica, como a **Rafaela Silva Soares**, consigam utilizar a plataforma com total autonomia, segurança e dignidade, eliminando as barreiras entre o cidadão e os seus direitos
 
