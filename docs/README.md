@@ -598,11 +598,11 @@ O vídeo a seguir traz uma apresentação do problema que a equipe está tratand
 
 Esta seção apresenta as funcionalidades da solução
 
-##### Funcionalidade 1 - Visualização e visualização dos benefícios
+### Funcionalidade 1 - Visualização e filtragem dos benefícios
 
-Permite a inclusão, leitura, alteração e exclusão de contatos para o sistema
+Permite a visualização de todos os benefícios cadastrados, bem como uma filtragem dinâmica e a opção de favoritar algum benefício
 
-* **Estrutura de dados:** [Benefícios](#estrutura-de-dados---beneficios)
+* **Estrutura de dados:** [Benefícios](#-estrutura-de-dados---beneficios)
 * **Instruções de acesso:**
   * Abra o site
   * Clique pelo Menu ou pelo botão de navegação "Benefícios"
@@ -610,11 +610,18 @@ Permite a inclusão, leitura, alteração e exclusão de contatos para o sistema
 
 ![Tela de Visualizacão e Filtragem dos Benefícios](images/tela-visualizacao-beneficios.png)
 
-> ⚠️ **APAGUE ESSA PARTE ANTES DE ENTREGAR SEU TRABALHO**
->
-> Apresente cada uma das funcionalidades que a aplicação fornece tanto para os usuários quanto aos administradores da solução.
->
-> Inclua, para cada funcionalidade, itens como: (1) titulos e descrição da funcionalidade; (2) Estrutura de dados associada; (3) o detalhe sobre as instruções de acesso e uso.
+### Funcionalidade 2 - Visualização dos detalhes do benefício
+
+Permite a visualização dos detalhes de algum benefício específico, como requisitos, condições e documentação necessária, permitindo ainda marcar os documentos já possuídos para visualizar o progresso
+
+* **Estrutura de dados:** [Benefícios](#-estrutura-de-dados---beneficios)
+* **Instruções de acesso:**
+  * Abra o site
+  * Clique pelo Menu ou pelo botão de navegação "Benefícios"
+  * Clique no botão "mais detalhes"
+* **Tela da funcionalidade**:
+
+![Tela de Visualizacão e Filtragem dos Benefícios](images/tela-detalhes-beneficio.png)
 
 ## Estruturas de Dados
 
