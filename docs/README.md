@@ -945,6 +945,7 @@ Esta seção apresenta os módulos e APIs utilizados na solução
 
 **Images**:
 
+* Imagens - [https://imgbb.com](https://imgbb.com)
 
 **Fonts:**
 

@@ -882,7 +882,7 @@
       "telefone": "(31) 97777-6666",
       "email": "rodrigo.souza@assistencia.gov.br",
       "senha": "Rs345678",
-      "imagem-assistente": "img/assistente2",
+      "imagem-assistente": "../../assets/images/assistentes/rodrigo.avif",
       "cras": "CRAS Barreiro",
       "familias-assistidas": [
         {
@@ -899,7 +899,7 @@
       "telefone": "(31) 96666-5555",
       "email": "amanda.costa@assistencia.gov.br",
       "senha": "Ac213243",
-      "imagem-assistente": "img/assistente3",
+      "imagem-assistente": "../../assets/images/assistentes/amanda-costa.jpg",
       "cras": "CRAS Venda Nova",
       "familias-assistidas": [
         {
@@ -916,7 +916,7 @@
       "telefone": "(31) 95555-4444",
       "email": "juliana.lima@assistencia.gov.br",
       "senha": "Jl090807",
-      "imagem-assistente": "img/assistente4",
+      "imagem-assistente": "../../assets/images/assistentes/juliana-lima.jpg",
       "cras": "CRAS Eldorado",
       "familias-assistidas": [
         {
@@ -930,7 +930,7 @@
       "telefone": "(31) 99704-6525",
       "email": "paulocsm2006@gmail.com",
       "senha": "Pc0709",
-      "imagem-assistente": "https://i.ibb.co/chXWYKZK/2ugqfpaqc7d5vfo38gr246r1e1l8pau0ri8q8llr9eda7bkbp1d48kc173s37ute056s15cua5mhjlep5r4vghgmg3kkejc0gqc7.jpg",
+      "imagem-assistente": "",
       "cras": "CRAS Vila Cemig",
       "familias-assistidas": [],
       "dataCadastro": "2026-06-22T16:07:30.294Z"
@@ -940,7 +940,7 @@
     {
       "idFamilia": "FAM-001",
       "nomeFamilia": "Família Dos Souzas",
-      "fotoFamilia": "",
+      "fotoFamilia": "https://loremflickr.com/800/600/family?lock=17",
       "endereco": {
         "rua": "Rua das Flores",
         "numero": "120",
@@ -1018,7 +1018,7 @@
     {
       "idFamilia": "FAM-002",
       "nomeFamilia": "Família Silva",
-      "fotoFamilia": "img/fotoFamilia2",
+      "fotoFamilia": "https://loremflickr.com/800/600/family?lock=11",
       "endereco": {
         "rua": "Avenida Amazonas",
         "numero": "2500",
@@ -1050,7 +1050,7 @@
           "nome": "Francisca Silva",
           "categoria": "Responsável",
           "dataNascimento": "1958-05-19",
-          "imagem-membro": "img/membro4",
+          "imagem-membro": "",
           "parentesco": "Responsável Familiar",
           "escolaridade": "Ensino Fundamental Incompleto",
           "ocupacao": "Aposentada por Idade",
@@ -1073,7 +1073,7 @@
     {
       "idFamilia": "FAM-003",
       "nomeFamilia": "Família Santos Rodrigues",
-      "fotoFamilia": "img/fotoFamilia3",
+      "fotoFamilia": "https://loremflickr.com/800/600/family?lock=30",
       "endereco": {
         "rua": "Rua David Fonseca",
         "numero": "45",
@@ -1105,7 +1105,7 @@
           "nome": "Clarice Santos",
           "categoria": "Responsável",
           "dataNascimento": "1990-01-25",
-          "imagem-membro": "img/membro5",
+          "imagem-membro": "",
           "parentesco": "Responsável Familiar",
           "escolaridade": "Ensino Médio Incompleto",
           "ocupacao": "Desempregada",
@@ -1122,7 +1122,7 @@
           "nome": "Marcos Rodrigues",
           "categoria": "Dependente",
           "dataNascimento": "2005-06-14",
-          "imagem-membro": "img/membro6",
+          "imagem-membro": "",
           "parentesco": "Filho",
           "escolaridade": "Ensino Médio Completo",
           "ocupacao": "Autônomo",
@@ -1140,7 +1140,7 @@
     {
       "idFamilia": "FAM-004",
       "nomeFamilia": "Família Oliveira Lima",
-      "fotoFamilia": "img/fotoFamilia4",
+      "fotoFamilia": "https://loremflickr.com/800/600/family?lock=27",
       "endereco": {
         "rua": "Rua Boaventura",
         "numero": "890",
@@ -1172,7 +1172,7 @@
           "nome": "Sandra Oliveira",
           "categoria": "Responsável",
           "dataNascimento": "1995-09-05",
-          "imagem-membro": "img/membro7",
+          "imagem-membro": "",
           "parentesco": "Responsável Familiar",
           "escolaridade": "Ensino Fundamental Completo",
           "ocupacao": "Coletora de Recicláveis",
@@ -1183,7 +1183,7 @@
           "nome": "Thiago Oliveira",
           "categoria": "Dependente",
           "dataNascimento": "2022-04-10",
-          "imagem-membro": "img/membro8",
+          "imagem-membro": "",
           "parentesco": "Filho",
           "escolaridade": "Não alfabetizado",
           "ocupacao": "Nenhuma",
@@ -1206,7 +1206,7 @@
     {
       "idFamilia": "FAM-005",
       "nomeFamilia": "Família Pereira Costa",
-      "fotoFamilia": "img/fotoFamilia5",
+      "fotoFamilia": "https://loremflickr.com/800/600/family?lock=49",
       "endereco": {
         "rua": "Rua Padre Pedro Pinto",
         "numero": "2110",
@@ -1233,7 +1233,7 @@
           "nome": "Raimunda Pereira",
           "categoria": "Responsável",
           "dataNascimento": "1978-11-30",
-          "imagem-membro": "img/membro9",
+          "imagem-membro": "",
           "parentesco": "Responsável Familiar",
           "escolaridade": "Ensino Médio Completo",
           "ocupacao": "Cozinheira",
@@ -1244,7 +1244,7 @@
           "nome": "Carlos Pereira",
           "categoria": "Dependente",
           "dataNascimento": "1998-02-12",
-          "imagem-membro": "img/membro10",
+          "imagem-membro": "",
           "parentesco": "Filho",
           "escolaridade": "Ensino Médio Completo",
           "ocupacao": "Estudante Técnico",
@@ -1262,7 +1262,7 @@
     {
       "idFamilia": "FAM-006",
       "nomeFamilia": "Família Alves Mendes",
-      "fotoFamilia": "img/fotoFamilia6",
+      "fotoFamilia": "https://loremflickr.com/800/600/family?lock=32",
       "endereco": {
         "rua": "Rua São Roque",
         "numero": "400",
@@ -1299,7 +1299,7 @@
           "nome": "Elaine Alves",
           "categoria": "Responsável",
           "dataNascimento": "2000-07-22",
-          "imagem-membro": "img/membro11",
+          "imagem-membro": "",
           "parentesco": "Responsável Familiar",
           "escolaridade": "Ensino Médio Incompleto",
           "ocupacao": "Desempregada",
@@ -1317,7 +1317,7 @@
     {
       "idFamilia": "FAM-007",
       "nomeFamilia": "Família Lima Macedo",
-      "fotoFamilia": "img/fotoFamilia7",
+      "fotoFamilia": "https://loremflickr.com/800/600/family?lock=21",
       "endereco": {
         "rua": "Rua Marajó",
         "numero": "55",
@@ -1349,7 +1349,7 @@
           "nome": "Jorge Lima",
           "categoria": "Responsável",
           "dataNascimento": "1980-04-18",
-          "imagem-membro": "img/membro12",
+          "imagem-membro": "",
           "parentesco": "Responsável Familiar",
           "escolaridade": "Ensino Fundamental Incompleto",
           "ocupacao": "Afastado por Invalidez",
@@ -1372,7 +1372,7 @@
     {
       "idFamilia": "FAM-1782332595989",
       "nomeFamilia": "Família Abravanel",
-      "fotoFamilia": "https://i.ibb.co/7LxPHDz/img-teste.jpg",
+      "fotoFamilia": "",
       "endereco": {
         "rua": "Rua São Paulo",
         "numero": "1234",
@@ -1421,7 +1421,7 @@
           "nome": "Patricia Abravanel",
           "categoria": "Dependente",
           "dataNascimento": "1988-11-10",
-          "imagem-membro": "https://i.ibb.co/0jdrXXKM/img-show-teste.jpg",
+          "imagem-membro": "",
           "parentesco": "Filha",
           "escolaridade": "Ensino Superior",
           "ocupacao": "Trabalhador CLT",
