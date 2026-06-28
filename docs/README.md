@@ -586,7 +586,7 @@ Esta seção apresenta todos os detalhes da solução criada no projeto.
 
 O vídeo a seguir traz uma apresentação do problema que a equipe está tratando e a proposta de solução. 
 
-[![Vídeo do projeto](https://github.com/user-attachments/assets/488b879a-10e3-47ec-a410-a881099977c4)]
+![Vídeo do projeto](https://github.com/user-attachments/assets/488b879a-10e3-47ec-a410-a881099977c4)
 
 ## Funcionalidades
 
