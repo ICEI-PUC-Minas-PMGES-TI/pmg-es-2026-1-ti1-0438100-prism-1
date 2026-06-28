@@ -1,11 +1,3 @@
-
-
-https://github.com/user-attachments/assets/488b879a-10e3-47ec-a410-a881099977c4
-
-
-
-https://github.com/user-attachments/assets/95692db8-6769-435c-bfb8-fdc3f87c2b7f
-
 # Introdução
 
 Informações básicas do projeto.
@@ -594,13 +586,7 @@ Esta seção apresenta todos os detalhes da solução criada no projeto.
 
 O vídeo a seguir traz uma apresentação do problema que a equipe está tratando e a proposta de solução. 
 
-[![Vídeo do projeto](images/video-guia-beneficio.mp4)]
-
-> ⚠️ **APAGUE ESSA PARTE ANTES DE ENTREGAR SEU TRABALHO**
->
-> O video de apresentação é voltado para que o público externo possa conhecer a solução. O formato é livre, sendo importante que seja apresentado o problema e a solução numa linguagem descomplicada e direta.
->
-> Inclua um link para o vídeo do projeto.
+[![Vídeo do projeto](https://github.com/user-attachments/assets/488b879a-10e3-47ec-a410-a881099977c4)]
 
 ## Funcionalidades
 
